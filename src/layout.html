@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:image" content="{{site_url}}assets/img/cpl-champions.jpg">
+  <meta name="theme-color" content="#07142b">
+  <link rel="icon" href="assets/img/crest.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="{{body_class}}">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Futuro Soccer Academy home">
+      <img src="assets/img/crest.jpg" alt="" width="42" height="42">
+      <span class="brand-text"><span class="brand-name">FUTURO</span><span class="brand-motto">Every Day In Every Way</span></span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+      <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      {{nav}}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{{body}}
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="index.html"><img src="assets/img/crest.jpg" alt="" width="42" height="42"><span class="brand-text"><span class="brand-name">FUTURO</span><span class="brand-motto">Every Day In Every Way</span></span></a>
+        <p class="foot-blurb">Futuro Soccer Academy (Ottawa St. Anthony Futuro). High-performance youth soccer for players in Eastern Ontario and Western Quebec.</p>
+      </div>
+      <div>
+        <h4>Academy</h4>
+        <ul class="foot-links">
+          <li><a href="about.html">About &amp; philosophy</a></li>
+          <li><a href="success.html">Success stories</a></li>
+          <li><a href="coaches.html">Coaches</a></li>
+          <li><a href="program.html">The program</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Families</h4>
+        <ul class="foot-links">
+          <li><a href="apply.html">Programs, dates &amp; fees</a></li>
+          <li><a href="register.html">Register for tryouts</a></li>
+          <li><a href="graduates.html">Graduates showcase</a></li>
+          <li><a href="policies.html">Policies</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul class="foot-links">
+          <li>Sanjeev Parmar, Academy Director</li>
+          <li><a href="mailto:{{email}}">{{email}}</a></li>
+          <li><a href="tel:+16132778096">(613) 277-8096</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fine">© Futuro Soccer Academy · Player achievements as published by the academy.</div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

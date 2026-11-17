@@ -1,0 +1,83 @@
+<!-- title: Register for Tryouts | Futuro Soccer Academy -->
+<!-- description: Register your player for a Futuro Soccer Academy tryout and identification session in Ottawa. -->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Tryouts &amp; player identification</p>
+    <h1>Register for <span class="accent">tryouts.</span></h1>
+    <p class="lede">Tell us about your player. The Academy Director will contact you to set up an identification session.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap form-shell">
+    <aside class="reveal">
+      <p class="eyebrow">What happens next</p>
+      <h2 class="h-lg" style="font-size:clamp(34px,4vw,48px)">We'll be in touch.</h2>
+      <ul class="side-list">
+        <li><b>1. We review your form</b>Usually within a few days.</li>
+        <li><b>2. Identification session</b>Your player trains with the group so our coaches can see their level.</li>
+        <li><b>3. Placement</b>If it's a fit, we send team placement, registration and fee details.</li>
+      </ul>
+      <p class="form-note" style="margin-top:22px">Questions? <a href="mailto:{{email}}" style="color:var(--sky)">{{email}}</a> · <a href="tel:+16132778096" style="color:var(--sky)">(613) 277-8096</a></p>
+      <p class="form-note">Already been placed? <a href="https://go.teamsnap.com/forms/335912" rel="noopener" style="color:var(--sky)">Complete your registration on TeamSnap</a>.</p>
+    </aside>
+
+    <form class="form-card reveal" action="{{form_endpoint}}" method="POST">
+      <input type="hidden" name="_subject" value="New tryout registration (futuro website)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="{{site_url}}thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <fieldset>
+        <legend>Player</legend>
+        <div class="fields">
+          <div class="field"><label for="p-first">First name <span class="req">*</span></label><input id="p-first" name="Player first name" required autocomplete="off"><span class="err">Enter the player's first name.</span></div>
+          <div class="field"><label for="p-last">Last name <span class="req">*</span></label><input id="p-last" name="Player last name" required autocomplete="off"><span class="err">Enter the player's last name.</span></div>
+          <div class="field">
+            <label for="p-year">Birth year <span class="req">*</span></label>
+            <select id="p-year" name="Birth year" required>
+              <option value="">Select</option>
+              <option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>2009</option><option>2008</option><option>2007</option>
+            </select>
+            <span class="err">Choose a birth year.</span>
+          </div>
+          <div class="field">
+            <label for="p-team">Program <span class="req">*</span></label>
+            <select id="p-team" name="Program" required>
+              <option value="">Select</option>
+              <option>Boys competitive</option>
+              <option>Girls competitive</option>
+              <option>Men's U21 / Competitive 1</option>
+              <option>Women's Competitive 1</option>
+              <option>Summer camp (ages 8–13)</option>
+              <option>Not sure yet</option>
+            </select>
+            <span class="err">Choose a program.</span>
+          </div>
+          <div class="field"><label for="p-pos">Position(s)</label><input id="p-pos" name="Position" placeholder="e.g. Winger, centre-back, GK"></div>
+          <div class="field"><label for="p-club">Current club &amp; level</label><input id="p-club" name="Current club" placeholder="e.g. U13 OPDL, Regional"></div>
+          <div class="field full"><label for="p-notes">Anything we should know?</label><textarea id="p-notes" name="Notes" placeholder="Experience, achievements, goals, availability"></textarea></div>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Parent or guardian</legend>
+        <div class="fields">
+          <div class="field full"><label for="g-name">Full name <span class="req">*</span></label><input id="g-name" name="Parent name" required autocomplete="name"><span class="err">Enter your name.</span></div>
+          <div class="field"><label for="g-email">Email <span class="req">*</span></label><input id="g-email" name="email" type="email" required autocomplete="email"><span class="err">Enter a valid email address.</span></div>
+          <div class="field"><label for="g-phone">Phone <span class="req">*</span></label><input id="g-phone" name="Phone" type="tel" required autocomplete="tel"><span class="err">Enter a phone number.</span></div>
+          <div class="field full">
+            <label for="g-heard">How did you hear about Futuro?</label>
+            <select id="g-heard" name="Heard about us">
+              <option value="">Select</option><option>Another Futuro family</option><option>Instagram / social media</option><option>Search</option><option>A coach or club</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <label class="check"><input type="checkbox" name="Consent to contact" value="Yes" required> I'm the player's parent or guardian and agree to be contacted by Futuro Soccer Academy about this registration.</label>
+      <button class="btn btn-primary btn-lg" type="submit">Send registration</button>
+      <p class="form-note">Your details go only to the Academy Director and are used only to arrange a tryout.</p>
+    </form>
+  </div>
+</section>

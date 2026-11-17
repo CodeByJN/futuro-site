@@ -2,29 +2,76 @@
 
 A redesign of the Futuro Soccer Academy website (Ottawa). The current site is at https://www.futurosoccer.com.
 
-The current site spreads its best content across 55+ pages: 11 separate "Achievements" and "University Grads" pages, most of it locked inside poster images, plus 25 policy pages in the main menu. This version is a single focused page, ordered the way a parent decides:
+Live preview: https://codebyjn.github.io/futuro-site/
 
-1. **Hero + numbers**: 24 pro and pro-academy signings, 13 national-team call-ups, 60+ university commitments, 2 CPL champions
-2. **Futuro Legends**: Noah Abatneh, Sadie Sider-Echenberg, Antoine Coupland, Maya Hindson, Elage Bah, Tyr Duhaney-Walker, Eric Lajeunesse, Molly Hale, Michael Peres
-3. **Where they are now**: a filterable wall (Pro / National team / University) and every university commitment by graduating class
-4. **Proof on the pitch**: UK tour results vs. English pro academies, plus YouTube highlights
-5. **The Futuro Standard**: what parents should expect (high intensity, elite technical skill, education standards)
-6. **Coaches**, **Programs pathway**, **Tryout CTA**
-7. Policies and parent resources go in the footer and link to the existing pages
+## Pages
 
-## Run locally
+| Page | What it's for |
+|---|---|
+| `index.html` | Home: hero with the looping player collage and headline numbers, sponsor carousel, and short sections on philosophy, coaches, the program, when to apply, graduates and policies |
+| `about.html` | Mission, vision, Joga Bonito philosophy, the 7 pillars, and results against English pro academies (with videos) |
+| `success.html` | Futuro Legends, the filterable "where they are now" wall, and every university commitment by class |
+| `coaches.html` | All 10 staff with photos and credentials |
+| `program.html` | A typical week, the standard, the U8–U18 pathway and the summer camp |
+| `apply.html` | How to join, season phases, age groups by birth year, financial assistance |
+| `register.html` | Tryout registration form |
+| `graduates.html` | Showcase board for scouts and the highlight-tape submission form |
+| `policies.html` | All 23 policies on one searchable page |
 
-Plain static HTML/CSS/JS with no build step.
+## Editing
+
+The pages are generated. **Edit the files in `src/`, then run:**
+
+```sh
+python3 build.py
+```
+
+- `src/layout.html` is the shared header and footer.
+- `src/pages/*.html` holds each page's content.
+- `src/policies/*.txt` holds the policy text, taken from the current site.
+- `src/graduates.json` holds the players on the graduates board.
+- Sponsors, the nav and the form inbox are set at the top of `build.py`.
+
+Preview locally:
 
 ```sh
 python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Deploy anywhere that serves static files (GitHub Pages, Netlify, Cloudflare Pages).
+### Adding a player to the graduates board
+
+After Coach Parmar approves a submission, add an entry to `src/graduates.json` and rebuild:
+
+```json
+[
+  {
+    "name": "Jane Doe",
+    "grad_year": 2026,
+    "position": "Centre-back",
+    "team": "Women's Competitive 1",
+    "youtube": "https://youtu.be/VIDEO_ID",
+    "note": "Left-footed, strong in the air"
+  }
+]
+```
+
+Only these fields are published. Scouts contact the academy through the button on each card.
+
+## Forms
+
+The tryout and highlight-tape forms send to the academy inbox through [FormSubmit](https://formsubmit.co). This needs no account and no server code.
+
+- **The first time someone submits a form, FormSubmit emails the inbox an activation link. Click it once, or later submissions won't be delivered.**
+- After submitting, people land on `thanks.html`.
+- To use a different service, such as Formspree or a Google Form, change `FORM_ENDPOINT` in `build.py`.
 
 ## Data notes
 
-- All facts come from the current futurosoccer.com pages and the academy's own announcement posters, as of November 2026.
-- The headline counts were tallied from that content. Have the academy confirm them before launch.
-- The university-recruitment page on the current site publishes minors' emails and birthdates. This redesign deliberately leaves them out.
+- All facts come from the current futurosoccer.com pages and the academy's announcement posters, as of November 2026.
+- The headline counts were tallied from that content. Have the academy confirm them before launch:
+  - 85+ success stories (unique players)
+  - 24 pro or pro-academy signings
+  - 13 national-team call-ups
+  - 60+ university commitments
+- The university-recruitment page on the current site publishes minors' emails and birthdates. This redesign leaves them out.

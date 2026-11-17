@@ -1,0 +1,97 @@
+<!-- title: Graduates Showcase | Futuro Soccer Academy -->
+<!-- description: Futuro's graduating players and their highlight tapes, for university and professional scouts. All scout inquiries go through the Academy Director. -->
+<section class="page-hero">
+  <div class="wrap">
+    <p class="eyebrow">Graduates showcase</p>
+    <h1>Scouts, meet <span class="accent">our next class.</span></h1>
+    <p class="lede">Graduating Futuro players, with their highlight tapes. To keep players safe, we don't publish their contact details. Every scout inquiry goes through the Academy Director.</p>
+    <div class="btn-row"><a class="btn btn-primary" href="mailto:{{email}}?subject=Scout%20inquiry%3A%20Futuro%20graduates">Contact the academy</a><a class="btn btn-ghost" href="#submit">Players: submit your tape</a></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow">Available prospects</p>
+      <h2 class="h-lg">The board.</h2>
+    </div>
+{{graduates}}
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head split-head reveal">
+      <div>
+        <p class="eyebrow">Recently placed</p>
+        <h2 class="h-lg">Class of 2025 commitments.</h2>
+      </div>
+      <a class="link-arrow" href="success.html#alumni">Every class since 2019</a>
+    </div>
+    <div class="alumni reveal">
+      <div class="alum"><span class="tag">NCAA D1</span><strong>Brianne MacDonald</strong><small>University of Central Florida</small></div>
+      <div class="alum"><span class="tag">NCAA</span><strong>Stella De Capua</strong><small>University of Bridgeport</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Justin Meka</strong><small>University of Toronto</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Amelia Racicot</strong><small>University of Toronto</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Julian Shiau</strong><small>UPEI</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Ruben Lund</strong><small>UPEI</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Daniel Lombo</strong><small>UPEI</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Olivia Chen</strong><small>UPEI</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Dounia El Abdi</strong><small>UPEI</small></div>
+      <div class="alum"><span class="tag">U SPORTS</span><strong>Rania Demone</strong><small>UPEI</small></div>
+      <div class="alum"><span class="tag">CEGEP</span><strong>Celina Labaki</strong><small>Cégep de l'Outaouais</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="submit">
+  <div class="wrap form-shell">
+    <aside class="reveal">
+      <p class="eyebrow">For graduating players</p>
+      <h2 class="h-lg" style="font-size:clamp(34px,4vw,48px)">Get your tape on the board.</h2>
+      <ul class="side-list">
+        <li><b>Upload to YouTube first</b>Public or unlisted. Keep it to 3–5 minutes, with your best clips in the first 30 seconds.</li>
+        <li><b>Coach review</b>Coach Parmar reviews every submission before it goes live.</li>
+        <li><b>Your privacy</b>We publish your name, grad year, position, team and video only. Scouts contact the academy, never you directly.</li>
+      </ul>
+    </aside>
+
+    <form class="form-card reveal" action="{{form_endpoint}}" method="POST">
+      <input type="hidden" name="_subject" value="Graduate highlight tape submission (futuro website)">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_next" value="{{site_url}}thanks.html">
+      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <fieldset>
+        <legend>Player</legend>
+        <div class="fields">
+          <div class="field full"><label for="s-name">Full name <span class="req">*</span></label><input id="s-name" name="Player name" required><span class="err">Enter your full name.</span></div>
+          <div class="field">
+            <label for="s-year">Graduating class <span class="req">*</span></label>
+            <select id="s-year" name="Graduating class" required>
+              <option value="">Select</option><option>2026</option><option>2027</option><option>2028</option><option>2029</option>
+            </select>
+            <span class="err">Choose your graduating class.</span>
+          </div>
+          <div class="field"><label for="s-pos">Position <span class="req">*</span></label><input id="s-pos" name="Position" required placeholder="e.g. Centre-back"><span class="err">Enter your position.</span></div>
+          <div class="field full"><label for="s-team">Current Futuro team</label><input id="s-team" name="Team" placeholder="e.g. U18 Boys, Women's Competitive 1"></div>
+          <div class="field full">
+            <label for="s-yt">YouTube highlight link <span class="req">*</span></label>
+            <input id="s-yt" name="YouTube link" type="url" required inputmode="url" placeholder="https://youtu.be/..." pattern="https?://(www\.|m\.)?(youtube\.com|youtu\.be)/.+">
+            <span class="hint">Paste the link from YouTube's Share button.</span>
+            <span class="err">Enter a YouTube link (youtube.com or youtu.be).</span>
+          </div>
+          <div class="field full"><label for="s-note">One line for scouts</label><input id="s-note" name="Note for scouts" maxlength="140" placeholder="e.g. Left-footed, 3 years captain, strong in the air"></div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Parent or guardian</legend>
+        <div class="fields">
+          <div class="field"><label for="s-g">Name <span class="req">*</span></label><input id="s-g" name="Parent name" required autocomplete="name"><span class="err">Enter a parent or guardian's name.</span></div>
+          <div class="field"><label for="s-ge">Email <span class="req">*</span></label><input id="s-ge" name="email" type="email" required autocomplete="email"><span class="hint">For the academy only. Never published.</span><span class="err">Enter a valid email address.</span></div>
+        </div>
+      </fieldset>
+      <label class="check"><input type="checkbox" name="Publishing consent" value="Yes" required> As the parent or guardian, I agree to Futuro publishing the player's name, graduating class, position, team, note and highlight video on this website.</label>
+      <button class="btn btn-primary btn-lg" type="submit">Submit highlight tape</button>
+    </form>
+  </div>
+</section>
