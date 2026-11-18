@@ -663,3 +663,24 @@ tr:last-child td { border-bottom: 0; }
   background-blend-mode: multiply; padding-top: 120px; padding-bottom: 120px;
 }
 .cta-band.photo-band .lede { color: var(--ink); }
+
+/* Philosophy video montage */
+.about-video { position: relative; background: var(--navy-900); }
+.about-video video { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; max-height: 70vh; object-fit: cover; object-position: center 40%; }
+.vid-toggle {
+  position: absolute; right: 12px; bottom: 12px; width: 44px; height: 44px; border-radius: 50%;
+  display: grid; place-items: center; border: 0; cursor: pointer;
+  background: rgba(5, 14, 31, 0.72); color: var(--ink);
+}
+.vid-toggle:hover { background: var(--navy-900); }
+.vid-toggle .i-play { display: none; }
+.vid-toggle.is-paused .i-play { display: inline; }
+.vid-toggle.is-paused .i-pause { display: none; }
+
+/* Footer socials */
+.socials { list-style: none; padding: 0; margin: 18px 0 0; display: flex; gap: 10px; }
+.socials a {
+  display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--line); color: var(--ink-dim); text-decoration: none;
+}
+.socials a:hover { color: var(--navy-900); background: var(--lime); border-color: var(--lime); }

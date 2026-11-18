@@ -31,6 +31,7 @@ python3 build.py
 - `src/policies/*.txt` holds the policy text, taken from the current site.
 - `src/coaches.json` holds the coaches, in display order. It feeds the home page carousel and the coaches page.
 - `src/graduates.json` holds the players on the graduates board.
+- `assets/video/philosophy.mp4` is the muted training montage in the home philosophy section, cut from four of Coach Parmar's X clips.
 - `assets/img/action/` holds the training and match photos (from the current futurosoccer.com). Inner pages set their header photo with `style="--hero-img:url(...)"` on `.page-hero.has-photo`.
 - Sponsors, the nav and the form inbox are set at the top of `build.py`.
 

@@ -108,3 +108,27 @@ if (search) {
   openFromHash();
   window.addEventListener('hashchange', openFromHash);
 }
+
+// Philosophy montage: play only while on screen; respect reduced motion; pause control
+(() => {
+  const v = document.querySelector('.about-video video');
+  if (!v) return;
+  const btn = v.parentElement.querySelector('.vid-toggle');
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let userPaused = still;
+  const sync = () => {
+    btn.classList.toggle('is-paused', v.paused);
+    btn.setAttribute('aria-label', v.paused ? 'Play video' : 'Pause video');
+  };
+  btn.hidden = false; sync();
+  v.addEventListener('play', sync); v.addEventListener('pause', sync);
+  btn.addEventListener('click', () => {
+    userPaused = !v.paused;
+    if (v.paused) { v.play().catch(() => {}); } else { v.pause(); }
+  });
+  if (!('IntersectionObserver' in window)) { if (!userPaused) v.play().catch(() => {}); return; }
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting && !userPaused) v.play().catch(() => {});
+    else if (!e.isIntersecting) v.pause();
+  }, { threshold: 0.25 }).observe(v);
+})();
