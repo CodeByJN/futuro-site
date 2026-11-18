@@ -431,23 +431,33 @@ def initials(name):
     return "".join(w[0] for w in words[:2]).upper()
 
 
-def alum_card(name, tag, details, photo=None, cat=None):
+def alum_card(name, tag, details, photo=None, cat=None, extra=()):
+    """A poster card. `extra` = more (cat, tag, details) achievements for the same player."""
     if photo:
         pic = f'<div class="alum-pic"><img src="{esc(img(photo, 480))}" alt="" loading="lazy" width="288" height="360"></div>'
     else:  # no photo yet: a branded placeholder with their initials
         pic = (f'<div class="alum-pic alum-mono" aria-hidden="true"><span>{esc(initials(name))}</span>'
                '<img src="assets/img/crest-sm.png" alt="" width="48" height="60" loading="lazy"></div>')
-    data = f' data-cat="{cat}"' if cat else ""
-    return (f'<div class="alum"{data}>{pic}<div class="alum-body"><span class="tag">{esc(tag)}</span>'
-            f'<strong>{esc(name)}</strong><small>{esc(details)}</small></div></div>')
+    achs = [(cat, tag, details)] + list(extra)
+    cats = " ".join(dict.fromkeys(c for c, _, _ in achs if c))
+    data = f' data-cat="{cats}"' if cats else ""
+    tags = "".join(f'<span class="tag{" tag-" + c if c else ""}">{esc(t)}</span>' for c, t, _ in achs if t)
+    lines = "".join(f"<small>{esc(d)}</small>" for _, _, d in achs if d)
+    return (f'<div class="alum"{data}>{pic}<div class="alum-body"><span class="tags">{tags}</span>'
+            f'<strong>{esc(name)}</strong>{lines}</div></div>')
 
 
 def alumni_wall():
-    return "\n".join(
-        "        " + alum_card(a["name"], a.get("label") or a.get("pathway"), a.get("details"), a.get("photo"),
-                               PATHWAYS.get(a.get("pathway"), "pro"))
-        for a in items("alumni.json", ("name",))
-    )
+    out = []
+    for a in items("alumni.json", ("name",)):
+        achs = [x for x in a.get("achievements") or [] if isinstance(x, dict)]
+        if not achs and (a.get("pathway") or a.get("details")):  # older single-pathway entries
+            achs = [{"pathway": a.get("pathway"), "label": a.get("label"), "details": a.get("details")}]
+        conv = [(PATHWAYS.get(x.get("pathway"), "pro"), x.get("label") or x.get("pathway"), x.get("details")) for x in achs]
+        if not conv:
+            conv = [(None, "", "")]
+        out.append("        " + alum_card(a["name"], conv[0][1], conv[0][2], a.get("photo"), conv[0][0], conv[1:]))
+    return "\n".join(out)
 
 
 def load_classes():

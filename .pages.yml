@@ -135,17 +135,22 @@ content:
 
   - name: alumni
     label: "🌍 Where they are now"
-    description: The filterable wall on the Success Stories page.
+    description: The filterable wall on the Success Stories page. One card per player; add each achievement under it (pro, national team, university) and the filters find them under each.
     type: file
     path: content/alumni.json
     format: json
-    list: { collapsible: { collapsed: true, summary: "{fields.name} - {fields.details}" } }
+    list: { collapsible: { collapsed: true, summary: "{fields.name}" } }
     fields:
       - { name: name, label: Player name, type: string, required: true }
-      - { name: pathway, label: Filter, type: select, options: { values: ["Pro & pro academy", "National team", "University"] } }
-      - { name: label, label: Tag on the card, type: string, description: "e.g. Pro, Pro academy, National team, NCAA D1, U SPORTS" }
-      - { name: details, label: Club, team or school, type: string }
       - { name: photo, label: Photo (optional), type: image, options: { media: uploads } }
+      - name: achievements
+        label: Achievements
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.label}: {fields.details}" } }
+        fields:
+          - { name: pathway, label: Filter, type: select, options: { values: ["Pro & pro academy", "National team", "University"] } }
+          - { name: label, label: Tag on the card, type: string, description: "e.g. Pro, Pro academy, National team, NCAA D1, U SPORTS" }
+          - { name: details, label: Club, team or school, type: string }
 
   - name: commitments
     label: "🏫 University commitments by class"

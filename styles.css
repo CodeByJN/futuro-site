@@ -246,8 +246,11 @@ section { padding: 104px 0; }
 .alum { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; display: flex; flex-direction: column; gap: 4px; }
 .alum[hidden] { display: none; }
 .tag { align-self: flex-start; font-size: 13px; font-weight: 600; padding: 2px 8px; border-radius: 4px; background: rgba(238, 243, 251, 0.08); color: var(--ink-dim); }
-.alum[data-cat="pro"] .tag { background: rgba(124, 194, 66, 0.16); color: var(--lime-bright); }
-.alum[data-cat="national"] .tag { background: rgba(242, 193, 78, 0.16); color: var(--gold); }
+.tag-pro { background: rgba(124, 194, 66, 0.16); color: var(--lime-bright); }
+.tag-national { background: rgba(242, 193, 78, 0.16); color: var(--gold); }
+.tag-university { background: rgba(143, 203, 239, 0.16); color: var(--sky); }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.alum small + small { margin-top: 4px; padding-top: 4px; border-top: 1px solid var(--line); }
 .alum strong { font-size: 17px; margin-top: 6px; }
 .alum small { color: var(--ink-dim); font-size: 14px; line-height: 1.45; }
 .uni-classes { margin-top: 18px; }

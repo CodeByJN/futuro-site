@@ -64,7 +64,7 @@ if (filterButtons.length) {
     btn.addEventListener('click', () => {
       const f = btn.dataset.filter;
       filterButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-      alumni.forEach((a) => { a.hidden = f !== 'all' && a.dataset.cat !== f; });
+      alumni.forEach((a) => { a.hidden = f !== 'all' && !(a.dataset.cat || '').split(' ').includes(f); });
       if (uniClasses) uniClasses.hidden = !(f === 'all' || f === 'university');
     });
   });
