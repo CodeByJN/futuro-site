@@ -1,0 +1,117 @@
+---
+title: "Emergency Action Plan (EAP)"
+section: "Safety & wellbeing"
+order: 3
+---
+
+An Emergency Action Plan (EAP) is a plan designed by coaches to assist them in responding to emergency situations.
+
+The idea behind having such a plan prepared in advance is that it will help you respond in a responsible and clear-headed way if an emergency occurs.
+
+An EAP should be prepared for the facility or site where you normally hold practices and for any facility or site where you regularly host competitions. For away competitions, ask the host team or host facility for a copy of their EAP.
+
+An EAP can be simple or elaborate but should cover the following items:
+
+1. Designate in advance who is in charge in the event of an emergency.
+
+2. Have a cell phone with you and make sure the battery is fully charged. If this is not possible, find out exactly where a telephone is located.
+
+3. Have emergency telephone numbers with you (facility manager, fire, police, ambulance) as well as contact numbers (parents/guardians, next of kin, family doctor) for the participants.
+
+4. Have a medical profile for each participant on hand so this information can be provided to emergency medical personnel. Include a signed consent from the parent/guardian to authorize medical treatment in an emergency in this profile.
+
+5. Prepare directions to provide to Emergency Medical Services (EMS) to enable them to reach the site as rapidly as possible. You may want to include information such as the closest major intersection, one way streets, or major landmarks.
+
+6. Have a first aid kit accessible and properly stocked at all times (all coaches are strongly encouraged to pursue first aid training).
+
+7. Designate a “call person” (the person who makes contact with medical authorities and otherwise assists the person in charge) in advance. Be sure that your call person can give emergency vehicles precise instructions to reach your facility or site.
+
+When an injury occurs, an EAP should be activated immediately if the injured person:
+
+• is not breathing
+
+• does not have a pulse
+
+• is bleeding profusely
+
+• has impaired consciousness
+
+• has injured the back, neck or head
+
+• has a visible major trauma to a limb
+
+Contact Information:
+
+Emergency Phone Number: 911
+
+CHEO - The Children's Hospital of Eastern Ontario
+
+401 Smyth Road, Ottawa, ON, K1H 8L1
+
+613-737-7600
+
+Activation of Emergency Medical Services
+
+1. Call 911. You must provide:
+
+a. Your name
+
+b. Location of injured athlete
+
+c. Number of individuals injured
+
+d. Condition of athlete(s)
+
+Conscious or unconscious?
+
+Is he/she breathing
+
+Has severe bleeding?
+
+In shock?
+
+Heat Illness?
+
+e. First aid treatment provided
+
+Splinting?
+
+Wound care?
+
+CPR/AED?
+
+Ice tub?
+
+f. Any other information requested by the dispatcher
+
+Address of Futuro Soccer Fields
+
+University of Ottawa Lees Avenue Dome: 200 Lees Avenue, Ottawa, ON K1S 5S9
+
+Glebe High school: 212 Glebe Ave, Ottawa, ON K1S 2C9
+
+Gloucester superdome: 1660 Bearbrook Rd, Gloucester, ON K1B 1C4
+
+St. Anthony Italia Soccer Club: 523 St Anthony St, Ottawa, ON K1R 0A6
+
+Adult high school: 300 Rochester Street, Ottawa, ON K1R 7N4
+
+EAP (Once the player is Stabilized):
+
+Have Emergency Medical Form of the player ready for Paramedics.
+
+Notify parents if not on the scene.
+
+Take Notes of player's name and injuries, hospital name, time, location, witnesses, referees...
+
+Record incidents/injuries with the academy
+
+Important Recommendations:
+
+Each player should have an Emergency Medical Form completed.
+
+All forms should be inserted in the team's EAP binder.
+
+This Emergency Medical Form can be used as a reference by the coaches, trainers, and medical staffs.
+
+The academy encourages all Team Officials to take a First aid and CPR course.

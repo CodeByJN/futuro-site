@@ -1,0 +1,287 @@
+[
+  {
+    "year": 2025,
+    "players": [
+      {
+        "name": "Brianne MacDonald",
+        "school": "UCF",
+        "level": "NCAA D1"
+      },
+      {
+        "name": "Stella De Capua",
+        "school": "University of Bridgeport",
+        "level": "NCAA"
+      },
+      {
+        "name": "Justin Meka",
+        "school": "University of Toronto",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Amelia Racicot",
+        "school": "University of Toronto",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Julian Shiau",
+        "school": "UPEI",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Ruben Lund",
+        "school": "UPEI",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Daniel Lombo",
+        "school": "UPEI",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Olivia Chen",
+        "school": "UPEI",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Dounia El Abdi",
+        "school": "UPEI",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Rania Demone",
+        "school": "UPEI",
+        "level": "U SPORTS"
+      },
+      {
+        "name": "Celina Labaki",
+        "school": "Cégep de l'Outaouais",
+        "level": "CEGEP"
+      }
+    ]
+  },
+  {
+    "year": 2024,
+    "players": [
+      {
+        "name": "Molly Hale",
+        "school": "UCLA"
+      },
+      {
+        "name": "Maya Hindson",
+        "school": "South Florida"
+      },
+      {
+        "name": "Celina Bensebaa",
+        "school": "University of Ottawa"
+      },
+      {
+        "name": "Bilaal Volcy",
+        "school": "Carleton"
+      },
+      {
+        "name": "Darcy Cain",
+        "school": "Carleton"
+      },
+      {
+        "name": "Ava Milito",
+        "school": "Carleton"
+      },
+      {
+        "name": "Cameron Cino",
+        "school": "Queen's"
+      },
+      {
+        "name": "James Feininger-Hughes",
+        "school": "Queen's"
+      },
+      {
+        "name": "Luca Da Caria",
+        "school": "Queen's"
+      },
+      {
+        "name": "Asha Cameron",
+        "school": "Ontario Tech"
+      },
+      {
+        "name": "Jenna Viduka",
+        "school": "Ontario Tech"
+      },
+      {
+        "name": "Jahmal Boursiquot",
+        "school": "UPEI"
+      },
+      {
+        "name": "Kyle St. Jean",
+        "school": "UPEI"
+      },
+      {
+        "name": "Alyssa Bui",
+        "school": "Nipissing"
+      }
+    ]
+  },
+  {
+    "year": 2023,
+    "players": [
+      {
+        "name": "Dante Britto",
+        "school": "Queen's"
+      },
+      {
+        "name": "Martin Popp",
+        "school": "Guelph"
+      },
+      {
+        "name": "Adrijian Vranjkovic",
+        "school": "Carleton"
+      },
+      {
+        "name": "Safa Sabry",
+        "school": "Concordia"
+      },
+      {
+        "name": "Ella Kennedy",
+        "school": "Bishop's"
+      },
+      {
+        "name": "Rory Cotroneo",
+        "school": "Brock"
+      },
+      {
+        "name": "Ali Sultan",
+        "school": "Algonquin College"
+      },
+      {
+        "name": "Danica Gravel",
+        "school": "committed"
+      }
+    ]
+  },
+  {
+    "year": 2022,
+    "players": [
+      {
+        "name": "Salena Allibhai",
+        "school": "UBC Okanagan"
+      },
+      {
+        "name": "Paris Axam",
+        "school": "Dalhousie"
+      },
+      {
+        "name": "Ellie Eriksson",
+        "school": "Saint Mary's"
+      },
+      {
+        "name": "Samara Hallett",
+        "school": "Houghton"
+      },
+      {
+        "name": "Nikita Mohan",
+        "school": "Ontario Tech"
+      },
+      {
+        "name": "Harvard Matt",
+        "school": "Queen's"
+      }
+    ]
+  },
+  {
+    "year": 2021,
+    "players": [
+      {
+        "name": "Sadie Sider-Echenberg",
+        "school": "University of Ottawa"
+      },
+      {
+        "name": "Sara Buffone",
+        "school": "Oral Roberts"
+      },
+      {
+        "name": "Marissa Gravel",
+        "school": "Queen's"
+      },
+      {
+        "name": "Mika Matsukubo",
+        "school": "Queen's"
+      },
+      {
+        "name": "Zoe Gardiner",
+        "school": "McGill"
+      },
+      {
+        "name": "Abby Barwick",
+        "school": "Concordia"
+      },
+      {
+        "name": "Caitlin Crichton",
+        "school": "St. Francis Xavier"
+      },
+      {
+        "name": "Kristen Riis",
+        "school": "St. Francis Xavier"
+      },
+      {
+        "name": "Kelsey Pokoj",
+        "school": "Nipissing"
+      },
+      {
+        "name": "Mia Hollingsworth",
+        "school": "Bishop's"
+      },
+      {
+        "name": "Ethan Hulley",
+        "school": "Trent"
+      }
+    ]
+  },
+  {
+    "year": 2019,
+    "players": [
+      {
+        "name": "Cameron Marin",
+        "school": "Florida International"
+      },
+      {
+        "name": "Luca Nicastro",
+        "school": "St. Bonaventure"
+      },
+      {
+        "name": "Cameron Wallace",
+        "school": "Queen's"
+      },
+      {
+        "name": "Zachary Barwick",
+        "school": "McMaster"
+      },
+      {
+        "name": "Ed Bryan Florent",
+        "school": "McMaster"
+      },
+      {
+        "name": "Cristian Aviles",
+        "school": "Concordia"
+      },
+      {
+        "name": "Kevin Kaba",
+        "school": "Carleton"
+      },
+      {
+        "name": "Mandela Singh-Sharpe",
+        "school": "Guelph"
+      },
+      {
+        "name": "Jack Pensom",
+        "school": "Guelph"
+      },
+      {
+        "name": "Kerim Tosun",
+        "school": "Nipissing"
+      },
+      {
+        "name": "Blake Mihaychuk",
+        "school": "Waterloo"
+      }
+    ]
+  }
+]

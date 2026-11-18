@@ -1,0 +1,59 @@
+{
+  "announcement": {
+    "show": false,
+    "text": "Summer camp registration is open.",
+    "button_text": "Register",
+    "button_link": "register.html"
+  },
+  "contact": {
+    "name": "Sanjeev Parmar, Academy Director",
+    "email": "sanjeev@parmarsportstraining.com",
+    "phone": "(613) 277-8096"
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/futurosoccer/",
+    "facebook": "https://www.facebook.com/futurosoccer/",
+    "youtube": "https://www.youtube.com/user/ParmarSportsTraining",
+    "x": "https://x.com/parmarsports"
+  },
+  "hero": {
+    "headline": "Built for players who chase excellence.",
+    "subtitle": "At the university, professional and international level.",
+    "stats": [
+      {
+        "number": "85+",
+        "label": "Success stories"
+      },
+      {
+        "number": "24",
+        "label": "Pro & pro-academy signings"
+      },
+      {
+        "number": "13",
+        "label": "National-team call-ups"
+      },
+      {
+        "number": "60+",
+        "label": "University commitments"
+      }
+    ]
+  },
+  "success_stats": [
+    {
+      "number": "24",
+      "label": "players signed by pro clubs & pro academies"
+    },
+    {
+      "number": "13",
+      "label": "national-team call-ups across 6 countries"
+    },
+    {
+      "number": "60+",
+      "label": "university & college commitments since 2019"
+    },
+    {
+      "number": "2",
+      "label": "Canadian Premier League champions (2025)"
+    }
+  ]
+}

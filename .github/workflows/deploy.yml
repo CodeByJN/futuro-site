@@ -1,0 +1,58 @@
+# Rebuilds the site from content/ and src/ and publishes it to GitHub Pages.
+# Runs on every push to main, so a save in Pages CMS goes live in about a minute.
+name: Build and publish site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install image tools
+        run: |
+          pip install pillow pillow-heif pyyaml
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
+      - name: Reuse resized photos and videos from earlier builds
+        uses: actions/cache@v4
+        with:
+          path: assets/opt
+          key: media-${{ hashFiles('assets/uploads/**', 'assets/img/collage/**') }}
+          restore-keys: media-
+      - name: Build
+        run: python build.py
+      - name: Collect the published files
+        run: |
+          mkdir _site
+          cp *.html styles.css main.js _site/
+          cp -r assets _site/
+          rm -rf _site/assets/uploads/*.mov _site/assets/uploads/*.MOV _site/assets/uploads/*.m4v _site/assets/uploads/*.heic _site/assets/uploads/*.HEIC
+          touch _site/.nojekyll
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,30 @@
+[
+  {
+    "title": "1v1 creativity",
+    "caption": "1v1s that build confident players who want the ball.",
+    "video": "assets/video/reel-2.mp4",
+    "poster": "assets/video/reel-2.webp",
+    "description": "Confident, creative ballers"
+  },
+  {
+    "title": "Protect and escape",
+    "caption": "Shield the ball, turn and get out of pressure.",
+    "video": "assets/video/reel-3.mp4",
+    "poster": "assets/video/reel-3.webp",
+    "description": "Protect and escape"
+  },
+  {
+    "title": "Fun technical challenges",
+    "caption": "Obstacle courses that test touch at speed.",
+    "video": "assets/video/reel-4.mp4",
+    "poster": "assets/video/reel-4.webp",
+    "description": "Fun technical challenges"
+  },
+  {
+    "title": "Parkour warmup",
+    "caption": "Rolls, vaults and balance to build agile, coordinated athletes.",
+    "video": "assets/video/reel-6.mp4",
+    "poster": "assets/video/reel-6.webp",
+    "description": "Parkour warmup"
+  }
+]

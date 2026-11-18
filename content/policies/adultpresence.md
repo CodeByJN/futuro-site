@@ -1,0 +1,15 @@
+---
+title: "Adult Presence Policy"
+section: "Safety & wellbeing"
+order: 6
+---
+
+The purpose of this policy is to ensure that adults that lead teams of youth players either as a coach, assistant coach or manger do not find themselves as the only adult present during club-sanctioned activities such as practices or games.
+
+Procedure
+
+To avoid the risks created by such a circumstance, team officials (coaches, managers) should ensure that a second team official is present, or that at least one coach and one team parent are present for a given team activity.   Should only one adult be present at the time of any Club event, coaches are advised to cancel, postpone or delay the start of any Club event, practice or otherwise.
+
+Parents responsibility
+
+Parents must ensure that they are not placed in a situation where they are alone with another parent’s child without the specific consent of that child’s parent(s), for example, in the case of providing rides to and from team events.  The Club and its representatives (coaches, assistant coaches and managers) are not responsible for ensuring that this policy is followed, except as it applies to their own children.    Parents must also ensure that their own children are not left unattended at team events, or that arrangements are made regarding a child’s attendance, arrival and departure from a club-sanctioned event.

@@ -8,69 +8,65 @@ Live preview: https://codebyjn.github.io/futuro-site/
 
 | Page | What it's for |
 |---|---|
-| `index.html` | Home: hero with the looping player collage and headline numbers, sponsor carousel (with a "see all" grid), success stories and current graduates, philosophy, coaches carousel, "The Futuro experience" photo mosaic, the program, when to apply and policies |
+| `index.html` | Home: hero with the looping player collage and headline numbers, sponsors, legends and the scouting showcase, philosophy and training videos, coaches and coach recruiting, the photo mosaic, the program, the season calendar and policies |
 | `about.html` | Mission, vision, Joga Bonito philosophy, the 7 pillars, and results against English pro academies (with videos) |
 | `success.html` | Futuro Legends, the filterable "where they are now" wall, and every university commitment by class |
 | `coaches.html` | Swipeable carousel of all 10 staff with photos and credentials |
 | `program.html` | A typical week, the standard, the U8–U18 pathway and the summer camp |
 | `apply.html` | How to join, season phases, age groups by birth year, financial assistance |
 | `register.html` | Tryout registration form |
-| `graduates.html` | Showcase board for scouts and the highlight-tape submission form |
+| `graduates.html` | Showcase board for scouts (highlight tapes added by the academy) and the latest class's commitments |
 | `policies.html` | All 23 policies on one searchable page |
 
 ## Editing
 
-The pages are generated. **Edit the files in `src/`, then run:**
+### For the academy: Pages CMS
 
-```sh
-python3 build.py
-```
+The academy updates the site in **Pages CMS** (https://app.pagescms.org). It's a free editor with plain forms and photo uploads, and no code. Each save goes live in about a minute. The editor's sections are defined in `.pages.yml`:
 
-- `src/layout.html` is the shared header and footer.
-- `src/pages/*.html` holds each page's content.
-- `src/policies/*.txt` holds the policy text, taken from the current site.
-- `src/coaches.json` holds the coaches, in display order. It feeds the home page carousel and the coaches page.
-- `src/graduates.json` holds the players on the graduates board.
-- `assets/video/reel-N.mp4` (+ `.webp` posters) are Coach Parmar's training clips from X, shown as a reel carousel in the home philosophy section. To add one, encode it to 540x960 and copy a `<figure class="reel slide">` block in `src/pages/index.html`.
-- The coach inquiry form ("Coach with Futuro") is at `coaches.html#coach-with-us` and sends to the same inbox as the tryout form.
+| Section | Edits | File |
+|---|---|---|
+| Site settings | Announcement banner, home headline and numbers, Success page numbers, contact details, social links | `content/settings.json` |
+| Graduates board | Graduating players and their YouTube highlight links | `content/graduates.json` |
+| Futuro legends | The big player stories (Success page, and the home carousel) | `content/legends.json` |
+| Where they are now | The filterable wall of players, with optional photos | `content/alumni.json` |
+| University commitments | One entry per graduating class; the newest also feeds the home and graduates pages | `content/commitments.json` |
+| Coaches | Staff cards (home carousel and Coaches page) | `content/coaches.json` |
+| Training videos | The vertical clips on the home page | `content/videos.json` |
+| Home page photos | "The Futuro experience" mosaic (it lays itself out for any number of photos) | `content/gallery.json` |
+| Sponsors | Logos in the sponsor strip | `content/sponsors.json` |
+| Programs and age groups | The table on the apply page (update birth years each season) | `content/programs.json` |
+| Season calendar | The Sept–Aug calendar bars | `content/season.json` |
+| Sign-up agreement | The rules parents agree to on the tryout form | `content/signup.json` |
+| Policies | One plain-text page per policy | `content/policies/*.md` |
+
+The "Home page photo wall" media folder (`assets/img/collage/`) feeds the moving collage behind the home headline.
+
+Uploads go to `assets/uploads/`. At build time, photos (including iPhone .heic) are resized to WebP, and videos (including .mov) are compressed to 540px-wide silent MP4s with a cover frame. The results go in `assets/opt/`, which isn't committed.
+
+**Setup (one time):** sign in at app.pagescms.org with the GitHub account that owns this repo, and install the Pages CMS GitHub App on the repo. Then open the repo, go to **Collaborators** and invite the academy's email. Collaborators don't need a GitHub account.
+
+### How it publishes
+
+`.github/workflows/deploy.yml` runs on every push to `main`. It installs Pillow and ffmpeg, runs `python build.py`, and publishes to GitHub Pages. The generated `*.html` files are not committed.
+
+If an entry is missing a required field, the build skips it with a warning in the Actions log. The rest of the site still publishes. If a build fails completely, the previous version stays live.
+
+### For developers
+
+- `src/layout.html` is the shared header and footer. `src/pages/*.html` are the page templates. `{{placeholders}}` are filled from `content/` by `build.py`.
+- Run `python3 build.py` to build locally, then `python3 -m http.server 8000` to preview.
 - CSS and JS links get a `?v=` content hash at build time, so visitors always load the latest version.
-- `{{season_calendar}}` (built in `build.py`) is the Sep–Aug program calendar on home and apply; edit its lanes there. `assets/img/action/` holds the training and match photos (from the current futurosoccer.com). Inner pages set their header photo with `style="--hero-img:url(...)"` on `.page-hero.has-photo`.
-- Sponsors, the nav and the form inbox are set at the top of `build.py`.
-
-Preview locally:
-
-```sh
-python3 -m http.server 8000
-# open http://localhost:8000
-```
-
-### Adding a player to the graduates board
-
-After Coach Parmar approves a submission, add an entry to `src/graduates.json` and rebuild:
-
-```json
-[
-  {
-    "name": "Jane Doe",
-    "grad_year": 2026,
-    "position": "Centre-back",
-    "team": "Women's Competitive 1",
-    "youtube": "https://youtu.be/VIDEO_ID",
-    "note": "Left-footed, strong in the air"
-  }
-]
-```
-
-Only these fields are published. Scouts contact the academy through the button on each card.
+- Inner pages set their header photo with `style="--hero-img:url(...)"` on `.page-hero.has-photo`.
 
 ## Forms
 
-The tryout and highlight-tape forms send to the academy inbox through [FormSubmit](https://formsubmit.co). This needs no account and no server code.
+The tryout and coach inquiry forms send to the academy inbox through [FormSubmit](https://formsubmit.co). This needs no account and no server code.
 
 - **The first time someone submits a form, FormSubmit emails the inbox an activation link. Click it once, or later submissions won't be delivered.**
 - After submitting, people land on `thanks.html`.
-- The tryout form ends with a **Standards & policies** step. Parents must tick three summary cards (player standards, parent standards, safety & refunds), agree to all club policies, and type their name to sign. The full policy text expands inline. The emailed registration records each agreement, the policy version, the time they agreed and which full policies they opened, so keep those emails. The summaries and `POLICY_VERSION` are in `build.py` (`ACK_GROUPS`): update them whenever a policy changes.
-- To use a different service, such as Formspree or a Google Form, change `FORM_ENDPOINT` in `build.py`.
+- The tryout form ends with a **Standards & policies** step. Parents must tick three summary cards (player standards, parent standards, safety & refunds), agree to all club policies, and type their name to sign. The full policy text expands inline. The emailed registration records each agreement, the policy version, the time they agreed and which full policies they opened, so keep those emails. The summaries and the policy version are in the "Sign-up agreement" section of the editor (`content/signup.json`). Update them whenever a policy changes.
+- The inbox is the contact email in Site settings.
 
 ## Data notes
 

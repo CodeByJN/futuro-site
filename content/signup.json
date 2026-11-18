@@ -1,0 +1,50 @@
+{
+  "policy_version": "Futuro club policies as published on the website, November 2026",
+  "cards": [
+    {
+      "heading": "Player standards",
+      "points": [
+        "Players represent Futuro on and off the field and show respect to staff, volunteers and the public.",
+        "Zero tolerance for tobacco, alcohol and illegal substances.",
+        "Players follow the home technical and strength programs set by the coaches.",
+        "School comes first: players hand in their report card three times a year.",
+        "Rule breaks are handled under the Discipline and Zero Tolerance policies, and can lead to a player being released from the academy."
+      ],
+      "policies": [
+        "playercodeofconduct",
+        "disciplinepolicy",
+        "zerotolerance"
+      ]
+    },
+    {
+      "heading": "Parent standards",
+      "points": [
+        "Futuro is a high-performance program. Playing time is not equal for all players.",
+        "Only coaches instruct players during training and games. Parents stay off the field during training.",
+        "No one addresses the referee during a game.",
+        "Speaking negatively about another player is grounds for immediate dismissal of your own child.",
+        "Wait 24 hours after a match before raising an issue with the Academy Director, and never confront coaches after a game.",
+        "Team fundraising stays in the team fund if a player is released or leaves."
+      ],
+      "policies": [
+        "parentcodeofconduct",
+        "zerotolerance",
+        "academycommunication"
+      ]
+    },
+    {
+      "heading": "Safety, communication & refunds",
+      "points": [
+        "Futuro follows its child safeguarding, concussion and emergency action policies.",
+        "Coaches' written messages to players under 18 always include a parent.",
+        "Refunds: 100% minus a $45 admin fee more than 10 business days before the program starts, 50% within 10 business days, and none after the first session."
+      ],
+      "policies": [
+        "childsafeguarding",
+        "concussioninfo",
+        "refund",
+        "weathercancellation"
+      ]
+    }
+  ]
+}

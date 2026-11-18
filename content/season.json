@@ -1,0 +1,37 @@
+{
+  "programs": [
+    {
+      "name": "Fall / Winter phase",
+      "short_name": "Fall / Winter",
+      "starts": "September",
+      "ends": "February",
+      "note": "",
+      "colour": "Green"
+    },
+    {
+      "name": "Spring / Summer phase",
+      "short_name": "Spring / Summer",
+      "starts": "March",
+      "ends": "August",
+      "note": "",
+      "colour": "Blue"
+    },
+    {
+      "name": "Summer camp",
+      "short_name": "Summer camp",
+      "starts": "July",
+      "ends": "August",
+      "ends_mid_month": true,
+      "note": "ages 8–13",
+      "colour": "Yellow"
+    },
+    {
+      "name": "Tryouts & placement",
+      "short_name": "Tryouts",
+      "starts": "September",
+      "ends": "August",
+      "note": "any month",
+      "colour": "White"
+    }
+  ]
+}

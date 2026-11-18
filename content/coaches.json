@@ -1,0 +1,152 @@
+[
+  {
+    "name": "Sanjeev Parmar",
+    "role": "Academy Technical Director",
+    "photo": "assets/img/coaches/sanjeev-parmar.webp",
+    "photo_alt": "Sanjeev Parmar coaching a player",
+    "summary": "Former pro and USL national champion. CSA A Licence. Captained Canada's military national team.",
+    "credentials": [
+      "**CSA A Licence** · FIFA Futsal Certificate",
+      "Master's in Human Kinetics, Sports Management",
+      "**Played professionally** with the Charlotte Eagles and Ottawa Wizards, winning titles including the USL national championship",
+      "**Captained Canada's military national team** at the Americas Cup",
+      "Ottawa Business Journal **Forty Under 40** award",
+      "Technical Director of YFC Rurkakalan in Punjab, India, since 2008",
+      "Co-founder of the 99Rated player development app",
+      "First inductee in the player category of the Campbell River Youth Soccer Association Hall of Fame",
+      "Houghton University Athletics Hall of Honour, Class of 2023/24",
+      "Presenter at the United Soccer Coaches Convention, 2024"
+    ],
+    "show_email": true
+  },
+  {
+    "name": "Joshua Sargusingh",
+    "role": "Academy Lead Coach, U6–U13",
+    "photo": "assets/img/coaches/joshua-sargusingh.webp",
+    "photo_alt": "Joshua Sargusingh",
+    "summary": "On staff since 2012 and Futuro's U9 and U10 coach. B Licence candidate.",
+    "credentials": [
+      "B Licence candidate",
+      "On staff since 2012; Futuro U9 coach since 2014 and U10 coach since 2017",
+      "Won the Robbie Tournament with Ottawa Fury (2009)",
+      "Honours graduate in mechanical engineering, Carleton University"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Michael Cox",
+    "role": "Academy Chaos Coach",
+    "photo": "assets/img/coaches/michael-cox.webp",
+    "photo_alt": "Michael Cox",
+    "summary": "Designs high-intensity, game-realistic sessions that sharpen transition speed and decision-making.",
+    "credentials": [
+      "Designs **high-intensity, game-realistic sessions** that build speed of transition, decision-making and tactical adaptability under pressure",
+      "C Licence candidate",
+      "High school special education teacher"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Gaetano Pecora",
+    "role": "Head of Game Intelligence",
+    "photo": "assets/img/coaches/gaetano-pecora.webp",
+    "photo_alt": "Gaetano Pecora",
+    "summary": "Former Futuro player. Coaches the jump from 9v9 to 11v11.",
+    "credentials": [
+      "Transition coach from 9v9 to 11v11",
+      "C Licence candidate",
+      "**Former Futuro player**",
+      "Honours student in mechanical engineering, Carleton University"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Dwight Hornibrook",
+    "role": "Head of Coaching & Player Development",
+    "photo": "assets/img/coaches/dwight-hornibrook.webp",
+    "photo_alt": "Dwight Hornibrook",
+    "summary": "Canada U17 national team staff. North American scout for Middlesbrough FC.",
+    "credentials": [
+      "**CSA A Licence** · NCCP Level 5 · M.S. Sports Science",
+      "**Canada U17 national team** coaching staff",
+      "Canada Soccer High Performance Director, Atlantic Regional Training Centre",
+      "North American scout for **Middlesbrough FC** (EPL)",
+      "Canada men's 1994 World Cup qualifiers",
+      "Coached at Cornell, SUNY Cortland and Houghton",
+      "Head coach of Winnipeg Fury; player/assistant coach of Nova Scotia Clippers (CSL)",
+      "Fredericton Sports Wall of Fame"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Jed Davies",
+    "role": "High Performance Support Consultant",
+    "photo": "assets/img/coaches/jed-davies.webp",
+    "photo_alt": "Jed Davies",
+    "summary": "CPL assistant coach. Worked with the Iran and Estonia national teams. Published author.",
+    "credentials": [
+      "**UEFA B** Licence",
+      "Pro experience with **HFX Wanderers** (CPL), Ottawa Fury and Miami FC",
+      "International work with **Iran and Estonia**; Estonia national team tactical analyst, 2015–16",
+      "Assistant coach, Oxford University (2014)",
+      "Author of *Coaching the Tiki-Taka Style of Play* and *The Philosophy of Football: In Shadows of Marcelo Bielsa*"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Craig Taylor",
+    "role": "Sprint Mechanics Coach",
+    "photo": "assets/img/coaches/craig-taylor.webp",
+    "photo_alt": "Craig Taylor",
+    "summary": "Sprint coach for the Bahrain national team and Norway's national bobsled team.",
+    "credentials": [
+      "Sprint coach, **Bahrain national team**",
+      "Sprint coach, **Norway national bobsled team**",
+      "Sprint coach, University of Ottawa football",
+      "Ottawa Lions club",
+      "Four decades developing speed and power across football, soccer, rugby, hockey, basketball and more"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Chris Wellsman",
+    "role": "Strength & Conditioning Coach",
+    "photo": "assets/img/coaches/chris-wellsman.webp",
+    "photo_alt": "Chris Wellsman",
+    "summary": "Former Queen's University captain with a Master of Human Kinetics.",
+    "credentials": [
+      "Former **captain of Queen's University** men's soccer",
+      "Master of Human Kinetics, University of Ottawa",
+      "Coaching consultant with the Coaching Association of Canada",
+      "Three years as a strength and conditioning coach in a private training facility"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Marco Gee",
+    "role": "Goalkeeper Coach",
+    "photo": "assets/img/coaches/marco-gee.webp",
+    "photo_alt": "Marco Gee with Futuro players",
+    "summary": "Futsal goalkeeper coach in the PLFQ. Trains keepers from grassroots to competitive.",
+    "credentials": [
+      "Futsal GK coach with L'Équipe Mamba in the PLFQ (Gatineau)",
+      "Delivers GKC1 goalkeeper training from grassroots to competitive",
+      "Official brand ambassador for NGA Soccer Canada"
+    ],
+    "show_email": false
+  },
+  {
+    "name": "Jordan Hassin",
+    "role": "Academy Doctor, First Aid & Coach U5–U10",
+    "photo": "assets/img/coaches/jordan-hassin.webp",
+    "photo_alt": "Jordan Hassin",
+    "summary": "uOttawa medical student and former Ottawa Fury player. Leads academy first aid.",
+    "credentials": [
+      "Medical student, University of Ottawa School of Medicine",
+      "Standard First Aid, CPR/AED Level C",
+      "Former Ottawa Fury player (2012–15) and Ontario provincial program",
+      "Futuro U9/U10 assistant coach since 2015"
+    ],
+    "show_email": false
+  }
+]

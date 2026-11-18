@@ -1,0 +1,167 @@
+[
+  {
+    "name": "Puma",
+    "logo": "assets/img/sponsors/puma.png",
+    "light_logo": true
+  },
+  {
+    "name": "RBC Dominion Securities, Jeanty Wealth Management",
+    "logo": "assets/img/sponsors/rbc.png",
+    "light_logo": false
+  },
+  {
+    "name": "Domino's",
+    "logo": "assets/img/sponsors/dominos.png",
+    "light_logo": false
+  },
+  {
+    "name": "Agropur",
+    "logo": "assets/img/sponsors/agropur.png",
+    "light_logo": false
+  },
+  {
+    "name": "Perley-Robertson, Hill & McDougall",
+    "logo": "assets/img/sponsors/perley-robertson.png",
+    "light_logo": false
+  },
+  {
+    "name": "Jiffy Lube",
+    "logo": "assets/img/sponsors/jiffy-lube.png",
+    "light_logo": false
+  },
+  {
+    "name": "Champion Petfoods",
+    "logo": "assets/img/sponsors/champion-petfoods.png",
+    "light_logo": false
+  },
+  {
+    "name": "Fitness Depot",
+    "logo": "assets/img/sponsors/fitness-depot.png",
+    "light_logo": false
+  },
+  {
+    "name": "Preston Hardware",
+    "logo": "assets/img/sponsors/preston-hardware.png",
+    "light_logo": false
+  },
+  {
+    "name": "Lapointe",
+    "logo": "assets/img/sponsors/lapointe.png",
+    "light_logo": false
+  },
+  {
+    "name": "Clocktower Brew Pub",
+    "logo": "assets/img/sponsors/clocktower.png",
+    "light_logo": false
+  },
+  {
+    "name": "Medron Medical Systems",
+    "logo": "assets/img/sponsors/medron.png",
+    "light_logo": false
+  },
+  {
+    "name": "Evangelista Sports",
+    "logo": "assets/img/sponsors/evangelista.png",
+    "light_logo": false
+  },
+  {
+    "name": "The Mortgage Group",
+    "logo": "assets/img/sponsors/mortgage-group.png",
+    "light_logo": true
+  },
+  {
+    "name": "Billings Bridge Dental Centre",
+    "logo": "assets/img/sponsors/billings-bridge-dental.png",
+    "light_logo": true
+  },
+  {
+    "name": "Happy Goat Coffee Company",
+    "logo": "assets/img/sponsors/happy-goat.png",
+    "light_logo": false
+  },
+  {
+    "name": "East India Company Restaurants",
+    "logo": "assets/img/sponsors/east-india-company.png",
+    "light_logo": false
+  },
+  {
+    "name": "Homestead",
+    "logo": "assets/img/sponsors/homestead.png",
+    "light_logo": false
+  },
+  {
+    "name": "Mercato Zacconi",
+    "logo": "assets/img/sponsors/mercato-zacconi.png",
+    "light_logo": false
+  },
+  {
+    "name": "Movement Union",
+    "logo": "assets/img/sponsors/movement-union.png",
+    "light_logo": false
+  },
+  {
+    "name": "Denis Labelle Distribution",
+    "logo": "assets/img/sponsors/denis-labelle.png",
+    "light_logo": false
+  },
+  {
+    "name": "Econo Gas",
+    "logo": "assets/img/sponsors/econo-gas.png",
+    "light_logo": false
+  },
+  {
+    "name": "Tosca Ristorante",
+    "logo": "assets/img/sponsors/tosca.png",
+    "light_logo": false
+  },
+  {
+    "name": "Infiniti Wealth Management",
+    "logo": "assets/img/sponsors/infiniti-wealth.png",
+    "light_logo": false
+  },
+  {
+    "name": "Pharmaco Alliance",
+    "logo": "assets/img/sponsors/pharmaco.png",
+    "light_logo": true
+  },
+  {
+    "name": "Electric Mark",
+    "logo": "assets/img/sponsors/electric-mark.png",
+    "light_logo": true
+  },
+  {
+    "name": "Laws of Motion",
+    "logo": "assets/img/sponsors/laws-of-motion.png",
+    "light_logo": true
+  },
+  {
+    "name": "La Belle & La Boeuf",
+    "logo": "assets/img/sponsors/la-belle-la-boeuf.png",
+    "light_logo": false
+  },
+  {
+    "name": "Aahar",
+    "logo": "assets/img/sponsors/aahar.png",
+    "light_logo": false
+  },
+  {
+    "name": "Sweda",
+    "logo": "assets/img/sponsors/sweda.png",
+    "light_logo": true
+  },
+  {
+    "name": "Reitano Concrete",
+    "logo": "assets/img/sponsors/reitano-concrete.png",
+    "light_logo": true
+  },
+  {
+    "name": "Maple Laundromart",
+    "logo": "assets/img/sponsors/maple-laundromart.png",
+    "light_logo": false
+  },
+  {
+    "name": "P Design Studio",
+    "logo": "assets/img/sponsors/p-design-studio.png",
+    "light_logo": true
+  }
+]

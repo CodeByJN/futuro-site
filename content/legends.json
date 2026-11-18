@@ -1,0 +1,135 @@
+[
+  {
+    "name": "Noah Abatneh",
+    "headline": "Canada men's national team, CPL champion",
+    "photo": "assets/img/noah-canada.jpg",
+    "photo_alt": "Noah Abatneh poster: Futuro's first Canada national team call-up",
+    "photo_focus": "Center",
+    "highlights": [
+      "**Futuro's first senior Canada men's national team call-up**",
+      "Won the 2025 Canadian Premier League title with Atlético Ottawa",
+      "Canada U20 national team",
+      "Signed with S.S. Lazio U17 in Italy's Serie A; later played for York United",
+      "As a Futuro player: offered a contract by AS Roma (2016), on trial with Arsenal, and offered a contract by Fulham FC"
+    ],
+    "style": "Featured (big card)",
+    "show_on_home": true
+  },
+  {
+    "name": "Sadie Sider-Echenberg",
+    "headline": "Pro with Kristianstads DFF, Sweden",
+    "photo": "assets/img/sadie-kristianstad.jpg",
+    "photo_alt": "Sadie Sider-Echenberg signed with Kristianstads DFF",
+    "photo_focus": "Center",
+    "highlights": [
+      "**Canada futsal national team**",
+      "Canada U20 camp",
+      "Played with Le Havre AC; trials with PSV Eindhoven, Hoffenheim and Racing Louisville",
+      "OUA First Team All-Star at the University of Ottawa"
+    ],
+    "style": "Standard",
+    "show_on_home": true
+  },
+  {
+    "name": "Molly Hale",
+    "headline": "Committed to UCLA",
+    "photo": "assets/img/molly-canada-u17.jpg",
+    "photo_alt": "Molly Hale, Canada U17 national team",
+    "photo_focus": "Center",
+    "highlights": [
+      "**Canada U17 national team**",
+      "Committed to UCLA, one of the top NCAA Division I programs",
+      "Trials with Le Havre AC and OGC Nice in France"
+    ],
+    "style": "Standard",
+    "show_on_home": true
+  },
+  {
+    "name": "Antoine Coupland",
+    "headline": "Pro with the Whitecaps and Atlético Ottawa",
+    "photo": "assets/img/antoine-wfc2.jpg",
+    "photo_alt": "Antoine Coupland signed with Whitecaps FC 2",
+    "photo_focus": "Center",
+    "highlights": [
+      "**Short-term agreement with Vancouver Whitecaps FC (MLS)**",
+      "Signed with Whitecaps FC 2 in MLS NEXT Pro (2023)",
+      "Signed with HNK Rijeka in Croatia; named to Canada U20 list",
+      "Scored 5 goals against Cardiff City on Futuro's 2016 UK tour"
+    ],
+    "style": "Standard",
+    "show_on_home": true
+  },
+  {
+    "name": "Maya Hindson",
+    "headline": "University of South Florida, NCAA D1",
+    "photo": "assets/img/maya-arsenal.jpg",
+    "photo_alt": "Maya Hindson signed with Arsenal FC",
+    "photo_focus": "Center",
+    "highlights": [
+      "**Signed with Arsenal FC**",
+      "Selected for the Canada U20 national team",
+      "Ranked #1 in FTF Canada's 2024 graduating-class rankings (girls)",
+      "Trained with OGC Nice"
+    ],
+    "style": "Standard",
+    "show_on_home": true
+  },
+  {
+    "name": "Elage Bah",
+    "headline": "Pro in the Canadian Premier League",
+    "photo": "assets/img/elage-vancouverfc.jpg",
+    "photo_alt": "Elage Bah with Vancouver FC in the CPL",
+    "photo_focus": "Center",
+    "highlights": [
+      "**Vancouver FC in the CPL: 14 appearances and 2 goals in his first season**",
+      "Signed with the Vancouver Whitecaps U17 academy; played for Whitecaps FC 2",
+      "Named to Canada U20 list",
+      "Scored twice in Futuro's 6–0 win over Leicester City (2016)"
+    ],
+    "style": "Standard",
+    "show_on_home": true
+  },
+  {
+    "name": "Tyr Duhaney-Walker",
+    "headline": "Pro with Atlético Ottawa",
+    "photo": "assets/img/tyr-atletico.jpg",
+    "photo_alt": "Tyr Duhaney-Walker welcomed back to Atlético Ottawa",
+    "photo_focus": "Left",
+    "highlights": [
+      "**2025 Canadian Premier League champion** alongside fellow Futuro graduate Noah Abatneh",
+      "Signed with Atlético Ottawa (2023) and re-signed in 2025",
+      "Scored against Bristol Rovers on Futuro's 2016 UK tour"
+    ],
+    "style": "Standard",
+    "show_on_home": true
+  },
+  {
+    "name": "Eric Lajeunesse",
+    "headline": "Pacific FC (CPL) and UBC",
+    "photo": "assets/img/eric-signed.jpg",
+    "photo_alt": "Eric Lajeunesse signed with Pacific FC",
+    "photo_focus": "Center",
+    "highlights": [
+      "**U SPORTS Rookie of the Year** at UBC",
+      "Signed a U SPORTS contract with Pacific FC in the CPL",
+      "Signed with the Vancouver Whitecaps MLS reserve team",
+      "Joined Futuro on October 1, 2011, the academy's first day"
+    ],
+    "style": "Standard",
+    "show_on_home": true
+  },
+  {
+    "name": "Michael Peres",
+    "headline": "The next wave, class of 2026",
+    "photo": "assets/img/peres-ranking.jpg",
+    "photo_alt": "Michael Peres ranked #1 CDM in the 2026 class",
+    "photo_focus": "Center",
+    "highlights": [
+      "**Signed with CF Montréal**",
+      "Ranked #1 CDM in FTF Canada's 2026 graduating-class rankings",
+      "Vancouver Whitecaps trial"
+    ],
+    "style": "Next wave",
+    "show_on_home": true
+  }
+]

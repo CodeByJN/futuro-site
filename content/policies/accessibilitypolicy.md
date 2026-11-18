@@ -1,0 +1,61 @@
+---
+title: "Accessibility Policy"
+section: "Club operations"
+order: 19
+---
+
+Under the Accessibility for Ontarians with Disabilities Act, 2005 all municipalities and organizations must meet the requirements of accessibility standards established by regulation. This policy applies to all employees of Futuro Soccer Academy, volunteers and contracted service staff.
+
+Definitions:
+
+Accessible means customer service is provided in a manner that is capable of being easily understood or appreciated; easy to get at; capable of being reached, or entered; obtainable.
+
+Disability means:
+
+Any degree of physical infirmity, malformation or disfigurement that is caused by bodily injury, birth defect or illness and, without limiting the generality of the foregoing, includes diabetes mellitus, epilepsy, a brain injury, any degree of paralysis, amputation, lack of physical co-ordination, blindness or visual impairment, deafness or hearing impediment, muteness or speech impediment, or physical reliance on a guide dog , or other animal or on a wheelchair or other remedial appliance or device, A condition of mental impairment or a developmental disability
+
+A learning disability, or a dysfunction in one or more of the processes involved in understanding or using symbols or spoken language, A mental disorder, An injury or disability for which benefits were claimed or received under the insurance plan established under the Workplace Safety and Insurance Act, 1997
+
+Scope and Application
+
+This policy shall apply to every person who deals with members of the public or other third parties on behalf of the Organization whether the person does so as an employee, agent, volunteer or otherwise. Failure to comply with this policy may result in disciplinary action up to and including termination.
+
+Commitment
+
+The Futuro Soccer Academy is committed to excellence in serving all customers/members including people with disabilities. As such, the Futuro Soccer Academy will use reasonable efforts to ensure that its policies, practices and procedures are consistent with the following principles:
+
+Academy’s programs will be provided in a manner that that respects the dignity and independence of persons with disabilities.
+
+The provision programs to persons with disabilities, and others, will be integrated unless an alternate measure is necessary, whether temporarily or on a permanent basis, to enable a person with a disability to obtain, use or benefit from the academy programs.
+
+Persons with disabilities will be given an opportunity equal to that given to others to obtain, use and benefit from the programs.
+
+Persons with disabilities may use personal assistive devices and/or support persons in the access of goods and services.
+
+When communicating with a person with a disability, employees, volunteers and contractors shall do so in a manner that considers the person’s disability.
+
+Assistive Devices
+
+The Futuro Soccer Academy will ensure that staff is trained and familiar with various assistive devices that may be used by customers/members with disabilities while accessing our felids or services. Every employee shall use reasonable efforts to allow persons with disabilities to use their own assistive devices to access felids and/or services.
+
+Service Animals
+
+Service animals offer independence and security to many people with various disabilities. The Organization welcomes people with disabilities and their service animals on the parts of our premises that are open to the public.
+
+Examples of service animals include:
+
+Dogs used by people who are blind
+
+Hearing alert animals for people who are deaf, deafened or hard of hearing
+
+Animals trained to alert an individual to an oncoming seizure and lead them to safety
+
+Feedback Process:
+
+Futuro Soccer Academy accepts feedback from the public in a variety of methods including:
+
+Phone
+
+In person
+
+Email

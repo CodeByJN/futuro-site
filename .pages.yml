@@ -1,0 +1,307 @@
+# Pages CMS (https://app.pagescms.org) - the editor Sanj uses to update the website.
+# Every save here makes a commit; GitHub Actions then rebuilds and publishes the site in about a minute.
+# Content lives in content/. Page design lives in src/ (not editable here, on purpose).
+
+media:
+  - name: uploads
+    label: Photos & videos
+    input: assets/uploads
+    output: /assets/uploads
+    extensions: [jpg, jpeg, png, webp, gif, heic, mp4, mov, m4v, pdf]
+    rename: safe
+  - name: collage
+    label: Home page photo wall
+    input: assets/img/collage
+    output: /assets/img/collage
+    extensions: [jpg, jpeg, png, webp]
+    rename: safe
+
+settings:
+  content: true   # keep any extra fields already in a file instead of dropping them
+
+content:
+  # ---------------------------------------------------------------- Site settings
+  - name: settings
+    label: "⚙️ Site settings"
+    type: file
+    path: content/settings.json
+    format: json
+    fields:
+      - name: announcement
+        label: Announcement banner
+        description: A message that pops up at the bottom of every page, e.g. "Summer camp registration is open". Visitors can close it.
+        type: object
+        fields:
+          - { name: show, label: Show the banner, type: boolean }
+          - { name: text, label: Message, type: string, description: "Keep it short. Use **double stars** for bold." }
+          - { name: button_text, label: Button text, type: string, description: "Optional, e.g. Register" }
+          - { name: button_link, label: Button link, type: string, description: "A page like register.html, or a full web address" }
+      - name: hero
+        label: Home page headline
+        type: object
+        fields:
+          - { name: headline, label: Headline, type: string, required: true }
+          - { name: subtitle, label: Line under the headline, type: string }
+          - name: stats
+            label: Big numbers under the headline
+            description: Four works best.
+            type: object
+            list: { max: 4, collapsible: { collapsed: true, summary: "{fields.number} {fields.label}" } }
+            fields:
+              - { name: number, label: Number, type: string, description: "e.g. 85+" }
+              - { name: label, label: What it counts, type: string }
+      - name: success_stats
+        label: Numbers band on the Success Stories page
+        type: object
+        list: { max: 4, collapsible: { collapsed: true, summary: "{fields.number} {fields.label}" } }
+        fields:
+          - { name: number, label: Number, type: string }
+          - { name: label, label: What it counts, type: string }
+      - name: contact
+        label: Contact details
+        description: Shown in the footer and on the forms. Note - if you change the email, the first form sent afterwards triggers a one-time "activate" email from FormSubmit. Click it, or forms won't arrive.
+        type: object
+        fields:
+          - { name: name, label: Contact name and title, type: string }
+          - { name: email, label: Email (forms are sent here too), type: string, required: true }
+          - { name: phone, label: Phone, type: string }
+      - name: socials
+        label: Social media links
+        description: Full web addresses. Leave one empty to hide its icon.
+        type: object
+        fields:
+          - { name: instagram, label: Instagram, type: string }
+          - { name: facebook, label: Facebook, type: string }
+          - { name: youtube, label: YouTube, type: string }
+          - { name: x, label: X (Twitter), type: string }
+          - { name: tiktok, label: TikTok, type: string }
+
+  # ---------------------------------------------------------------- Players
+  - name: graduates
+    label: "🎓 Graduates board (highlight tapes)"
+    description: Graduating players shown to scouts. Paste their YouTube link and the video appears on the card. Newest first; the first 3 also show on the home page.
+    type: file
+    path: content/graduates.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.name} - Class of {fields.grad_year}" } }
+    fields:
+      - { name: name, label: Player name, type: string, required: true }
+      - { name: grad_year, label: Graduating class (year), type: number, required: true }
+      - { name: position, label: Position, type: string, description: "e.g. Centre-back" }
+      - { name: team, label: Futuro team, type: string, description: "e.g. Women's Competitive 1" }
+      - { name: youtube, label: YouTube highlight link, type: string, description: "Copy the link from YouTube's Share button" }
+      - { name: note, label: Short scouting note, type: string, description: "e.g. Left-footed, strong in the air" }
+
+  - name: legends
+    label: "⭐ Futuro legends"
+    description: The big player stories. They show on the Success Stories page in this order; drag to reorder.
+    type: file
+    path: content/legends.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.name} - {fields.headline}" } }
+    fields:
+      - { name: name, label: Player name, type: string, required: true }
+      - { name: headline, label: Where they are now (one line), type: string, description: "e.g. Pro with Atlético Ottawa" }
+      - { name: photo, label: Photo, type: image, required: true, options: { media: uploads } }
+      - { name: photo_alt, label: Photo description (for blind visitors and Google), type: string }
+      - { name: photo_focus, label: Keep this part of the photo in view, type: select, options: { values: [Center, Left, Far left, Right, Top, Bottom] } }
+      - name: highlights
+        label: Achievements
+        description: One per line. Put **double stars** around the biggest one to make it bold.
+        type: string
+        list: true
+      - { name: style, label: Card style, type: select, options: { values: ["Standard", "Featured (big card)", "Next wave"] }, description: "Featured = the big card at the top. Next wave = rising players." }
+      - { name: show_on_home, label: Also show on the home page, type: boolean }
+
+  - name: alumni
+    label: "🌍 Where they are now"
+    description: The filterable wall on the Success Stories page.
+    type: file
+    path: content/alumni.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.name} - {fields.details}" } }
+    fields:
+      - { name: name, label: Player name, type: string, required: true }
+      - { name: pathway, label: Filter, type: select, options: { values: ["Pro & pro academy", "National team", "University"] } }
+      - { name: label, label: Tag on the card, type: string, description: "e.g. Pro, Pro academy, National team, NCAA D1, U SPORTS" }
+      - { name: details, label: Club, team or school, type: string }
+      - { name: photo, label: Photo (optional), type: image, options: { media: uploads } }
+
+  - name: commitments
+    label: "🏫 University commitments by class"
+    description: Add a new class each year. The newest class also shows on the home page (its first 4 players).
+    type: file
+    path: content/commitments.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "Class of {fields.year}" } }
+    fields:
+      - { name: year, label: Class of (year), type: number, required: true }
+      - name: players
+        label: Players
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.name}, {fields.school}" } }
+        fields:
+          - { name: name, label: Player name, type: string, required: true }
+          - { name: school, label: School, type: string }
+          - { name: level, label: Level (optional), type: string, description: "e.g. NCAA D1, U SPORTS" }
+
+  # ---------------------------------------------------------------- Academy
+  - name: coaches
+    label: "🧢 Coaches"
+    description: Shown in this order on the home page and the Coaches page.
+    type: file
+    path: content/coaches.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.name} - {fields.role}" } }
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: role, label: Role, type: string, required: true }
+      - { name: photo, label: Photo (portrait works best), type: image, required: true, options: { media: uploads } }
+      - { name: photo_alt, label: Photo description, type: string }
+      - { name: summary, label: One-line summary (home page card), type: string }
+      - name: credentials
+        label: Credentials and experience
+        description: One per line. **Double stars** for bold, *single stars* for italics.
+        type: string
+        list: true
+      - { name: show_email, label: Show the academy email on this coach's card, type: boolean }
+
+  - name: videos
+    label: "🎬 Training videos"
+    description: The vertical clips in the philosophy section of the home page. Upload a phone video and it is compressed automatically; the sound is removed.
+    type: file
+    path: content/videos.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.title}" } }
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: caption, label: Caption, type: string }
+      - { name: video, label: Video (vertical), type: file, required: true, options: { media: uploads } }
+      - { name: poster, label: Cover image (optional - one is made from the video), type: image, options: { media: uploads } }
+      - { name: description, label: What happens in the clip (for blind visitors), type: string }
+
+  - name: gallery
+    label: "📸 Home page photos (The Futuro experience)"
+    description: The photo mosaic on the home page. The first photo is shown wide and the second tall, and the layout adjusts itself to however many photos you add.
+    type: file
+    path: content/gallery.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.caption}" } }
+    fields:
+      - { name: photo, label: Photo, type: image, required: true, options: { media: uploads } }
+      - { name: caption, label: Caption, type: string }
+      - { name: photo_alt, label: Photo description, type: string }
+      - { name: photo_focus, label: Keep this part of the photo in view, type: select, options: { values: [Center, Left, Far left, Right, Top, Bottom] } }
+
+  - name: sponsors
+    label: "🤝 Sponsors"
+    type: file
+    path: content/sponsors.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.name}" } }
+    fields:
+      - { name: name, label: Sponsor name, type: string, required: true }
+      - { name: logo, label: Logo (PNG with a see-through background is best), type: image, required: true, options: { media: uploads } }
+      - { name: light_logo, label: "Logo is white or very light", type: boolean, description: "Tick this if the logo disappears on a white background" }
+
+  # ---------------------------------------------------------------- Programs & sign-up
+  - name: programs
+    label: "📋 Programs and age groups"
+    description: The table on the Programs, dates and fees page. Update the birth years every season.
+    type: file
+    path: content/programs.json
+    format: json
+    list: { collapsible: { collapsed: true, summary: "{fields.program} - {fields.ages}" } }
+    fields:
+      - { name: program, label: Program, type: string, required: true }
+      - { name: stage, label: Stage, type: string, description: "e.g. Learning to Train" }
+      - { name: ages, label: Ages or team, type: string }
+      - { name: birth_years, label: Birth years, type: string, description: "e.g. 2017–2013" }
+      - { name: teams, label: Teams, type: string, description: "e.g. Boys & girls" }
+      - { name: schedule, label: Schedule, type: string }
+
+  - name: season
+    label: "📅 Season calendar"
+    description: The Sept-to-Aug calendar on the home and apply pages. Each program is one bar.
+    type: file
+    path: content/season.json
+    format: json
+    fields:
+      - name: programs
+        label: Programs on the calendar
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.name}: {fields.starts} to {fields.ends}" } }
+        fields:
+          - { name: name, label: Name, type: string, required: true }
+          - { name: short_name, label: Short name for phones, type: string }
+          - { name: starts, label: Starts, type: select, required: true, options: { values: [September, October, November, December, January, February, March, April, May, June, July, August] } }
+          - { name: ends, label: Ends, type: select, required: true, options: { values: [September, October, November, December, January, February, March, April, May, June, July, August] } }
+          - { name: ends_mid_month, label: Ends mid-month, type: boolean }
+          - { name: note, label: Extra note, type: string, description: "e.g. ages 8–13, or any month" }
+          - { name: colour, label: Colour, type: select, options: { values: [Green, Blue, Yellow, White, Red] } }
+
+  - name: signup
+    label: "✍️ Sign-up agreement"
+    description: The rules parents must read and agree to on the tryout form. If you change a policy, update its summary here too, and change the version line.
+    type: file
+    path: content/signup.json
+    format: json
+    fields:
+      - { name: policy_version, label: Policy version (saved with every sign-up), type: string, description: "e.g. Futuro club policies, updated March 2027" }
+      - name: cards
+        label: Agreement cards
+        type: object
+        list: { collapsible: { collapsed: true, summary: "{fields.heading}" } }
+        fields:
+          - { name: heading, label: Heading, type: string, required: true }
+          - { name: points, label: Key rules (one per line), type: string, list: true }
+          - name: policies
+            label: Full policies to show under this card
+            type: select
+            options:
+              multiple: true
+              values:
+              - { value: academycommunication, label: "Academy Communication Policy" }
+              - { value: accessibilitypolicy, label: "Accessibility Policy" }
+              - { value: adultpresence, label: "Adult Presence Policy" }
+              - { value: childsafeguarding, label: "Child Safeguarding" }
+              - { value: coachescodeofconduct, label: "Coaches Code of Conduct" }
+              - { value: concussioninfo, label: "Concussion Information & Protocol" }
+              - { value: disciplinepolicy, label: "Discipline Policy" }
+              - { value: emergencyactionplan, label: "Emergency Action Plan (EAP)" }
+              - { value: equityandharassment, label: "Equity & Harassment Policy" }
+              - { value: foundationplayingup, label: "Playing Up / Down (U8\u2013U12)" }
+              - { value: healthysnack, label: "Healthy Snack Policy" }
+              - { value: incidentaccidentreport, label: "Incident / Accident Report" }
+              - { value: incidentguidelines, label: "Incident / Accident Guidelines" }
+              - { value: oathofconfidentiality, label: "Oath of Confidentiality" }
+              - { value: parentcodeofconduct, label: "Parent Code of Conduct" }
+              - { value: playercodeofconduct, label: "Player Code of Conduct" }
+              - { value: playersuniform, label: "Players Uniform Policy" }
+              - { value: refund, label: "Refund Policy" }
+              - { value: screening, label: "Screening Policy" }
+              - { value: tobaccofree, label: "Tobacco-Free Policy" }
+              - { value: weathercancellation, label: "Weather Cancellation Policy" }
+              - { value: youthplayingup, label: "Play-Up Procedures (13+)" }
+              - { value: zerotolerance, label: "Zero Tolerance Policy" }
+
+  - name: policies
+    label: "📜 Policies"
+    description: Each policy is a page of plain text. Leave a blank line between paragraphs. Start a line with - for a bullet or 1. for a numbered rule. A short line ending in a colon becomes a heading.
+    type: collection
+    path: content/policies
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    view:
+      fields: [title, section]
+      primary: title
+      sort: [order, title]
+      default: { sort: order, order: asc }
+    fields:
+      - { name: title, label: Policy name, type: string, required: true }
+      - { name: section, label: Section, type: select, options: { values: ["Safety & wellbeing", "Codes of conduct", "Club operations", "Playing up"] } }
+      - { name: order, label: Order on the page, type: number }
+      - { name: hidden, label: Hide this policy, type: boolean }
+      - { name: download, label: Downloadable form (PDF, optional), type: file, options: { media: uploads } }
+      - { name: download_label, label: Download button text, type: string }
+      - { name: body, label: Policy text, type: text }

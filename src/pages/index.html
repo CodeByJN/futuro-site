@@ -8,13 +8,10 @@
     </div>
   </div>
   <div class="hero-content">
-    <h1 id="hero-title">Built for players who chase excellence.</h1>
-    <p class="hero-sub">At the university, professional and international level.</p>
+    <h1 id="hero-title">{{hero_headline}}</h1>
+    <p class="hero-sub">{{hero_subtitle}}</p>
     <dl class="hero-stats">
-      <div><dt>Success stories</dt><dd><span>85+</span></dd></div>
-      <div><dt>Pro &amp; pro-academy signings</dt><dd><span>24</span></dd></div>
-      <div><dt>National-team call-ups</dt><dd><span>13</span></dd></div>
-      <div><dt>University commitments</dt><dd><span>60+</span></dd></div>
+{{hero_stats}}
     </dl>
     <div class="hero-cta">
       <a class="btn btn-primary btn-lg" href="register.html">Register for Tryouts</a>
@@ -41,28 +38,22 @@
       </div>
       <a class="btn btn-primary" href="success.html">All success stories</a>
     </div>
-    <div class="carousel legend-carousel" data-carousel>
-      <div class="carousel-track" role="region" aria-label="Futuro legends" tabindex="0">
-<a class="slide legend-card" href="success.html#noah-abatneh"><img src="assets/img/noah-canada.jpg" alt="Noah Abatneh poster: Futuro's first Canada national team call-up" loading="lazy" width="600" height="600"><div><h3>Noah Abatneh</h3><p class="now">Canada men's national team, CPL champion</p></div></a>
-<a class="slide legend-card" href="success.html#sadie-sider-echenberg"><img src="assets/img/sadie-kristianstad.jpg" alt="Sadie Sider-Echenberg signed with Kristianstads DFF" loading="lazy" width="600" height="600"><div><h3>Sadie Sider-Echenberg</h3><p class="now">Pro with Kristianstads DFF, Sweden</p></div></a>
-<a class="slide legend-card" href="success.html#molly-hale"><img src="assets/img/molly-canada-u17.jpg" alt="Molly Hale, Canada U17 national team" loading="lazy" width="600" height="600"><div><h3>Molly Hale</h3><p class="now">Committed to UCLA</p></div></a>
-<a class="slide legend-card" href="success.html#antoine-coupland"><img src="assets/img/antoine-wfc2.jpg" alt="Antoine Coupland signed with Whitecaps FC 2" loading="lazy" width="600" height="600"><div><h3>Antoine Coupland</h3><p class="now">Pro with the Whitecaps and Atlético Ottawa</p></div></a>
-<a class="slide legend-card" href="success.html#maya-hindson"><img src="assets/img/maya-arsenal.jpg" alt="Maya Hindson signed with Arsenal FC" loading="lazy" width="600" height="600"><div><h3>Maya Hindson</h3><p class="now">University of South Florida, NCAA D1</p></div></a>
-<a class="slide legend-card" href="success.html#elage-bah"><img src="assets/img/elage-vancouverfc.jpg" alt="Elage Bah with Vancouver FC in the CPL" loading="lazy" width="600" height="600"><div><h3>Elage Bah</h3><p class="now">Pro in the Canadian Premier League</p></div></a>
-<a class="slide legend-card" href="success.html#tyr-duhaney-walker"><img class="pos-left" src="assets/img/tyr-atletico.jpg" alt="Tyr Duhaney-Walker welcomed back to Atlético Ottawa" loading="lazy" width="600" height="600"><div><h3>Tyr Duhaney-Walker</h3><p class="now">Pro with Atlético Ottawa</p></div></a>
-<a class="slide legend-card" href="success.html#eric-lajeunesse"><img src="assets/img/eric-signed.jpg" alt="Eric Lajeunesse signed with Pacific FC" loading="lazy" width="600" height="600"><div><h3>Eric Lajeunesse</h3><p class="now">Pacific FC (CPL) and UBC</p></div></a>
-<a class="slide legend-card" href="success.html#michael-peres"><img src="assets/img/peres-ranking.jpg" alt="Michael Peres ranked #1 CDM in the 2026 class" loading="lazy" width="600" height="600"><div><h3>Michael Peres</h3><p class="now">The next wave, class of 2026</p></div></a>
-      </div>
-      <div class="carousel-ctrl"><button class="car-btn prev" type="button" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="car-count" aria-live="polite"></span><button class="car-btn" type="button" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-    </div>
+{{legends_home}}
 
-    <div class="grad-bar">
-      <p><strong>Scouts and parents:</strong> see our current graduates and their highlight tapes.</p>
-      <div class="grad-bar-cta">
-        <a class="btn btn-primary" href="graduates.html">View the graduates</a>
-        <a class="btn btn-ghost" href="graduates.html#submit">Submit a tape</a>
+    <div class="showcase">
+      <div class="showcase-copy">
+        <p class="eyebrow">For parents</p>
+        <h3>We put our graduates in front of scouts.</h3>
+        <p>Once your player graduates from Futuro, we work to get them seen. Their highlight tape goes up on our graduates board, where university and pro scouts can watch it, and every scout inquiry comes through the academy.</p>
+        <a class="btn btn-primary" href="graduates.html">See the graduates board</a>
       </div>
+      <a class="showcase-visual" href="graduates.html" tabindex="-1" aria-hidden="true">
+        <img class="sv-back sv-1" src="assets/img/collage/c36.webp" alt="" loading="lazy" width="288" height="360">
+        <img class="sv-back sv-2" src="assets/img/collage/c63.webp" alt="" loading="lazy" width="288" height="360">
+        <span class="sv-front"><img src="assets/img/collage/c58.webp" alt="" loading="lazy" width="288" height="360"><span class="sv-play"><svg viewBox="0 0 24 24" width="26" height="26"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span><span class="sv-chip">Highlight tape</span></span>
+      </a>
     </div>
+</div>
   </div>
 </section>
 
@@ -76,36 +67,8 @@
         <a class="btn btn-primary" href="about.html">Read our philosophy and the 7 pillars</a>
       </div>
     </div>
-    <div class="carousel reel-carousel" data-carousel>
-      <div class="carousel-track reels" role="region" aria-label="Training clips from Coach Parmar" tabindex="0">
-      <figure class="reel slide">
-        <div class="reel-frame">
-          <video src="assets/video/reel-2.mp4" poster="assets/video/reel-2.webp" muted loop playsinline preload="none" disablepictureinpicture width="540" height="960" aria-label="Training clip: Confident, creative ballers"></video>
-        </div>
-        <figcaption><b>1v1 creativity</b><span>1v1s that build confident players who want the ball.</span></figcaption>
-      </figure>
-      <figure class="reel slide">
-        <div class="reel-frame">
-          <video src="assets/video/reel-3.mp4" poster="assets/video/reel-3.webp" muted loop playsinline preload="none" disablepictureinpicture width="540" height="960" aria-label="Training clip: Protect and escape"></video>
-        </div>
-        <figcaption><b>Protect and escape</b><span>Shield the ball, turn and get out of pressure.</span></figcaption>
-      </figure>
-      <figure class="reel slide">
-        <div class="reel-frame">
-          <video src="assets/video/reel-4.mp4" poster="assets/video/reel-4.webp" muted loop playsinline preload="none" disablepictureinpicture width="540" height="960" aria-label="Training clip: Fun technical challenges"></video>
-        </div>
-        <figcaption><b>Fun technical challenges</b><span>Obstacle courses that test touch at speed.</span></figcaption>
-      </figure>
-      <figure class="reel slide">
-        <div class="reel-frame">
-          <video src="assets/video/reel-6.mp4" poster="assets/video/reel-6.webp" muted loop playsinline preload="none" disablepictureinpicture width="540" height="960" aria-label="Training clip: Parkour warmup"></video>
-        </div>
-        <figcaption><b>Parkour warmup</b><span>Rolls, vaults and balance to build agile, coordinated athletes.</span></figcaption>
-      </figure>
-      </div>
-      <div class="carousel-ctrl"><button class="car-btn prev" type="button" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="car-count" aria-live="polite"></span><button class="car-btn" type="button" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-    </div>
-    <p class="reels-note">From Coach Parmar's sessions. Follow <a href="https://x.com/parmarsports" target="_blank" rel="noopener">@parmarsports</a> for more.</p>
+{{reels}}
+    <p class="reels-note">From Coach Parmar's sessions. Follow <a href="{{x_url}}" target="_blank" rel="noopener">{{x_handle}}</a> for more.</p>
   </div>
 </section>
 
@@ -115,15 +78,19 @@
       <div>
         <h2 id="coach-title" class="h-lg">The coaching staff.</h2>
       </div>
-      <a class="btn btn-primary" href="coaches.html">Meet all 10 coaches</a>
+      <a class="btn btn-primary" href="coaches.html">Meet all {{coach_count}} coaches</a>
     </div>
 {{coach_carousel}}
-    <div class="grad-bar coach-bar">
-      <p><strong>Coaches:</strong> want to work with Futuro as a guest coach or personal coach?</p>
-      <div class="grad-bar-cta">
-        <a class="btn btn-primary" href="coaches.html#coach-with-us">Coach with us</a>
-      </div>
-    </div>
+    <a class="coach-join" href="coaches.html#coach-with-us">
+      <img class="cj-crest" src="assets/img/crest.png" alt="" width="315" height="396" loading="lazy">
+      <span class="cj-copy">
+        <span class="eyebrow">Coach at Futuro</span>
+        <strong>Join our coaching staff.</strong>
+        <span>Apply for a guest or permanent coaching role at Futuro.</span>
+      </span>
+      <span class="btn btn-primary">Apply to coach</span>
+    </a>
+</div>
   </div>
 </section>
 
@@ -137,14 +104,7 @@
       <a class="btn btn-primary" href="program.html">Inside the program</a>
     </div>
     <div class="photo-mosaic">
-      <figure class="m-wide"><img src="assets/img/action/futuro-match.webp" alt="Two Futuro players chase the ball at full speed during a match" loading="lazy" width="884" height="838"><figcaption>Match day</figcaption></figure>
-      <figure class="m-tall"><img src="assets/img/action/juggling.webp" alt="A Futuro player juggles the ball on her shoulder at training" loading="lazy" width="1189" height="1600"><figcaption>Ball mastery</figcaption></figure>
-      <figure><img src="assets/img/action/girls-match.webp" alt="A Futuro graduate dribbles past a defender in an international girls' match" loading="lazy" width="750" height="600"><figcaption>International play</figcaption></figure>
-      <figure><img src="assets/img/action/danone-match.webp" alt="Futuro players in Canada's red kit attack at the Danone Nations Cup" loading="lazy" width="1000" height="750"><figcaption>Danone Nations Cup</figcaption></figure>
-      <figure><img src="assets/img/action/team-swansea.webp" alt="A Futuro squad and coaches at the Swansea City training ground in Wales" loading="lazy" width="915" height="607"><figcaption>Swansea City, Wales</figcaption></figure>
-      <figure><img style="object-position:12% center" src="assets/img/action/danone-trophy.webp" alt="A young Futuro player kneels with a trophy and medal at the Danone Nations Cup" loading="lazy" width="561" height="372"><figcaption>Silverware</figcaption></figure>
-      <figure><img src="assets/img/action/canada-lineup.webp" alt="Futuro players in Canada kits line up before an international match" loading="lazy" width="1600" height="1067"><figcaption>Wearing the maple leaf</figcaption></figure>
-      <figure class="m-wide m-xwide"><img src="assets/img/action/team-cheer.webp" alt="Dozens of Futuro players and coaches cheer together on a cold training day" loading="lazy" width="1600" height="1073"><figcaption>One academy</figcaption></figure>
+{{gallery}}
     </div>
   </div>
 </section>

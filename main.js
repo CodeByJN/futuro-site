@@ -142,14 +142,17 @@ document.querySelectorAll('[data-season-cal]').forEach(cal => {
   const m = new Date().getMonth();             // 0 = Jan
   const i = (m - 8 + 12) % 12 + 1;              // column, season starts in Sep
   const name = new Date(2000, m, 1).toLocaleString('en-CA', { month: 'long' });
-  const phase = i <= 6 ? 'the Fall / Winter phase' : 'the Spring / Summer phase';
-  const camp = (m === 6 || m === 7) ? ' and summer camp are' : ' is';
+  // programs running this month, read from the calendar itself (so edits in the CMS just work)
+  const on = [...cal.querySelectorAll('.cal-lane:not([data-all])')].filter(l => {
+    const st = getComputedStyle(l); return +st.getPropertyValue('--s') <= i && i < +st.getPropertyValue('--e');
+  }).map(l => l.dataset.name);
+  const what = on.length ? `the ${on.join(' and ')} ${on.length > 1 ? 'are' : 'is'} on, and players` : 'players';
   cal.style.setProperty('--now', i);
   cal.classList.add('has-now');
   const cell = cal.querySelector(`.cal-months [data-i="${i}"]`);
   if (cell) cell.classList.add('is-now');
   const txt = cal.querySelector('[data-cal-now]');
-  if (txt) txt.innerHTML = `<span class="n-l">It's ${name}: ${phase}${camp} on, and players can join now.</span><span class="n-s">${name}: open to new players</span>`;
+  if (txt) txt.innerHTML = `<span class="n-l">It's ${name}: ${what} can join now.</span><span class="n-s">${name}: open to new players</span>`;
 });
 
 // Registration policy acknowledgement: typed signature must match the guardian name;
@@ -169,3 +172,17 @@ document.querySelectorAll('form').forEach(form => {
     const o = form.querySelector('[data-ack-opened]'); if (o) o.value = opened.size ? [...opened].join(', ') : 'None';
   });
 });
+
+// Announcement banner: show until the visitor closes it (a new message shows again).
+(() => {
+  const bar = document.querySelector('.announce');
+  if (!bar) return;
+  const id = 'futuro-announce-' + bar.dataset.key;
+  let closed = false;
+  try { closed = localStorage.getItem(id) === '1'; } catch (e) {}
+  if (!closed) bar.hidden = false;
+  bar.querySelector('.announce-x').addEventListener('click', () => {
+    bar.hidden = true;
+    try { localStorage.setItem(id, '1'); } catch (e) {}
+  });
+})();

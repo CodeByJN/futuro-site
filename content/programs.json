@@ -1,0 +1,42 @@
+[
+  {
+    "program": "Be Creative",
+    "stage": "Learning to Train",
+    "ages": "8–12",
+    "birth_years": "2017–2013",
+    "teams": "Boys & girls",
+    "schedule": "3 sessions/week + a match"
+  },
+  {
+    "program": "Refine Creativity",
+    "stage": "Training to Train",
+    "ages": "13–15",
+    "birth_years": "2012–2010",
+    "teams": "Boys & girls",
+    "schedule": "3 sessions/week + a match"
+  },
+  {
+    "program": "Retain Creativity",
+    "stage": "Training to Compete",
+    "ages": "Men's U21",
+    "birth_years": "2009–2008",
+    "teams": "Boys",
+    "schedule": "3 sessions/week + a match"
+  },
+  {
+    "program": "Retain the Creativity",
+    "stage": "Training to Compete",
+    "ages": "Men's Competitive 1",
+    "birth_years": "2008–2007",
+    "teams": "Boys",
+    "schedule": "3 sessions/week + a match"
+  },
+  {
+    "program": "Retain the Creativity",
+    "stage": "Training to Compete",
+    "ages": "Women's Competitive 1",
+    "birth_years": "2010–2007",
+    "teams": "Girls",
+    "schedule": "3 sessions/week + a match"
+  }
+]
