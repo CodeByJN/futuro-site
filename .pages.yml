@@ -149,7 +149,7 @@ content:
 
   - name: commitments
     label: "🏫 University commitments by class"
-    description: Add a new class each year. The newest class also shows on the home page (its first 4 players).
+    description: Add a new class each year. Each class is a dropdown of player photos on the Success Stories page; the newest class also shows on the home page (its first 4 players).
     type: file
     path: content/commitments.json
     format: json
@@ -164,6 +164,7 @@ content:
           - { name: name, label: Player name, type: string, required: true }
           - { name: school, label: School, type: string }
           - { name: level, label: Level (optional), type: string, description: "e.g. NCAA D1, U SPORTS" }
+          - { name: photo, label: Photo (their signing poster or headshot), type: image, options: { media: uploads } }
 
   # ---------------------------------------------------------------- Academy
   - name: coaches
