@@ -81,7 +81,7 @@ The tryout and coach inquiry forms send to the academy inbox through [FormSubmit
 
 - All facts come from the current futurosoccer.com pages and the academy's announcement posters, as of November 2026.
 - The headline counts were tallied from that content. Have the academy confirm them before launch:
-  - 85+ success stories (unique players)
+  - 100+ achievements (108 documented in `content/achievements.json`, by 87 players)
   - 24 pro or pro-academy signings
   - 13 national-team call-ups
   - 60+ university commitments
