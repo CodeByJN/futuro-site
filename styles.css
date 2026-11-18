@@ -784,3 +784,14 @@ tr:last-child td { border-bottom: 0; }
 .ack-sign .check a { color: var(--sky); }
 @media (max-width: 640px) { .ack-card { padding: 16px; } .ack-card h3 { font-size: 20px; } }
 .ack-doc-body ul.plain { list-style: none; padding-left: 0; }
+
+/* Hero fits the first screen on laptops: size the copy by viewport height as well as width */
+@media (min-width: 641px) {
+  .hero { min-height: 100vh; min-height: 100svh; padding: calc(var(--nav-h) + clamp(12px, 3vh, 48px)) 0 clamp(20px, 5vh, 72px); }
+  .hero h1 { font-size: clamp(44px, min(8.4vw, 11.5vh), 116px); }
+  .hero-sub { font-size: clamp(17px, min(2.2vw, 3.2vh), 24px); margin-top: clamp(8px, 2vh, 18px); }
+  .hero-stats { margin-top: clamp(18px, 4.5vh, 40px); }
+  .hero-stats dd { font-size: clamp(32px, min(5vw, 7vh), 60px); }
+  .hero-stats dt { margin-top: clamp(4px, 1vh, 8px); }
+  .hero-cta { margin-top: clamp(18px, 4.5vh, 40px); }
+}
