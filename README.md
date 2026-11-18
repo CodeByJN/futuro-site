@@ -8,7 +8,7 @@ Live preview: https://codebyjn.github.io/futuro-site/
 
 | Page | What it's for |
 |---|---|
-| `index.html` | Home: hero with the looping player collage and headline numbers, sponsor carousel (with a "see all" grid), success stories and current graduates, philosophy, coaches carousel, the program, when to apply and policies |
+| `index.html` | Home: hero with the looping player collage and headline numbers, sponsor carousel (with a "see all" grid), success stories and current graduates, philosophy, coaches carousel, "The Futuro experience" photo mosaic, the program, when to apply and policies |
 | `about.html` | Mission, vision, Joga Bonito philosophy, the 7 pillars, and results against English pro academies (with videos) |
 | `success.html` | Futuro Legends, the filterable "where they are now" wall, and every university commitment by class |
 | `coaches.html` | Swipeable carousel of all 10 staff with photos and credentials |
@@ -31,6 +31,7 @@ python3 build.py
 - `src/policies/*.txt` holds the policy text, taken from the current site.
 - `src/coaches.json` holds the coaches, in display order. It feeds the home page carousel and the coaches page.
 - `src/graduates.json` holds the players on the graduates board.
+- `assets/img/action/` holds the training and match photos (from the current futurosoccer.com). Inner pages set their header photo with `style="--hero-img:url(...)"` on `.page-hero.has-photo`.
 - Sponsors, the nav and the form inbox are set at the top of `build.py`.
 
 Preview locally:
