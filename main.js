@@ -149,7 +149,7 @@ document.querySelectorAll('[data-season-cal]').forEach(cal => {
   const cell = cal.querySelector(`.cal-months [data-i="${i}"]`);
   if (cell) cell.classList.add('is-now');
   const txt = cal.querySelector('[data-cal-now]');
-  if (txt) txt.textContent = `It's ${name}: ${phase}${camp} on, and players can join now.`;
+  if (txt) txt.innerHTML = `<span class="n-l">It's ${name}: ${phase}${camp} on, and players can join now.</span><span class="n-s">${name}: open to new players</span>`;
 });
 
 // Registration policy acknowledgement: typed signature must match the guardian name;
