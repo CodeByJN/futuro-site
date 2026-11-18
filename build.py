@@ -109,6 +109,65 @@ def sponsors():
     return f'<ul class="marquee-track">{items}{dup}</ul>'
 
 
+def sponsor_grid():
+    items = "".join(
+        f'<li class="logo{" invert" if inv else ""}"><img src="assets/img/sponsors/{slug}.png" alt="{esc(name)}" loading="lazy"></li>'
+        for slug, name, inv in SPONSORS
+    )
+    return (
+        f'<details class="sponsor-all"><summary>See all {len(SPONSORS)} supporters</summary>'
+        f'<ul class="logo-grid">{items}</ul></details>'
+    )
+
+
+
+# ---------- Carousels ----------
+ARROW = '<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+
+
+def carousel(label, slides, cls=""):
+    """Swipeable row: native scroll-snap, with prev/next buttons added by main.js."""
+    return (
+        f'<div class="carousel {cls}" data-carousel>'
+        f'<div class="carousel-track" role="region" aria-label="{esc(label)}" tabindex="0">{"".join(slides)}</div>'
+        '<div class="carousel-ctrl">'
+        f'<button class="car-btn prev" type="button" data-dir="-1" aria-label="Previous">{ARROW}</button>'
+        '<span class="car-count" aria-live="polite"></span>'
+        f'<button class="car-btn" type="button" data-dir="1" aria-label="Next">{ARROW}</button>'
+        "</div></div>"
+    )
+
+
+def load_coaches():
+    return json.loads((SRC / "coaches.json").read_text())
+
+
+def coach_carousel():
+    slides = [
+        f'<a class="slide coach-card" href="coaches.html#{c["slug"]}">'
+        f'<img src="{c["photo"]}" alt="" loading="lazy" width="480" height="600">'
+        f'<div><h3>{esc(c["name"])}</h3><p class="role">{esc(c["role"])}</p><p class="sum">{esc(c["summary"])}</p></div></a>'
+        for c in load_coaches()
+    ]
+    return carousel("Coaching staff", slides, "coach-carousel")
+
+
+def staff_carousel():
+    slides = []
+    for c in load_coaches():
+        ticks = "".join(f"<li>{t}</li>" for t in c["credentials"])
+        extra = (
+            f'<p class="staff-mail"><a class="link-arrow" href="mailto:{ACADEMY_EMAIL}">{ACADEMY_EMAIL}</a></p>'
+            if c["slug"] == "sanjeev-parmar" else ""
+        )
+        slides.append(
+            f'<article class="slide staff-card" id="{c["slug"]}">'
+            f'<img src="{c["photo"]}" alt="{esc(c["photo_alt"])}" loading="lazy" width="480" height="600">'
+            f'<div><h2>{esc(c["name"])}</h2><p class="role">{esc(c["role"])}</p><ul class="ticks">{ticks}</ul>{extra}</div></article>'
+        )
+    return carousel("Coaching staff, swipe for more", slides, "staff-carousel")
+
+
 # ---------- Policies ----------
 URL_RE = re.compile(r"(https?://[^\s<]+)")
 
@@ -186,8 +245,27 @@ def yt_id(url):
     return m.group(1) if m else None
 
 
+def load_grads():
+    return json.loads((SRC / "graduates.json").read_text())
+
+
+def grads_home():
+    """Home page: the newest approved graduates, or last year's commitments while the board is empty."""
+    grads = load_grads()
+    if grads:
+        return grad_cards(grads[:3])
+    picks = [
+        ("NCAA D1", "Brianne MacDonald", "University of Central Florida"),
+        ("NCAA", "Stella De Capua", "University of Bridgeport"),
+        ("U SPORTS", "Justin Meka", "University of Toronto"),
+        ("U SPORTS", "Amelia Racicot", "University of Toronto"),
+    ]
+    items = "".join(f'<div class="alum"><span class="tag">{t}</span><strong>{n}</strong><small>{u}</small></div>' for t, n, u in picks)
+    return f'<p class="mini-label">Class of 2025 commitments</p><div class="alumni alumni-mini">{items}</div>'
+
+
 def graduates():
-    grads = json.loads((SRC / "graduates.json").read_text())
+    grads = load_grads()
     if not grads:
         return (
             '<div class="empty-board"><p class="eyebrow">Board opening</p>'
@@ -195,6 +273,10 @@ def graduates():
             "<p>Approved players will appear here with their highlight video, position and graduating class. "
             'Graduating players can submit their tape <a href="#submit">below</a>.</p></div>'
         )
+    return grad_cards(grads)
+
+
+def grad_cards(grads):
     cards = []
     for g in grads:
         vid = yt_id(g.get("youtube", ""))
@@ -226,7 +308,9 @@ def nav(current):
 def main():
     layout = (SRC / "layout.html").read_text()
     parts = {
-        "collage": collage, "sponsors": sponsors, "policies": policies, "graduates": graduates,
+        "collage": collage, "sponsors": sponsors, "sponsor_grid": sponsor_grid, "policies": policies,
+        "graduates": graduates, "grads_home": grads_home, "coach_carousel": coach_carousel,
+        "staff_carousel": staff_carousel,
     }
     for page in sorted((SRC / "pages").glob("*.html")):
         raw = page.read_text()

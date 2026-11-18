@@ -22,15 +22,56 @@
       <a class="btn btn-ghost btn-lg" href="success.html">See our success stories</a>
     </div>
   </div>
-  <button class="motion-toggle" type="button" aria-pressed="false" data-target=".hero-collage">
-    <span class="when-playing">Pause motion</span><span class="when-paused">Play motion</span>
-  </button>
 </section>
 
 <section class="supporters" aria-labelledby="sup-title">
   <div class="wrap"><h2 id="sup-title" class="supporters-title">Our proud supporters</h2></div>
   <div class="marquee">
 {{sponsors}}
+  </div>
+  <div class="wrap">
+{{sponsor_grid}}
+  </div>
+</section>
+
+<section class="home-success" aria-labelledby="succ-title">
+  <div class="wrap">
+    <div class="section-head split-head reveal">
+      <div>
+        <p class="eyebrow">Success stories</p>
+        <h2 id="succ-title" class="h-lg">The best of <span class="accent">the best.</span></h2>
+      </div>
+      <a class="link-arrow" href="success.html">All success stories</a>
+    </div>
+    <div class="carousel legend-carousel" data-carousel>
+      <div class="carousel-track" role="region" aria-label="Futuro legends" tabindex="0">
+<a class="slide legend-card" href="success.html#noah-abatneh"><img src="assets/img/noah-canada.jpg" alt="Noah Abatneh poster: Futuro's first Canada national team call-up" loading="lazy" width="600" height="600"><div><h3>Noah Abatneh</h3><p class="now">NOW: CANADA MEN'S NATIONAL TEAM · CPL CHAMPION</p></div></a>
+<a class="slide legend-card" href="success.html#sadie-sider-echenberg"><img src="assets/img/sadie-kristianstad.jpg" alt="Sadie Sider-Echenberg signed with Kristianstads DFF" loading="lazy" width="600" height="600"><div><h3>Sadie Sider-Echenberg</h3><p class="now">NOW: PRO, KRISTIANSTADS DFF (SWEDEN)</p></div></a>
+<a class="slide legend-card" href="success.html#antoine-coupland"><img src="assets/img/antoine-wfc2.jpg" alt="Antoine Coupland signed with Whitecaps FC 2" loading="lazy" width="600" height="600"><div><h3>Antoine Coupland</h3><p class="now">NOW: PRO (WHITECAPS · ATLÉTICO OTTAWA)</p></div></a>
+<a class="slide legend-card" href="success.html#maya-hindson"><img src="assets/img/maya-arsenal.jpg" alt="Maya Hindson signed with Arsenal FC" loading="lazy" width="600" height="600"><div><h3>Maya Hindson</h3><p class="now">NOW: UNIVERSITY OF SOUTH FLORIDA (NCAA D1)</p></div></a>
+<a class="slide legend-card" href="success.html#elage-bah"><img src="assets/img/elage-vancouverfc.jpg" alt="Elage Bah with Vancouver FC in the CPL" loading="lazy" width="600" height="600"><div><h3>Elage Bah</h3><p class="now">NOW: PRO, CANADIAN PREMIER LEAGUE</p></div></a>
+<a class="slide legend-card" href="success.html#tyr-duhaney-walker"><img class="pos-left" src="assets/img/tyr-atletico.jpg" alt="Tyr Duhaney-Walker welcomed back to Atlético Ottawa" loading="lazy" width="600" height="600"><div><h3>Tyr Duhaney-Walker</h3><p class="now">NOW: PRO, ATLÉTICO OTTAWA</p></div></a>
+<a class="slide legend-card" href="success.html#eric-lajeunesse"><img src="assets/img/eric-signed.jpg" alt="Eric Lajeunesse signed with Pacific FC" loading="lazy" width="600" height="600"><div><h3>Eric Lajeunesse</h3><p class="now">NOW: PACIFIC FC (CPL) · UBC</p></div></a>
+<a class="slide legend-card" href="success.html#molly-hale"><img src="assets/img/molly-canada-u17.jpg" alt="Molly Hale, Canada U17 national team" loading="lazy" width="600" height="600"><div><h3>Molly Hale</h3><p class="now">NOW: COMMITTED TO UCLA</p></div></a>
+<a class="slide legend-card" href="success.html#michael-peres"><img src="assets/img/peres-ranking.jpg" alt="Michael Peres ranked #1 CDM in the 2026 class" loading="lazy" width="600" height="600"><div><h3>Michael Peres</h3><p class="now">THE NEXT WAVE · CLASS OF 2026</p></div></a>
+      </div>
+      <div class="carousel-ctrl"><button class="car-btn prev" type="button" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="car-count" aria-live="polite"></span><button class="car-btn" type="button" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+    </div>
+
+    <div class="scout-panel reveal">
+      <div class="scout-copy">
+        <p class="eyebrow">For scouts &amp; parents</p>
+        <h3>Our current graduates.</h3>
+        <p>Graduating players and their highlight tapes, ready for university and pro scouts. Every inquiry goes through the academy director.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="graduates.html">View the graduates</a>
+          <a class="btn btn-ghost" href="graduates.html#submit">Submit a highlight tape</a>
+        </div>
+      </div>
+      <div class="scout-list">
+{{grads_home}}
+      </div>
+    </div>
   </div>
 </section>
 
@@ -39,16 +80,12 @@
     <div class="reveal">
       <p class="eyebrow">Our philosophy</p>
       <h2 id="about-title" class="h-xl">Every Day<br><span class="accent">In Every Way.</span></h2>
+    </div>
+    <div class="reveal">
       <p class="lede">Our mission is to produce professional, international and university players, and to give every player the chance to reach their full potential.</p>
       <p>We play <em>Joga Bonito</em>: possession-based, attacking soccer that gives players the freedom and confidence to show their creativity. Off the ball, every player works to win it back fast. Off the field, we hold players to the same standard in school, because education comes first.</p>
       <a class="link-arrow" href="about.html">Read our philosophy and the 7 pillars</a>
     </div>
-    <ul class="proof-list reveal">
-      <li><b>2025</b><span>Two Futuro graduates won the Canadian Premier League title with Atlético Ottawa.</span></li>
-      <li><b>1st</b><span>Noah Abatneh became Futuro's first call-up to Canada's senior men's national team.</span></li>
-      <li><b>6–0</b><span>Futuro's win over Leicester City's academy on our 2016 tour of England.</span></li>
-      <li><b>9</b><span>Countries where Futuro players have signed with clubs, from Canada and the US to England, Italy and Sweden.</span></li>
-    </ul>
   </div>
 </section>
 
@@ -61,24 +98,7 @@
       </div>
       <a class="link-arrow" href="coaches.html">Meet all 10 coaches</a>
     </div>
-    <div class="coach-cards">
-      <a class="coach-card reveal" href="coaches.html#sanjeev-parmar">
-        <img src="assets/img/coaches/sanjeev-parmar.webp" alt="" loading="lazy" width="480" height="560">
-        <div><h3>Sanjeev Parmar</h3><p class="role">Academy Technical Director</p><p>Former pro and USL national champion. CSA A Licence. Captained Canada's military national team.</p></div>
-      </a>
-      <a class="coach-card reveal" href="coaches.html#dwight-hornibrook">
-        <img src="assets/img/coaches/dwight-hornibrook.webp" alt="" loading="lazy" width="480" height="560">
-        <div><h3>Dwight Hornibrook</h3><p class="role">Head of Coaching</p><p>Canada U17 national team staff. North American scout for Middlesbrough FC.</p></div>
-      </a>
-      <a class="coach-card reveal" href="coaches.html#jed-davies">
-        <img src="assets/img/coaches/jed-davies.webp" alt="" loading="lazy" width="480" height="560">
-        <div><h3>Jed Davies</h3><p class="role">High Performance Consultant</p><p>CPL assistant coach. Worked with the Iran and Estonia national teams. Published author.</p></div>
-      </a>
-      <a class="coach-card reveal" href="coaches.html#craig-taylor">
-        <img src="assets/img/coaches/craig-taylor.webp" alt="" loading="lazy" width="480" height="560">
-        <div><h3>Craig Taylor</h3><p class="role">Sprint Mechanics Coach</p><p>Sprint coach for the Bahrain national team and Norway's national bobsled team.</p></div>
-      </a>
-    </div>
+{{coach_carousel}}
   </div>
 </section>
 
@@ -118,20 +138,14 @@
   </div>
 </section>
 
-<section class="home-grads" aria-labelledby="grads-title">
-  <div class="wrap split">
-    <div class="reveal">
-      <p class="eyebrow">Graduates showcase</p>
-      <h2 id="grads-title" class="h-lg">Where scouts find<br>our next class.</h2>
-      <p class="lede">When players graduate, their highlight tape goes on our showcase for university and pro scouts. Every scout inquiry goes through the academy director.</p>
-      <div class="btn-row">
-        <a class="btn btn-ghost" href="graduates.html">View the showcase</a>
-        <a class="btn btn-ghost" href="graduates.html#submit">Submit a highlight tape</a>
-      </div>
-    </div>
+<section class="home-policies" aria-labelledby="pol-title">
+  <div class="wrap">
     <div class="policy-teaser reveal">
-      <p class="eyebrow">Policies</p>
-      <p>Safeguarding, concussion protocol, codes of conduct, refunds and more, all on one page.</p>
+      <div>
+        <p class="eyebrow">Policies</p>
+        <h2 id="pol-title" class="h-md">Safe, fair and clear.</h2>
+        <p>Safeguarding, concussion protocol, codes of conduct, refunds and more, all on one page.</p>
+      </div>
       <ul class="chip-links">
         <li><a href="policies.html#childsafeguarding">Child safeguarding</a></li>
         <li><a href="policies.html#concussioninfo">Concussion protocol</a></li>

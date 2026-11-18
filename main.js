@@ -18,13 +18,41 @@ toggle.addEventListener('click', () => setMenu(!links.classList.contains('open')
 links.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setMenu(false); });
 
-// Pause / play the hero collage
-document.querySelectorAll('.motion-toggle').forEach((btn) => {
-  const target = document.querySelector(btn.dataset.target);
-  btn.addEventListener('click', () => {
-    const paused = target.classList.toggle('paused');
-    btn.setAttribute('aria-pressed', String(paused));
+// Carousels: swipe natively; buttons step one card, the counter tracks position
+document.querySelectorAll('[data-carousel]').forEach((car) => {
+  const track = car.querySelector('.carousel-track');
+  const slides = [...track.children];
+  const [prev, next] = car.querySelectorAll('.car-btn');
+  const count = car.querySelector('.car-count');
+  const step = () => slides[1] ? slides[1].offsetLeft - slides[0].offsetLeft : track.clientWidth;
+  const update = () => {
+    const i = Math.round(track.scrollLeft / step());
+    const visible = Math.max(1, Math.round(track.clientWidth / step()));
+    const last = Math.min(slides.length, i + visible);
+    count.textContent = visible > 1 ? `${i + 1}–${last} / ${slides.length}` : `${i + 1} / ${slides.length}`;
+    prev.disabled = track.scrollLeft < 4;
+    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+  };
+  [prev, next].forEach((b) => b.addEventListener('click', () => {
+    track.scrollBy({ left: Number(b.dataset.dir) * step(), behavior: reduce ? 'auto' : 'smooth' });
+  }));
+  track.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+      e.preventDefault();
+      (e.key === 'ArrowRight' ? next : prev).click();
+    }
   });
+  let raf;
+  track.addEventListener('scroll', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(update); }, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+  // coaches.html#name: bring that coach's card into view
+  let target = null;
+  try { target = location.hash && track.querySelector(location.hash); } catch (e) { /* not a valid selector */ }
+  if (target) {
+    track.scrollLeft = target.offsetLeft - slides[0].offsetLeft;
+    car.scrollIntoView({ block: 'start' });
+  }
 });
 
 // Success stories filter

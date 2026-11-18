@@ -8,10 +8,10 @@ Live preview: https://codebyjn.github.io/futuro-site/
 
 | Page | What it's for |
 |---|---|
-| `index.html` | Home: hero with the looping player collage and headline numbers, sponsor carousel, and short sections on philosophy, coaches, the program, when to apply, graduates and policies |
+| `index.html` | Home: hero with the looping player collage and headline numbers, sponsor carousel (with a "see all" grid), success stories and current graduates, philosophy, coaches carousel, the program, when to apply and policies |
 | `about.html` | Mission, vision, Joga Bonito philosophy, the 7 pillars, and results against English pro academies (with videos) |
 | `success.html` | Futuro Legends, the filterable "where they are now" wall, and every university commitment by class |
-| `coaches.html` | All 10 staff with photos and credentials |
+| `coaches.html` | Swipeable carousel of all 10 staff with photos and credentials |
 | `program.html` | A typical week, the standard, the U8–U18 pathway and the summer camp |
 | `apply.html` | How to join, season phases, age groups by birth year, financial assistance |
 | `register.html` | Tryout registration form |
@@ -29,6 +29,7 @@ python3 build.py
 - `src/layout.html` is the shared header and footer.
 - `src/pages/*.html` holds each page's content.
 - `src/policies/*.txt` holds the policy text, taken from the current site.
+- `src/coaches.json` holds the coaches, in display order. It feeds the home page carousel and the coaches page.
 - `src/graduates.json` holds the players on the graduates board.
 - Sponsors, the nav and the form inbox are set at the top of `build.py`.
 
