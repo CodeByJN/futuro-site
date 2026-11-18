@@ -1,14 +1,17 @@
-# Rebuilds the site from content/ and src/ and publishes it to GitHub Pages.
-# Runs on every push to main, so a save in Pages CMS goes live in about a minute.
+# Builds and publishes the site to GitHub Pages:
+#   main    -> https://codebyjn.github.io/futuro-site/          (the live site)
+#   preview -> https://codebyjn.github.io/futuro-site/preview/  (what Sanj is editing, not live yet)
+# The editor (Pages CMS) saves to the preview branch. "Publish to the live site" (publish.yml) copies preview into main.
 name: Build and publish site
 
 on:
   push:
-    branches: [main]
+    branches: [main, preview]
   workflow_dispatch:
+  workflow_call:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -20,7 +23,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Check out the live site (main)
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: live
+          fetch-depth: 0
+      - name: Keep the preview up to date with the live site
+        # changes to the design (pushed to main) flow into the preview too
+        working-directory: live
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin preview >/dev/null; then
+            git fetch -q origin preview
+            git checkout -q -B preview origin/preview
+            if ! git merge-base --is-ancestor main preview; then
+              git merge -q --no-edit main && git push -q origin preview || echo "::warning::Could not merge main into preview; resolve by hand."
+            fi
+          else
+            git push -q origin main:refs/heads/preview
+          fi
+          git checkout -q main
+      - name: Check out the preview
+        uses: actions/checkout@v4
+        with:
+          ref: preview
+          path: preview
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -28,23 +57,36 @@ jobs:
         run: |
           pip install pillow pillow-heif pyyaml
           # ffmpeg is only needed when someone has uploaded a video
-          if ls assets/uploads/ | grep -qiE '\.(mp4|mov|m4v)$' && ! command -v ffmpeg; then
+          if ls live/assets/uploads/ preview/assets/uploads/ | grep -qiE '\.(mp4|mov|m4v)$' && ! command -v ffmpeg; then
             sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends ffmpeg
           fi
       - name: Reuse resized photos and videos from earlier builds
         uses: actions/cache@v4
         with:
-          path: assets/opt
-          key: media-${{ hashFiles('assets/uploads/**', 'assets/img/collage/**') }}
+          path: |
+            live/assets/opt
+            preview/assets/opt
+          key: media-${{ hashFiles('live/assets/uploads/**', 'preview/assets/uploads/**', 'live/assets/img/collage/**', 'preview/assets/img/collage/**') }}
           restore-keys: media-
-      - name: Build
+      - name: Build the live site
+        working-directory: live
+        run: python build.py
+      - name: Build the preview
+        working-directory: preview
+        env:
+          FUTURO_PREVIEW: "1"
         run: python build.py
       - name: Collect the published files
         run: |
-          mkdir _site
-          cp *.html styles.css main.js _site/
-          cp -r assets _site/
-          rm -rf _site/assets/uploads/*.mov _site/assets/uploads/*.MOV _site/assets/uploads/*.m4v _site/assets/uploads/*.heic _site/assets/uploads/*.HEIC
+          collect() {  # $1 = built checkout, $2 = destination
+            mkdir -p "$2"
+            cp "$1"/*.html "$1"/styles.css "$1"/main.js "$2"/
+            cp -r "$1"/assets "$2"/
+            find "$2"/assets/uploads -maxdepth 1 -type f -iregex '.*\.\(mov\|m4v\|heic\)' -delete
+          }
+          collect live _site
+          collect preview _site/preview
+          printf 'User-agent: *\nDisallow: /futuro-site/preview/\n' > _site/robots.txt
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:

@@ -1,0 +1,45 @@
+# "Publish to the live site" button in Pages CMS: copies the preview branch into main, then republishes.
+name: Publish preview to the live site
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Sent by Pages CMS (who pressed the button)
+        required: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Copy the preview into the live site
+        env:
+          PAYLOAD: ${{ inputs.payload }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898333+github-actions[bot]@users.noreply.github.com"
+          who=$(python3 -c "import json,os; d=json.loads(os.environ.get('PAYLOAD') or '{}'); print(((d.get('triggeredBy') or {}).get('name') or 'the editor').replace(chr(10), ' ')[:60])" 2>/dev/null || echo "the editor")
+          git fetch -q origin preview
+          if git merge-base --is-ancestor origin/preview main; then
+            echo "Nothing new to publish."; exit 0
+          fi
+          git merge --no-edit -m "Publish preview to the live site (by $who)" origin/preview
+          git push origin main
+
+  deploy:
+    needs: merge
+    uses: ./.github/workflows/deploy.yml
+

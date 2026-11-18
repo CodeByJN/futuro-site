@@ -268,19 +268,22 @@
     "name": "Cameron Marin",
     "pathway": "University",
     "label": "NCAA",
-    "details": "Florida International University"
+    "details": "Florida International University",
+    "photo": "assets/img/grads/2019-cameron-marin.webp"
   },
   {
     "name": "Sara Buffone",
     "pathway": "University",
     "label": "NCAA",
-    "details": "Oral Roberts University"
+    "details": "Oral Roberts University",
+    "photo": "assets/img/grads/2021-sara-buffone.webp"
   },
   {
     "name": "Luca Nicastro",
     "pathway": "University",
     "label": "NCAA",
-    "details": "St. Bonaventure University"
+    "details": "St. Bonaventure University",
+    "photo": "assets/img/grads/2019-luca-nicastro.webp"
   },
   {
     "name": "Stella De Capua",

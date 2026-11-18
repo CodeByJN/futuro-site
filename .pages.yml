@@ -16,6 +16,26 @@ media:
     extensions: [jpg, jpeg, png, webp]
     rename: safe
 
+# Buttons on the editor's Actions page. Saves go to the preview copy first:
+# https://codebyjn.github.io/futuro-site/preview/
+actions:
+  - name: publish
+    label: Publish to the live site
+    workflow: publish.yml
+    cancelable: false
+    confirm:
+      title: Publish your changes?
+      message: Everything you've saved and checked on the preview page goes live on the website in about a minute.
+      button: Publish
+  - name: discard
+    label: Undo all unpublished changes
+    workflow: discard.yml
+    cancelable: false
+    confirm:
+      title: Undo unpublished changes?
+      message: The preview goes back to match the live site. Anything you saved since the last publish is removed.
+      button: Undo changes
+
 settings:
   content: true   # keep any extra fields already in a file instead of dropping them
 

@@ -1,0 +1,33 @@
+# "Undo all unpublished changes" button in Pages CMS: resets the preview to match the live site.
+name: Discard preview changes
+
+on:
+  workflow_dispatch:
+    inputs:
+      payload:
+        description: Sent by Pages CMS
+        required: false
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  reset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - name: Reset the preview to the live site
+        run: git push --force origin main:refs/heads/preview
+
+  deploy:
+    needs: reset
+    uses: ./.github/workflows/deploy.yml

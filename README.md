@@ -46,9 +46,19 @@ Uploads go to `assets/uploads/`. At build time, photos (including iPhone .heic) 
 
 **Setup (one time):** sign in at app.pagescms.org with the GitHub account that owns this repo, and install the Pages CMS GitHub App on the repo. Then open the repo, go to **Collaborators** and invite the academy's email. Collaborators don't need a GitHub account.
 
+### Preview, then publish
+
+The editor saves to the `preview` branch, which is the repo's default branch, so Pages CMS opens it automatically. Each save rebuilds the site, and the preview copy appears at https://codebyjn.github.io/futuro-site/preview/ with a yellow "Preview" bar. Google is told not to index it.
+
+On the editor's **Actions** page there are two buttons:
+- **Publish to the live site** (`publish.yml`) merges `preview` into `main` and republishes.
+- **Undo all unpublished changes** (`discard.yml`) resets `preview` to match `main`.
+
+Design changes pushed to `main` are merged into `preview` automatically on the next build.
+
 ### How it publishes
 
-`.github/workflows/deploy.yml` runs on every push to `main`. It installs Pillow and ffmpeg, runs `python build.py`, and publishes to GitHub Pages. The generated `*.html` files are not committed.
+`.github/workflows/deploy.yml` runs on every push to `main` or `preview`, and builds both: `main` at the site root and `preview` at `/preview/`. It installs Pillow and ffmpeg, runs `python build.py`, and publishes to GitHub Pages. The generated `*.html` files are not committed.
 
 If an entry is missing a required field, the build skips it with a warning in the Actions log. The rest of the site still publishes. If a build fails completely, the previous version stays live.
 

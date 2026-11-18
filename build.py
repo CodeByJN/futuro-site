@@ -15,6 +15,7 @@ site down.
 import hashlib
 import html
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -27,6 +28,15 @@ CONTENT = ROOT / "content"
 OPT = ROOT / "assets" / "opt"          # generated, resized copies of uploads (not committed)
 UPLOADS = ("assets/uploads/",)         # only files Sanj uploads get optimized; hand-made assets are already
 SITE_URL = "https://codebyjn.github.io/futuro-site/"
+# FUTURO_PREVIEW=1 builds the preview copy (served at /preview/): not indexed by Google, with a banner.
+PREVIEW = os.environ.get("FUTURO_PREVIEW") == "1"
+if PREVIEW:
+    SITE_URL += "preview/"
+PREVIEW_BAR = (
+    '<div class="preview-bar" role="status"><b>Preview</b><span>These changes aren\'t live yet. '
+    'When it looks right, press <b>Publish to the live site</b> in the editor.</span>'
+    '<a href="../">See the live site</a></div>'
+)
 
 NAV = [
     ("about.html", "About"),
@@ -446,11 +456,25 @@ def load_classes():
 
 
 def commitments():
+    """Success page: one dropdown per graduating class, with every player's photo inside."""
     out = []
     for c in load_classes():
         players = [p for p in c.get("players") or [] if isinstance(p, dict) and p.get("name")]
-        lis = "".join(f"            <li><b>{esc(p['name'])}</b>, {esc(p.get('school'))}</li>\n" for p in players)
-        out.append(f"        <details>\n          <summary>Class of {esc(c['year'])}</summary>\n          <ul>\n{lis}          </ul>\n        </details>")
+        faces = "".join(f'<img src="{esc(img(p["photo"], 160))}" alt="" width="40" height="40" loading="lazy">'
+                        for p in [p for p in players if p.get("photo")][:5])
+        cards = "".join(
+            '<li class="grad-tile">'
+            + (f'<img src="{esc(img(p["photo"], 600))}" alt="{esc(p["name"])}" loading="lazy" width="600" height="600">'
+               if p.get("photo") else f'<span class="grad-mono" aria-hidden="true">{esc(initials(p["name"]))}</span>')
+            + f'<span class="gt-body"><b>{esc(p["name"])}</b><span>{esc(p.get("school"))}</span></span></li>'
+            for p in players
+        )
+        count = f'{len(players)} player{"s" if len(players) != 1 else ""}'
+        out.append(
+            f'        <details>\n          <summary><span class="cls-title">Class of {esc(c["year"])}</span>'
+            f'<span class="cls-faces" aria-hidden="true">{faces}</span><span class="cls-count">{count}</span></summary>\n'
+            f'          <ul class="grad-tiles">{cards}</ul>\n        </details>'
+        )
     return "\n".join(out)
 
 
@@ -764,6 +788,10 @@ def main():
     # cache-busting: browsers refetch CSS/JS whenever their contents change
     for key, f in (("v_css", "styles.css"), ("v_js", "main.js")):
         layout = layout.replace("{{" + key + "}}", hashlib.md5((ROOT / f).read_bytes()).hexdigest()[:8])
+    if PREVIEW:
+        layout = layout.replace("</head>", '  <meta name="robots" content="noindex, nofollow">\n</head>', 1)
+        layout = layout.replace('<a class="skip"', PREVIEW_BAR + '\n<a class="skip"', 1)
+        layout = layout.replace('<body class="{{body_class}}">', '<body class="{{body_class}} is-preview">', 1)
     parts = {
         "announcement": announcement, "collage": collage, "hero_headline": hero_headline, "hero_subtitle": hero_subtitle,
         "hero_stats": hero_stats, "success_stats": success_stats, "sponsors": sponsors, "sponsor_grid": sponsor_grid,
