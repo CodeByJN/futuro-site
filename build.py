@@ -152,11 +152,16 @@ def video(p):
     """Compress an uploaded video to a 540px-wide silent MP4 (and make a poster frame). Returns (video, poster)."""
     p = path_of(p)
     src = ROOT / p
-    if not p.startswith(UPLOADS) or not src.is_file() or not shutil.which("ffmpeg"):
+    if not p.startswith(UPLOADS) or not src.is_file():
         if p and not src.is_file():
             warn(f"video not found: {p}")
         return p, ""
     out, poster = _opt_name(src, ".mp4"), _opt_name(src, ".jpg")
+    if out.exists() and poster.exists():  # compressed in an earlier build
+        return out.relative_to(ROOT).as_posix(), poster.relative_to(ROOT).as_posix()
+    if not shutil.which("ffmpeg"):
+        warn(f"ffmpeg is not installed, so {p} is used uncompressed")
+        return p, ""
     OPT.mkdir(parents=True, exist_ok=True)
     try:
         if not out.exists():
