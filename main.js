@@ -109,45 +109,48 @@ if (search) {
   window.addEventListener('hashchange', openFromHash);
 }
 
-// Training reels: autoplay (muted) while on screen, tap to pause, one reel with sound at a time
+// Training reels: preload and play all of them while the section is near the screen, so swiping
+// is seamless. One shared sound setting: unmuting any reel unmutes them all (reels you can see).
 (() => {
   const vids = [...document.querySelectorAll('.reel video')];
   if (!vids.length) return;
-  const held = new Set();
-  const onScreen = new Set();
+  const track = vids[0].closest('.carousel-track') || vids[0].closest('.reels');
   const btns = vids.map(v => v.parentElement.querySelector('.reel-sound'));
-  const start = v => {
-    const p = v.play();
-    if (p) p.catch(() => {});
+  const held = new Set();
+  const inView = new Set();
+  let near = false, soundOn = false;
+  const start = v => { const p = v.play(); if (p) p.catch(() => {}); };
+  vids.forEach(v => { v.muted = true; v.defaultMuted = true; });
+  // Start loading every reel once the section is getting close (not on page load)
+  const warm = () => vids.forEach(v => { if (v.preload !== 'auto') { v.preload = 'auto'; v.load(); } });
+  const applySound = () => {
+    vids.forEach(v => { v.muted = !(soundOn && inView.has(v)); });
+    btns.forEach(b => { b.setAttribute('aria-pressed', soundOn); b.setAttribute('aria-label', soundOn ? 'Turn sound off' : 'Turn sound on'); });
   };
-  vids.forEach(v => { v.muted = true; v.defaultMuted = true; v.setAttribute('muted', ''); v.autoplay = true; v.preload = 'metadata'; });
-  const setSound = (v, on) => {
-    v.muted = !on;
-    const b = btns[vids.indexOf(v)];
-    b.setAttribute('aria-pressed', on); b.setAttribute('aria-label', on ? 'Turn sound off' : 'Turn sound on');
-  };
+  const playAll = () => { if (near) vids.forEach(v => { if (!held.has(v) && v.paused) start(v); }); };
   vids.forEach((v, i) => {
     v.addEventListener('click', () => {
       if (v.paused) { held.delete(v); start(v); } else { held.add(v); v.pause(); }
     });
     btns[i].addEventListener('click', () => {
-      const on = v.muted;
-      vids.forEach(o => o !== v && setSound(o, false));
-      setSound(v, on);
-      held.delete(v); start(v);
+      soundOn = !soundOn; held.delete(v); applySound(); playAll();
     });
+    v.addEventListener('canplay', () => { if (near && !held.has(v) && v.paused) start(v); });
   });
-  const playVisible = () => onScreen.forEach(v => { if (!held.has(v) && v.paused) start(v); });
   if ('IntersectionObserver' in window) {
-    const io = new IntersectionObserver(entries => entries.forEach(e => {
-      const v = e.target;
-      if (e.isIntersecting) { onScreen.add(v); if (!held.has(v)) start(v); }
-      else { onScreen.delete(v); v.pause(); if (!v.muted) setSound(v, false); }
-    }), { threshold: 0.2 });
-    vids.forEach(v => io.observe(v));
-  } else { vids.forEach(v => { onScreen.add(v); start(v); }); }
+    // Section near the screen: load + play everything; far away: pause to save battery
+    new IntersectionObserver(([e]) => {
+      near = e.isIntersecting;
+      if (near) { warm(); playAll(); }
+      else { vids.forEach(v => v.pause()); if (soundOn) { soundOn = false; applySound(); } }
+    }, { rootMargin: '1200px 0px' }).observe(track);
+    // Which reels are actually showing in the strip (sound only comes from those)
+    const seen = new IntersectionObserver(entries => {
+      entries.forEach(e => e.isIntersecting ? inView.add(e.target) : inView.delete(e.target));
+      applySound();
+    }, { root: track, threshold: 0.6 });
+    vids.forEach(v => seen.observe(v));
+  } else { near = true; vids.forEach(v => inView.add(v)); playAll(); }
   // Some phones (e.g. iPhone Low Power Mode) block autoplay until the first touch anywhere
-  ['touchstart', 'pointerdown', 'scroll'].forEach(ev => window.addEventListener(ev, playVisible, { passive: true }));
-  // Videos that finish loading after they scrolled into view
-  vids.forEach(v => v.addEventListener('canplay', () => { if (onScreen.has(v) && !held.has(v) && v.paused) start(v); }));
+  ['touchstart', 'pointerdown', 'scroll'].forEach(ev => window.addEventListener(ev, playAll, { passive: true }));
 })();
