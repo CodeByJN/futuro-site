@@ -152,10 +152,8 @@ section { padding: 104px 0; }
   flex: none; width: 176px; height: 96px; display: grid; place-items: center; padding: 14px 18px;
   background: #fff; border-radius: 12px; box-shadow: 0 1px 2px rgba(12, 31, 64, 0.08), 0 0 0 1px rgba(12, 31, 64, 0.06);
 }
-.logo img { max-width: 100%; max-height: 64px; width: auto; height: auto; object-fit: contain; filter: grayscale(1); opacity: .72; transition: filter .3s, opacity .3s; }
-.logo.invert img { filter: grayscale(1) invert(1); }
-.logo:hover img { filter: none; opacity: 1; }
-.logo.invert:hover img { filter: invert(1); }
+.logo img { max-width: 100%; max-height: 64px; width: auto; height: auto; object-fit: contain; }
+.logo.invert img { filter: invert(1); }
 
 /* ============ Home: about ============ */
 .home-about p:not(.eyebrow):not(.lede) { color: var(--ink-dim); max-width: 600px; }
@@ -580,8 +578,7 @@ tr:last-child td { border-bottom: 0; }
 .sponsor-all summary:hover { border-color: var(--paper-ink); }
 .logo-grid { list-style: none; padding: 0; margin: 22px 0 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
 .logo-grid .logo { width: auto; height: 68px; padding: 8px 10px; }
-.logo-grid .logo img { filter: none; opacity: 1; max-height: 48px; }
-.logo-grid .logo.invert img { filter: invert(1); }
+.logo-grid .logo img { max-height: 48px; }
 @media (min-width: 640px) { .logo-grid { grid-template-columns: repeat(4, 1fr); gap: 14px; } .logo-grid .logo { height: 84px; padding: 14px 18px; } .logo-grid .logo img { max-height: 56px; } }
 @media (min-width: 981px) { .logo-grid { grid-template-columns: repeat(6, 1fr); } }
 
