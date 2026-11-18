@@ -109,13 +109,18 @@ if (search) {
   window.addEventListener('hashchange', openFromHash);
 }
 
-// Training reels: play while on screen (muted), tap to pause, one reel with sound at a time
+// Training reels: autoplay (muted) while on screen, tap to pause, one reel with sound at a time
 (() => {
   const vids = [...document.querySelectorAll('.reel video')];
   if (!vids.length) return;
-  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const held = new Set(still ? vids : []);
+  const held = new Set();
+  const onScreen = new Set();
   const btns = vids.map(v => v.parentElement.querySelector('.reel-sound'));
+  const start = v => {
+    const p = v.play();
+    if (p) p.catch(() => {});
+  };
+  vids.forEach(v => { v.muted = true; v.defaultMuted = true; v.setAttribute('muted', ''); v.autoplay = true; v.preload = 'metadata'; });
   const setSound = (v, on) => {
     v.muted = !on;
     const b = btns[vids.indexOf(v)];
@@ -123,20 +128,26 @@ if (search) {
   };
   vids.forEach((v, i) => {
     v.addEventListener('click', () => {
-      if (v.paused) { held.delete(v); v.play().catch(() => {}); } else { held.add(v); v.pause(); }
+      if (v.paused) { held.delete(v); start(v); } else { held.add(v); v.pause(); }
     });
     btns[i].addEventListener('click', () => {
       const on = v.muted;
       vids.forEach(o => o !== v && setSound(o, false));
       setSound(v, on);
-      if (on) { held.delete(v); v.play().catch(() => {}); }
+      held.delete(v); start(v);
     });
   });
-  if (!('IntersectionObserver' in window)) return;
-  const io = new IntersectionObserver(entries => entries.forEach(e => {
-    const v = e.target;
-    if (e.isIntersecting) { if (!held.has(v)) v.play().catch(() => {}); }
-    else { v.pause(); if (!v.muted) setSound(v, false); }
-  }), { threshold: 0.5 });
-  vids.forEach(v => io.observe(v));
+  const playVisible = () => onScreen.forEach(v => { if (!held.has(v) && v.paused) start(v); });
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      const v = e.target;
+      if (e.isIntersecting) { onScreen.add(v); if (!held.has(v)) start(v); }
+      else { onScreen.delete(v); v.pause(); if (!v.muted) setSound(v, false); }
+    }), { threshold: 0.2 });
+    vids.forEach(v => io.observe(v));
+  } else { vids.forEach(v => { onScreen.add(v); start(v); }); }
+  // Some phones (e.g. iPhone Low Power Mode) block autoplay until the first touch anywhere
+  ['touchstart', 'pointerdown', 'scroll'].forEach(ev => window.addEventListener(ev, playVisible, { passive: true }));
+  // Videos that finish loading after they scrolled into view
+  vids.forEach(v => v.addEventListener('canplay', () => { if (onScreen.has(v) && !held.has(v) && v.paused) start(v); }));
 })();
