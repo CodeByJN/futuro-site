@@ -133,43 +133,20 @@ content:
       - { name: style, label: Card style, type: select, options: { values: ["Standard", "Featured (big card)", "Next wave"] }, description: "Featured = the big card at the top. Next wave = rising players." }
       - { name: show_on_home, label: Also show on the home page, type: boolean }
 
-  - name: alumni
-    label: "🌍 Where they are now"
-    description: The filterable wall on the Success Stories page. One card per player; add each achievement under it (pro, national team, university) and the filters find them under each.
+  - name: achievements
+    label: "🏆 Achievements (pro, national team, university)"
+    description: Everything on the Success Stories timeline. Add one entry per achievement with its year; the site sorts them by year and groups each player's achievements in a year onto one card. University commitments go here too (year = graduating class); the newest class also shows on the home and graduates pages.
     type: file
-    path: content/alumni.json
+    path: content/achievements.json
     format: json
-    list: { collapsible: { collapsed: true, summary: "{fields.name}" } }
+    list: { collapsible: { collapsed: true, summary: "{fields.year} · {fields.name} - {fields.details}" } }
     fields:
+      - { name: year, label: Year, type: number, required: true }
       - { name: name, label: Player name, type: string, required: true }
-      - { name: photo, label: Photo (optional), type: image, options: { media: uploads } }
-      - name: achievements
-        label: Achievements
-        type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.label}: {fields.details}" } }
-        fields:
-          - { name: pathway, label: Filter, type: select, options: { values: ["Pro & pro academy", "National team", "University"] } }
-          - { name: label, label: Tag on the card, type: string, description: "e.g. Pro, Pro academy, National team, NCAA D1, U SPORTS" }
-          - { name: details, label: Club, team or school, type: string }
-
-  - name: commitments
-    label: "🏫 University commitments by class"
-    description: Add a new class each year. Each class is a dropdown of player photos on the Success Stories page; the newest class also shows on the home page (its first 4 players).
-    type: file
-    path: content/commitments.json
-    format: json
-    list: { collapsible: { collapsed: true, summary: "Class of {fields.year}" } }
-    fields:
-      - { name: year, label: Class of (year), type: number, required: true }
-      - name: players
-        label: Players
-        type: object
-        list: { collapsible: { collapsed: true, summary: "{fields.name}, {fields.school}" } }
-        fields:
-          - { name: name, label: Player name, type: string, required: true }
-          - { name: school, label: School, type: string }
-          - { name: level, label: Level (optional), type: string, description: "e.g. NCAA D1, U SPORTS" }
-          - { name: photo, label: Photo (their signing poster or headshot), type: image, options: { media: uploads } }
+      - { name: pathway, label: Filter, type: select, required: true, options: { values: ["Pro & pro academy", "National team", "University"] } }
+      - { name: label, label: Tag on the card, type: string, description: "e.g. Pro, Pro academy, National team, NCAA D1, U SPORTS" }
+      - { name: details, label: What they did (club, team or school), type: string, description: "e.g. Signed with Pacific FC (CPL), or University of Ottawa" }
+      - { name: photo, label: Photo or poster, type: image, options: { media: uploads } }
 
   # ---------------------------------------------------------------- Academy
   - name: coaches

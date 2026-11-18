@@ -447,45 +447,62 @@ def alum_card(name, tag, details, photo=None, cat=None, extra=()):
             f'<strong>{esc(name)}</strong>{lines}</div></div>')
 
 
-def alumni_wall():
+ORDER = {"pro": 0, "national": 1, "university": 2}
+
+
+def load_achievements():
     out = []
-    for a in items("alumni.json", ("name",)):
-        achs = [x for x in a.get("achievements") or [] if isinstance(x, dict)]
-        if not achs and (a.get("pathway") or a.get("details")):  # older single-pathway entries
-            achs = [{"pathway": a.get("pathway"), "label": a.get("label"), "details": a.get("details")}]
-        conv = [(PATHWAYS.get(x.get("pathway"), "pro"), x.get("label") or x.get("pathway"), x.get("details")) for x in achs]
-        if not conv:
-            conv = [(None, "", "")]
-        out.append("        " + alum_card(a["name"], conv[0][1], conv[0][2], a.get("photo"), conv[0][0], conv[1:]))
+    for a in items("achievements.json", ("year", "name")):
+        try:
+            a["year"] = int(str(a["year"])[:4])
+        except ValueError:
+            warn(f"achievements.json: {a['name']} has no valid year")
+            continue
+        out.append(a)
+    return out
+
+
+def achievements():
+    """Success page: every achievement, grouped by year (newest first). One card per player per year."""
+    years = {}
+    for a in load_achievements():
+        cat = PATHWAYS.get(a.get("pathway"), "pro")
+        card = years.setdefault(a["year"], {}).setdefault(a["name"], {"photo": None, "achs": []})
+        card["photo"] = card["photo"] or a.get("photo")
+        card["achs"].append((cat, a.get("label") or a.get("pathway") or "", a.get("details") or ""))
+    out = []
+    for i, (year, players) in enumerate(sorted(years.items(), reverse=True)):
+        cards = sorted(players.items(), key=lambda kv: min(ORDER.get(c, 3) for c, _, _ in kv[1]["achs"]))
+        html_cards = "".join(
+            alum_card(name, v["achs"][0][1], v["achs"][0][2], v["photo"], v["achs"][0][0], v["achs"][1:])
+            for name, v in cards
+        )
+        faces = "".join(f'<img src="{esc(img(v["photo"], 160))}" alt="" width="40" height="40" loading="lazy">'
+                        for _, v in [kv for kv in cards if kv[1]["photo"]][:5])
+        n = len(cards)
+        out.append(
+            f'      <details class="year-block" id="y{year}"{" open" if i < 2 else ""}>\n'
+            f'        <summary><span class="cls-title">{year}</span><span class="cls-faces" aria-hidden="true">{faces}</span>'
+            f'<span class="cls-count" data-total="{n}">{n} player{"s" if n != 1 else ""}</span></summary>\n'
+            f'        <div class="alumni">{html_cards}</div>\n      </details>'
+        )
     return "\n".join(out)
+
+
+def year_jump():
+    ys = sorted({a["year"] for a in load_achievements()}, reverse=True)
+    return "".join(f'<a href="#y{y}">{y}</a>' for y in ys)
 
 
 def load_classes():
-    classes = [c for c in items("commitments.json", ("year",))]
-    return sorted(classes, key=lambda c: -int(str(c["year"])[:4]) if str(c["year"])[:4].isdigit() else 0)
-
-
-def commitments():
-    """Success page: one dropdown per graduating class, with every player's photo inside."""
-    out = []
-    for c in load_classes():
-        players = [p for p in c.get("players") or [] if isinstance(p, dict) and p.get("name")]
-        faces = "".join(f'<img src="{esc(img(p["photo"], 160))}" alt="" width="40" height="40" loading="lazy">'
-                        for p in [p for p in players if p.get("photo")][:5])
-        cards = "".join(
-            '<li class="grad-tile">'
-            + (f'<img src="{esc(img(p["photo"], 600))}" alt="{esc(p["name"])}" loading="lazy" width="600" height="600">'
-               if p.get("photo") else f'<span class="grad-mono" aria-hidden="true">{esc(initials(p["name"]))}</span>')
-            + f'<span class="gt-body"><b>{esc(p["name"])}</b><span>{esc(p.get("school"))}</span></span></li>'
-            for p in players
-        )
-        count = f'{len(players)} player{"s" if len(players) != 1 else ""}'
-        out.append(
-            f'        <details>\n          <summary><span class="cls-title">Class of {esc(c["year"])}</span>'
-            f'<span class="cls-faces" aria-hidden="true">{faces}</span><span class="cls-count">{count}</span></summary>\n'
-            f'          <ul class="grad-tiles">{cards}</ul>\n        </details>'
-        )
-    return "\n".join(out)
+    """University commitments by graduating class, derived from achievements.json."""
+    classes = {}
+    for a in load_achievements():
+        if a.get("pathway") == "University":
+            classes.setdefault(a["year"], []).append(
+                {"name": a["name"], "school": a.get("details"), "level": a.get("label") if a.get("label") != "University" else "",
+                 "photo": a.get("photo")})
+    return [{"year": y, "players": p} for y, p in sorted(classes.items(), reverse=True)]
 
 
 def latest_class_year():
@@ -498,9 +515,8 @@ def latest_class():
     c = load_classes()
     if not c:
         return ""
-    photos = {a["name"]: a.get("photo") for a in items("alumni.json", ("name",)) if a.get("photo")}
     players = [p for p in c[0].get("players") or [] if isinstance(p, dict) and p.get("name")]
-    return "\n".join("      " + alum_card(p["name"], p.get("level") or "University", p.get("school"), photos.get(p["name"]))
+    return "\n".join("      " + alum_card(p["name"], p.get("level") or "University", p.get("school"), p.get("photo"), "university")
                      for p in players)
 
 
@@ -808,8 +824,8 @@ def main():
         "policies": policies, "policy_nav": policy_nav, "graduates": graduates, "grads_home": grads_home,
         "coach_carousel": coach_carousel, "staff_carousel": staff_carousel, "coach_count": coach_count,
         "season_calendar": season_calendar, "programs_table": programs_table, "policy_ack": policy_ack,
-        "legends_home": legends_home, "legends_grid": legends_grid, "alumni_wall": alumni_wall,
-        "commitments": commitments, "commitment_total": commitment_total,
+        "legends_home": legends_home, "legends_grid": legends_grid, "achievements": achievements,
+        "year_jump": year_jump, "commitment_total": commitment_total,
         "latest_class": latest_class, "latest_class_year": latest_class_year, "reels": reels, "gallery": gallery,
         "socials": socials, "x_handle": x_handle, "tel": tel,
         "x_url": lambda: esc(setting("socials", "x", default="https://x.com/parmarsports")),

@@ -10,7 +10,7 @@ Live preview: https://codebyjn.github.io/futuro-site/
 |---|---|
 | `index.html` | Home: hero with the looping player collage and headline numbers, sponsors, legends and the scouting showcase, philosophy and training videos, coaches and coach recruiting, the photo mosaic, the program, the season calendar and policies |
 | `about.html` | Mission, vision, Joga Bonito philosophy, the 7 pillars, and results against English pro academies (with videos) |
-| `success.html` | Futuro Legends, the filterable "where they are now" wall, and every university commitment by class |
+| `success.html` | Futuro Legends, then every achievement year by year (filter by pro, national team or university) |
 | `coaches.html` | Swipeable carousel of all 10 staff with photos and credentials |
 | `program.html` | A typical week, the standard, the U8–U18 pathway and the summer camp |
 | `apply.html` | How to join, season phases, age groups by birth year, financial assistance |
@@ -29,8 +29,7 @@ The academy updates the site in **Pages CMS** (https://app.pagescms.org). It's a
 | Site settings | Announcement banner, home headline and numbers, Success page numbers, contact details, social links | `content/settings.json` |
 | Graduates board | Graduating players and their YouTube highlight links | `content/graduates.json` |
 | Futuro legends | The big player stories (Success page, and the home carousel) | `content/legends.json` |
-| Where they are now | The filterable wall of players, with optional photos | `content/alumni.json` |
-| University commitments | One entry per graduating class; the newest also feeds the home and graduates pages | `content/commitments.json` |
+| Achievements | Every pro, national-team and university achievement with its year. It becomes the year-by-year timeline on the Success page, with filters. University entries also feed the home and graduates pages. | `content/achievements.json` |
 | Coaches | Staff cards (home carousel and Coaches page) | `content/coaches.json` |
 | Training videos | The vertical clips on the home page | `content/videos.json` |
 | Home page photos | "The Futuro experience" mosaic (it lays itself out for any number of photos) | `content/gallery.json` |

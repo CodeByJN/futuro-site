@@ -25,27 +25,26 @@
     </div>
   </section>
 
-  <!-- WHERE THEY ARE NOW -->
+  <!-- EVERY ACHIEVEMENT, YEAR BY YEAR -->
   <section id="alumni">
     <div class="wrap">
       <div class="section-head">
-        <h2>Where they are now.</h2>
-        <p class="lede">Every name below came through Futuro. Use the filters to see each pathway.</p>
+        <h2>Every achievement, year by year.</h2>
+        <p class="lede">Pro contracts, national-team call-ups and university commitments: every Futuro player who made the next step, since 2015.</p>
       </div>
 
-      <div class="filters" role="group" aria-label="Filter players">
-        <button type="button" data-filter="all" aria-pressed="true">All</button>
-        <button type="button" data-filter="pro" aria-pressed="false">Pro &amp; pro academy</button>
-        <button type="button" data-filter="national" aria-pressed="false">National teams</button>
-        <button type="button" data-filter="university" aria-pressed="false">University</button>
+      <div class="ach-tools">
+        <div class="filters" role="group" aria-label="Filter achievements">
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="pro" aria-pressed="false">Pro &amp; pro academy</button>
+          <button type="button" data-filter="national" aria-pressed="false">National teams</button>
+          <button type="button" data-filter="university" aria-pressed="false">University</button>
+        </div>
+        <nav class="year-jump" aria-label="Jump to a year">{{year_jump}}</nav>
       </div>
 
-      <div class="alumni" id="alumni-grid">
-{{alumni_wall}}
-      </div>
-
-      <div class="uni-classes" data-section="university">
-{{commitments}}
+      <div class="timeline" id="alumni-grid">
+{{achievements}}
       </div>
     </div>
   </section>

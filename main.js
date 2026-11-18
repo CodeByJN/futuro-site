@@ -55,19 +55,30 @@ document.querySelectorAll('[data-carousel]').forEach((car) => {
   }
 });
 
-// Success stories filter
+// Success stories: filter the year-by-year achievements; hide years with nothing left, update counts
 const filterButtons = document.querySelectorAll('.filters button');
 if (filterButtons.length) {
-  const alumni = document.querySelectorAll('#alumni-grid .alum');
-  const uniClasses = document.querySelector('.uni-classes');
+  const years = document.querySelectorAll('#alumni-grid .year-block');
+  const jumps = document.querySelectorAll('.year-jump a');
   filterButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
       const f = btn.dataset.filter;
       filterButtons.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-      alumni.forEach((a) => { a.hidden = f !== 'all' && !(a.dataset.cat || '').split(' ').includes(f); });
-      if (uniClasses) uniClasses.hidden = !(f === 'all' || f === 'university');
+      years.forEach((y) => {
+        let n = 0;
+        y.querySelectorAll('.alum').forEach((a) => {
+          const show = f === 'all' || (a.dataset.cat || '').split(' ').includes(f);
+          a.hidden = !show; if (show) n++;
+        });
+        y.hidden = n === 0;
+        const c = y.querySelector('.cls-count');
+        if (c) c.textContent = `${n} player${n === 1 ? '' : 's'}`;
+        jumps.forEach((j) => { if (j.getAttribute('href') === '#' + y.id) j.hidden = n === 0; });
+      });
     });
   });
+  // jumping to a year opens it
+  jumps.forEach((j) => j.addEventListener('click', () => { const y = document.querySelector(j.getAttribute('href')); if (y) y.open = true; }));
 }
 
 // Click-to-load YouTube (keeps pages fast)

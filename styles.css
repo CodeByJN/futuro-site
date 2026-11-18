@@ -921,3 +921,28 @@ tr:last-child td { border-bottom: 0; }
 .is-preview .nav { top: 40px; }
 .is-preview main { padding-top: 40px; }
 @media (max-width: 640px) { .preview-bar { font-size: 13px; } .preview-bar span { display: none; } }
+
+/* Success page: achievements by year */
+.ach-tools { display: flex; flex-direction: column; gap: 14px; margin-bottom: 22px; }
+.year-jump { display: flex; flex-wrap: wrap; gap: 6px; }
+.year-jump a { font-family: var(--display); font-weight: 700; font-size: 17px; letter-spacing: .02em; color: var(--ink-dim); text-decoration: none;
+  padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); min-height: 36px; display: inline-flex; align-items: center; }
+.year-jump a:hover { color: var(--ink); border-color: rgba(124, 194, 66, .5); }
+.year-jump a[hidden] { display: none; }
+.timeline { display: flex; flex-direction: column; gap: 12px; }
+.year-block { border: 1px solid var(--line); border-radius: 14px; background: var(--card); scroll-margin-top: calc(var(--nav-h) + 16px); }
+.year-block[hidden] { display: none; }
+.year-block summary { cursor: pointer; list-style: none; display: flex; align-items: center; gap: 14px; padding: 16px 20px; min-height: 60px; }
+.year-block summary::-webkit-details-marker { display: none; }
+.year-block summary::after { content: "+"; color: var(--lime); font-size: 26px; line-height: 1; }
+.year-block[open] summary::after { content: "–"; }
+.year-block .cls-title { font-family: var(--display); font-weight: 800; font-size: 34px; line-height: 1; letter-spacing: .01em; }
+.year-block[open] .cls-faces { opacity: 0; transition: opacity .2s; }
+.year-block > .alumni { padding: 0 18px 20px; }
+@media (max-width: 640px) {
+  .year-block summary { padding: 14px 14px; gap: 10px; }
+  .year-block .cls-title { font-size: 28px; }
+  .year-block > .alumni { padding: 0 10px 12px; }
+  .year-jump { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin-inline: -16px; padding-inline: 16px; }
+  .year-jump::-webkit-scrollbar { display: none; }
+}

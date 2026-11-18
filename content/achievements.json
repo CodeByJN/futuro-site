@@ -1,0 +1,864 @@
+[
+  {
+    "year": 2026,
+    "name": "Noah Abatneh",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Futuro's first senior Canada men's national team call-up",
+    "photo": "assets/img/collage/c56.webp"
+  },
+  {
+    "year": 2026,
+    "name": "Sadie Sider-Echenberg",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with Kristianstads DFF, Sweden",
+    "photo": "assets/img/collage/c57.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Noah Abatneh",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Won the Canadian Premier League title with Atlético Ottawa",
+    "photo": "assets/img/collage/c30.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Tyr Duhaney-Walker",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Rejoined Atlético Ottawa and won the Canadian Premier League title",
+    "photo": "assets/img/collage/c39.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Antoine Coupland",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Short-term agreement with the Vancouver Whitecaps (MLS)",
+    "photo": "assets/img/collage/c40.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Elage Bah",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with Vancouver FC (CPL), after Whitecaps FC 2",
+    "photo": "assets/img/collage/c60.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Caitlin Crichton",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed professionally with KTP, Finland",
+    "photo": "assets/img/collage/c31.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Joachim Stavrianeas",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with Miami FC",
+    "photo": "assets/img/collage/c34.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Alex Polacek",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with Amora FC, Portugal",
+    "photo": "assets/img/collage/c38.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Adam Ali",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps",
+    "photo": "assets/img/collage/c32.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Cheeko Okafor",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps",
+    "photo": "assets/img/collage/c33.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Paul Lahaie-Boivin",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with Northwood Black Rock",
+    "photo": "assets/img/collage/c35.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Sadie Sider-Echenberg",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Canada futsal national team",
+    "photo": "assets/img/collage/c27.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Molly Hale",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Canada U17 national team",
+    "photo": "assets/img/collage/c28.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Michael Peres",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with CF Montréal; #1 CDM in the FTF 2026 rankings",
+    "photo": "assets/img/collage/c03.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Amadeo Zacconi",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with Pescara Calcio, Italy",
+    "photo": "assets/img/collage/c29.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Oriol Mensah",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps",
+    "photo": "assets/img/collage/c06.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Mike Kirumba",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps",
+    "photo": "assets/img/collage/c07.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Maya Hindson",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Selected for the Canada U20 national team",
+    "photo": "assets/img/collage/c01.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Maya Hindson",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with Arsenal FC",
+    "photo": "assets/img/collage/c12.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Eric Lajeunesse",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with Pacific FC (CPL); U SPORTS Rookie of the Year at UBC",
+    "photo": "assets/img/collage/c17.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Noah Abatneh",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with York United (CPL)",
+    "photo": "assets/img/collage/c20.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Antoine Coupland",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with Whitecaps FC 2 (MLS NEXT Pro)",
+    "photo": "assets/img/collage/c22.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Nathaniel Mulualem",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed in Italy with S.S.D. Cartigliano",
+    "photo": "assets/img/collage/c23.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Maelie Lessard",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Mauritius women's national team",
+    "photo": "assets/img/collage/c25.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Ameera Abualsamh",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Saudi Arabia women's national team",
+    "photo": "assets/img/achievements/2023-ameera-abualsamh.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Antoine Coupland",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with HNK Rijeka, Croatia",
+    "photo": "assets/img/collage/c42.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Mamadou Ba",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with the CF Montréal U23 team; later Atlético Ottawa",
+    "photo": "assets/img/collage/c44.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Noah Abatneh, Elage Bah & Antoine Coupland",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "All three named to Canada's U20 national team list",
+    "photo": "assets/img/achievements/2022-canada-u20-trio.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Sadie Sider-Echenberg",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Canada U20 camp",
+    "photo": "assets/img/collage/c53.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Salena Allibhai",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Invited to the Uganda women's national team",
+    "photo": "assets/img/collage/c45.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Isaac Charbonneau",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps",
+    "photo": "assets/img/achievements/2021-isaac-charbonneau.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Eric Lajeunesse",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps MLS reserve team",
+    "photo": "assets/img/achievements/2021-eric-lajeunesse.webp"
+  },
+  {
+    "year": 2020,
+    "name": "Tony Mavrozoumis",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Niki Volou FC, Greece: the first Futuro player to sign a pro contract in Europe",
+    "photo": "assets/img/achievements/2020-tony-mavrozoumis.webp"
+  },
+  {
+    "year": 2020,
+    "name": "Noah Abatneh",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with S.S. Lazio U17 in Italy's Serie A",
+    "photo": "assets/img/achievements/2020-noah-abatneh.webp"
+  },
+  {
+    "year": 2020,
+    "name": "Antoine Coupland",
+    "pathway": "Pro & pro academy",
+    "label": "Pro",
+    "details": "Signed with Atlético Ottawa (CPL)",
+    "photo": "assets/img/achievements/2020-antoine-coupland.webp"
+  },
+  {
+    "year": 2020,
+    "name": "Elage Bah",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps U17 academy",
+    "photo": "assets/img/collage/c74.webp"
+  },
+  {
+    "year": 2020,
+    "name": "Benedict Florent",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Vancouver Whitecaps U16 academy",
+    "photo": "assets/img/collage/c75.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Isaac Charbonneau",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Captained Canada at the Danone Nations Cup"
+  },
+  {
+    "year": 2018,
+    "name": "Benedict Florent",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Haiti U15 national team",
+    "photo": "assets/img/achievements/2018-benedict-florent.webp"
+  },
+  {
+    "year": 2017,
+    "name": "Claire Rea",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Canada U15 camp; represented Canada at the 2016 Danone Cup",
+    "photo": "assets/img/achievements/2017-claire-rea.webp"
+  },
+  {
+    "year": 2017,
+    "name": "Ed Bryant",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Haiti U17 national team camp",
+    "photo": "assets/img/achievements/2017-ed-bryant.webp"
+  },
+  {
+    "year": 2017,
+    "name": "Ewen Nedellec",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Selected for the Montreal Impact U10 team",
+    "photo": "assets/img/achievements/2017-ewen-nedellec.webp"
+  },
+  {
+    "year": 2016,
+    "name": "Carmen Marin",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Costa Rica women's national team (called up again in 2020)",
+    "photo": "assets/img/achievements/2016-carmen-marin.webp"
+  },
+  {
+    "year": 2016,
+    "name": "Ben Collins",
+    "pathway": "National team",
+    "label": "National team",
+    "details": "Canada U15 national team camp",
+    "photo": "assets/img/achievements/2016-ben-collins.webp"
+  },
+  {
+    "year": 2016,
+    "name": "Noah Abatneh",
+    "pathway": "Pro & pro academy",
+    "label": "Pro offer",
+    "details": "Offered a contract by AS Roma (Serie A), after a contract offer from Fulham FC"
+  },
+  {
+    "year": 2015,
+    "name": "Ben Collins",
+    "pathway": "Pro & pro academy",
+    "label": "Pro academy",
+    "details": "Signed with the Montreal Impact Academy",
+    "photo": "assets/img/achievements/2015-ben-collins.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Brianne MacDonald",
+    "pathway": "University",
+    "label": "NCAA D1",
+    "details": "University of Central Florida",
+    "photo": "assets/img/grads/2025-brianne-macdonald.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Stella De Capua",
+    "pathway": "University",
+    "label": "NCAA",
+    "details": "University of Bridgeport",
+    "photo": "assets/img/grads/2025-stella-de-capua.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Justin Meka",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "University of Toronto",
+    "photo": "assets/img/grads/2025-justin-meka.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Amelia Racicot",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "University of Toronto",
+    "photo": "assets/img/grads/2025-amelia-racicot.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Julian Shiau",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2025-julian-shiau.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Ruben Lund",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2025-ruben-lund.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Daniel Lombo",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2025-daniel-lombo.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Olivia Chen",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2025-olivia-chen.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Dounia El Abdi",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2025-dounia-el-abdi.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Rania Demone",
+    "pathway": "University",
+    "label": "U SPORTS",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2025-rania-demone.webp"
+  },
+  {
+    "year": 2025,
+    "name": "Celina Labaki",
+    "pathway": "University",
+    "label": "CEGEP",
+    "details": "Cégep de l'Outaouais",
+    "photo": "assets/img/grads/2025-celina-labaki.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Molly Hale",
+    "pathway": "University",
+    "label": "NCAA D1",
+    "details": "UCLA",
+    "photo": "assets/img/grads/2024-molly-hale.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Maya Hindson",
+    "pathway": "University",
+    "label": "NCAA D1",
+    "details": "University of South Florida",
+    "photo": "assets/img/grads/2024-maya-hindson.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Celina Bensebaa",
+    "pathway": "University",
+    "label": "University",
+    "details": "University of Ottawa",
+    "photo": "assets/img/grads/2024-celina-bensebaa.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Bilaal Volcy",
+    "pathway": "University",
+    "label": "University",
+    "details": "Carleton",
+    "photo": "assets/img/grads/2024-bilaal-volcy.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Darcy Cain",
+    "pathway": "University",
+    "label": "University",
+    "details": "Carleton",
+    "photo": "assets/img/grads/2024-darcy-cain.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Ava Milito",
+    "pathway": "University",
+    "label": "University",
+    "details": "Carleton",
+    "photo": "assets/img/grads/2024-ava-milito.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Cameron Cino",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2024-cameron-cino.webp"
+  },
+  {
+    "year": 2024,
+    "name": "James Feininger-Hughes",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2024-james-feininger-hughes.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Luca Da Caria",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2024-luca-da-caria.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Asha Cameron",
+    "pathway": "University",
+    "label": "University",
+    "details": "Ontario Tech",
+    "photo": "assets/img/grads/2024-asha-cameron.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Jenna Viduka",
+    "pathway": "University",
+    "label": "University",
+    "details": "Ontario Tech",
+    "photo": "assets/img/grads/2024-jenna-viduka.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Jahmal Boursiquot",
+    "pathway": "University",
+    "label": "University",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2024-jahmal-boursiquot.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Kyle St. Jean",
+    "pathway": "University",
+    "label": "University",
+    "details": "UPEI",
+    "photo": "assets/img/grads/2024-kyle-st-jean.webp"
+  },
+  {
+    "year": 2024,
+    "name": "Alyssa Bui",
+    "pathway": "University",
+    "label": "University",
+    "details": "Nipissing",
+    "photo": "assets/img/grads/2024-alyssa-bui.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Dante Britto",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2023-dante-britto.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Martin Popp",
+    "pathway": "University",
+    "label": "University",
+    "details": "Guelph",
+    "photo": "assets/img/grads/2023-martin-popp.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Adrijian Vranjkovic",
+    "pathway": "University",
+    "label": "University",
+    "details": "Carleton",
+    "photo": "assets/img/grads/2023-adrijian-vranjkovic.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Safa Sabry",
+    "pathway": "University",
+    "label": "University",
+    "details": "Concordia",
+    "photo": "assets/img/grads/2023-safa-sabry.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Ella Kennedy",
+    "pathway": "University",
+    "label": "University",
+    "details": "Bishop's",
+    "photo": "assets/img/grads/2023-ella-kennedy.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Rory Cotroneo",
+    "pathway": "University",
+    "label": "University",
+    "details": "Brock",
+    "photo": "assets/img/grads/2023-rory-cotroneo.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Ali Sultan",
+    "pathway": "University",
+    "label": "University",
+    "details": "Algonquin College",
+    "photo": "assets/img/grads/2023-ali-sultan.webp"
+  },
+  {
+    "year": 2023,
+    "name": "Danica Gravel",
+    "pathway": "University",
+    "label": "University",
+    "details": "committed",
+    "photo": "assets/img/grads/2023-danica-gravel.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Salena Allibhai",
+    "pathway": "University",
+    "label": "University",
+    "details": "UBC Okanagan",
+    "photo": "assets/img/grads/2022-salena-allibhai.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Paris Axam",
+    "pathway": "University",
+    "label": "University",
+    "details": "Dalhousie",
+    "photo": "assets/img/grads/2022-paris-axam.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Ellie Eriksson",
+    "pathway": "University",
+    "label": "University",
+    "details": "Saint Mary's",
+    "photo": "assets/img/grads/2022-ellie-eriksson.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Samara Hallett",
+    "pathway": "University",
+    "label": "University",
+    "details": "Houghton",
+    "photo": "assets/img/grads/2022-samara-hallett.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Nikita Mohan",
+    "pathway": "University",
+    "label": "University",
+    "details": "Ontario Tech",
+    "photo": "assets/img/grads/2022-nikita-mohan.webp"
+  },
+  {
+    "year": 2022,
+    "name": "Harvard Matt",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2022-harvard-matt.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Sadie Sider-Echenberg",
+    "pathway": "University",
+    "label": "University",
+    "details": "University of Ottawa, OUA First Team All-Star",
+    "photo": "assets/img/grads/2021-sadie-sider-echenberg.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Sara Buffone",
+    "pathway": "University",
+    "label": "NCAA",
+    "details": "Oral Roberts University",
+    "photo": "assets/img/grads/2021-sara-buffone.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Marissa Gravel",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2021-marissa-gravel.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Mika Matsukubo",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2021-mika-matsukubo.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Zoe Gardiner",
+    "pathway": "University",
+    "label": "University",
+    "details": "McGill",
+    "photo": "assets/img/grads/2021-zoe-gardiner.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Abby Barwick",
+    "pathway": "University",
+    "label": "University",
+    "details": "Concordia",
+    "photo": "assets/img/grads/2021-abby-barwick.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Caitlin Crichton",
+    "pathway": "University",
+    "label": "University",
+    "details": "St. Francis Xavier",
+    "photo": "assets/img/grads/2021-caitlin-crichton.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Kristen Riis",
+    "pathway": "University",
+    "label": "University",
+    "details": "St. Francis Xavier",
+    "photo": "assets/img/grads/2021-kristen-riis.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Kelsey Pokoj",
+    "pathway": "University",
+    "label": "University",
+    "details": "Nipissing",
+    "photo": "assets/img/grads/2021-kelsey-pokoj.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Mia Hollingsworth",
+    "pathway": "University",
+    "label": "University",
+    "details": "Bishop's",
+    "photo": "assets/img/grads/2021-mia-hollingsworth.webp"
+  },
+  {
+    "year": 2021,
+    "name": "Ethan Hulley",
+    "pathway": "University",
+    "label": "University",
+    "details": "Trent",
+    "photo": "assets/img/grads/2021-ethan-hulley.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Cameron Marin",
+    "pathway": "University",
+    "label": "NCAA",
+    "details": "Florida International University",
+    "photo": "assets/img/grads/2019-cameron-marin.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Luca Nicastro",
+    "pathway": "University",
+    "label": "NCAA",
+    "details": "St. Bonaventure University",
+    "photo": "assets/img/grads/2019-luca-nicastro.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Cameron Wallace",
+    "pathway": "University",
+    "label": "University",
+    "details": "Queen's",
+    "photo": "assets/img/grads/2019-cameron-wallace.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Zachary Barwick",
+    "pathway": "University",
+    "label": "University",
+    "details": "McMaster",
+    "photo": "assets/img/grads/2019-zachary-barwick.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Ed Bryan Florent",
+    "pathway": "University",
+    "label": "University",
+    "details": "McMaster",
+    "photo": "assets/img/grads/2019-ed-bryan-florent.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Cristian Aviles",
+    "pathway": "University",
+    "label": "University",
+    "details": "Concordia",
+    "photo": "assets/img/grads/2019-cristian-aviles.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Kevin Kaba",
+    "pathway": "University",
+    "label": "University",
+    "details": "Carleton",
+    "photo": "assets/img/grads/2019-kevin-kaba.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Mandela Singh-Sharpe",
+    "pathway": "University",
+    "label": "University",
+    "details": "Guelph",
+    "photo": "assets/img/grads/2019-mandela-singh-sharpe.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Jack Pensom",
+    "pathway": "University",
+    "label": "University",
+    "details": "Guelph",
+    "photo": "assets/img/grads/2019-jack-pensom.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Kerim Tosun",
+    "pathway": "University",
+    "label": "University",
+    "details": "Nipissing",
+    "photo": "assets/img/grads/2019-kerim-tosun.webp"
+  },
+  {
+    "year": 2019,
+    "name": "Blake Mihaychuk",
+    "pathway": "University",
+    "label": "University",
+    "details": "Waterloo",
+    "photo": "assets/img/grads/2019-blake-mihaychuk.webp"
+  }
+]
