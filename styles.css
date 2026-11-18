@@ -688,15 +688,6 @@ tr:last-child td { border-bottom: 0; }
 .reel figcaption { padding: 14px 2px 0; }
 .reel figcaption b { display: block; font-family: var(--display); font-size: 22px; font-weight: 700; line-height: 1.1; text-transform: uppercase; color: var(--navy-900); }
 .reel figcaption span { display: block; margin-top: 4px; font-size: 15px; line-height: 1.45; color: var(--paper-muted); }
-.reel-sound {
-  position: absolute; right: 10px; bottom: 10px; width: 44px; height: 44px; border-radius: 50%;
-  display: grid; place-items: center; border: 0; cursor: pointer;
-  background: rgba(5, 14, 31, 0.72); color: #fff;
-}
-.reel-sound .i-on { display: none; }
-.reel-sound[aria-pressed="true"] .i-on { display: inline; }
-.reel-sound[aria-pressed="true"] .i-off { display: none; }
-.reel-sound[aria-pressed="true"] { background: var(--lime); color: var(--navy-900); }
 .reels-note { margin: 22px 0 0; font-size: 15px; color: var(--paper-muted); }
 .reels-note a { color: var(--paper-ink); text-decoration-color: var(--lime); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 

@@ -109,48 +109,30 @@ if (search) {
   window.addEventListener('hashchange', openFromHash);
 }
 
-// Training reels: preload and play all of them while the section is near the screen, so swiping
-// is seamless. One shared sound setting: unmuting any reel unmutes them all (reels you can see).
+// Training reels (always muted): load and play all of them while the section is near the screen,
+// so swiping is seamless; pause when far away. Tap a reel to pause or resume it.
 (() => {
   const vids = [...document.querySelectorAll('.reel video')];
   if (!vids.length) return;
   const track = vids[0].closest('.carousel-track') || vids[0].closest('.reels');
-  const btns = vids.map(v => v.parentElement.querySelector('.reel-sound'));
   const held = new Set();
-  const inView = new Set();
-  let near = false, soundOn = false;
-  const start = v => { const p = v.play(); if (p) p.catch(() => {}); };
-  vids.forEach(v => { v.muted = true; v.defaultMuted = true; });
-  // Start loading every reel once the section is getting close (not on page load)
+  let near = false;
+  const start = v => { v.muted = true; const p = v.play(); if (p) p.catch(() => {}); };
   const warm = () => vids.forEach(v => { if (v.preload !== 'auto') { v.preload = 'auto'; v.load(); } });
-  const applySound = () => {
-    vids.forEach(v => { v.muted = !(soundOn && inView.has(v)); });
-    btns.forEach(b => { b.setAttribute('aria-pressed', soundOn); b.setAttribute('aria-label', soundOn ? 'Turn sound off' : 'Turn sound on'); });
-  };
   const playAll = () => { if (near) vids.forEach(v => { if (!held.has(v) && v.paused) start(v); }); };
-  vids.forEach((v, i) => {
+  vids.forEach(v => {
+    v.muted = true; v.defaultMuted = true;
     v.addEventListener('click', () => {
       if (v.paused) { held.delete(v); start(v); } else { held.add(v); v.pause(); }
-    });
-    btns[i].addEventListener('click', () => {
-      soundOn = !soundOn; held.delete(v); applySound(); playAll();
     });
     v.addEventListener('canplay', () => { if (near && !held.has(v) && v.paused) start(v); });
   });
   if ('IntersectionObserver' in window) {
-    // Section near the screen: load + play everything; far away: pause to save battery
     new IntersectionObserver(([e]) => {
       near = e.isIntersecting;
-      if (near) { warm(); playAll(); }
-      else { vids.forEach(v => v.pause()); if (soundOn) { soundOn = false; applySound(); } }
+      if (near) { warm(); playAll(); } else vids.forEach(v => v.pause());
     }, { rootMargin: '1200px 0px' }).observe(track);
-    // Which reels are actually showing in the strip (sound only comes from those)
-    const seen = new IntersectionObserver(entries => {
-      entries.forEach(e => e.isIntersecting ? inView.add(e.target) : inView.delete(e.target));
-      applySound();
-    }, { root: track, threshold: 0.6 });
-    vids.forEach(v => seen.observe(v));
-  } else { near = true; vids.forEach(v => inView.add(v)); playAll(); }
+  } else { near = true; warm(); playAll(); }
   // Some phones (e.g. iPhone Low Power Mode) block autoplay until the first touch anywhere
   ['touchstart', 'pointerdown', 'scroll'].forEach(ev => window.addEventListener(ev, playAll, { passive: true }));
 })();
