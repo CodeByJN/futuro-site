@@ -151,3 +151,21 @@ document.querySelectorAll('[data-season-cal]').forEach(cal => {
   const txt = cal.querySelector('[data-cal-now]');
   if (txt) txt.textContent = `It's ${name}: ${phase}${camp} on, and players can join now.`;
 });
+
+// Registration policy acknowledgement: typed signature must match the guardian name;
+// record when they agreed and which full policies they opened (sent with the form).
+document.querySelectorAll('form').forEach(form => {
+  const sign = form.querySelector('[data-sign-for]');
+  if (!sign) return;
+  const nameEl = form.querySelector('#' + sign.dataset.signFor);
+  const norm = s => s.trim().replace(/\s+/g, ' ').toLowerCase();
+  const check = () => sign.setCustomValidity(sign.value && nameEl && norm(sign.value) !== norm(nameEl.value) ? 'Type the same full name you entered above.' : '');
+  sign.addEventListener('input', check); if (nameEl) nameEl.addEventListener('input', check);
+  const opened = new Set();
+  form.querySelectorAll('details[data-policy]').forEach(d => d.addEventListener('toggle', () => { if (d.open) opened.add(d.dataset.policy); }));
+  form.addEventListener('submit', () => {
+    check();
+    const t = form.querySelector('[data-ack-time]'); if (t) t.value = new Date().toString();
+    const o = form.querySelector('[data-ack-opened]'); if (o) o.value = opened.size ? [...opened].join(', ') : 'None';
+  });
+});

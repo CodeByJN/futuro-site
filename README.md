@@ -69,6 +69,7 @@ The tryout and highlight-tape forms send to the academy inbox through [FormSubmi
 
 - **The first time someone submits a form, FormSubmit emails the inbox an activation link. Click it once, or later submissions won't be delivered.**
 - After submitting, people land on `thanks.html`.
+- The tryout form ends with a **Standards & policies** step. Parents must tick three summary cards (player standards, parent standards, safety & refunds), agree to all club policies, and type their name to sign. The full policy text expands inline. The emailed registration records each agreement, the policy version, the time they agreed and which full policies they opened, so keep those emails. The summaries and `POLICY_VERSION` are in `build.py` (`ACK_GROUPS`): update them whenever a policy changes.
 - To use a different service, such as Formspree or a Google Form, change `FORM_ENDPOINT` in `build.py`.
 
 ## Data notes

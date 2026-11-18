@@ -15,6 +15,7 @@
         <li><b>1. We review your form</b>Usually within a few days.</li>
         <li><b>2. Identification session</b>Your player trains with the group so our coaches can see their level.</li>
         <li><b>3. Placement</b>If it's a fit, we send team placement, registration and fee details.</li>
+        <li><b>Before you send</b>You'll read and agree to our <a href="#policies" style="color:var(--sky)">standards and policies</a>, so everyone knows the expectations from day one.</li>
       </ul>
       <p class="form-note" style="margin-top:22px">Questions? <a href="mailto:{{email}}" style="color:var(--sky)">{{email}}</a> or <a href="tel:+16132778096" style="color:var(--sky)">(613) 277-8096</a></p>
       <p class="form-note">Already been placed? <a href="https://go.teamsnap.com/forms/335912" rel="noopener" style="color:var(--sky)">Complete your registration on TeamSnap</a>.</p>
@@ -73,8 +74,23 @@
         </div>
       </fieldset>
 
-      <label class="check"><input type="checkbox" name="Consent to contact" value="Yes" required> I'm the player's parent or guardian and agree to be contacted by Futuro Soccer Academy about this registration.</label>
-      <button class="btn btn-primary btn-lg" type="submit">Send registration</button>
+      <fieldset class="ack" id="policies">
+        <legend>Standards &amp; policies</legend>
+        <p class="ack-intro">Futuro holds players and parents to a clear standard. Please read what you're agreeing to before you register. A copy of your agreement is sent to the academy with this form and kept on file.</p>
+        {{policy_ack}}
+        <div class="ack-sign">
+          <label class="check"><input type="checkbox" name="Agreed: all club policies" value="Yes" required> <span>I have read and agree to Futuro's standards and <a href="policies.html" target="_blank" rel="noopener">all club policies</a>. I understand my player can be disciplined or released from the academy for breaking them, under those policies.</span></label>
+          <label class="check"><input type="checkbox" name="Consent to contact" value="Yes" required> I'm the player's parent or guardian and agree to be contacted by Futuro Soccer Academy about this registration.</label>
+          <div class="field">
+            <label for="g-sign">Type your full name to sign <span class="req">*</span></label>
+            <input id="g-sign" name="Signature (typed name)" required autocomplete="off" data-sign-for="g-name">
+            <span class="hint">Must match the parent or guardian name above.</span>
+            <span class="err">Type the same full name you entered above.</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <button class="btn btn-primary btn-lg" type="submit">Agree and send registration</button>
       <p class="form-note">Your details go only to the Academy Director and are used only to arrange a tryout.</p>
     </form>
   </div>

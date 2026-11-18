@@ -266,6 +266,56 @@ def policies():
     )
 
 
+# ---------- Policy acknowledgement on the registration form ----------
+POLICY_VERSION = "Futuro club policies as published on the website, November 2026"
+ACK_GROUPS = [  # (field name, heading, key points, policy slugs)
+    ("Agreed: player standards", "Player standards", [
+        "Players represent Futuro on and off the field and show respect to staff, volunteers and the public.",
+        "Zero tolerance for tobacco, alcohol and illegal substances.",
+        "Players follow the home technical and strength programs set by the coaches.",
+        "School comes first: players hand in their report card three times a year.",
+        "Rule breaks are handled under the Discipline and Zero Tolerance policies, and can lead to a player being released from the academy.",
+    ], ["playercodeofconduct", "disciplinepolicy", "zerotolerance"]),
+    ("Agreed: parent standards", "Parent standards", [
+        "Futuro is a high-performance program. Playing time is not equal for all players.",
+        "Only coaches instruct players during training and games. Parents stay off the field during training.",
+        "No one addresses the referee during a game.",
+        "Speaking negatively about another player is grounds for immediate dismissal of your own child.",
+        "Wait 24 hours after a match before raising an issue with the Academy Director, and never confront coaches after a game.",
+        "Team fundraising stays in the team fund if a player is released or leaves.",
+    ], ["parentcodeofconduct", "zerotolerance", "academycommunication"]),
+    ("Agreed: safety and refunds", "Safety, communication &amp; refunds", [
+        "Futuro follows its child safeguarding, concussion and emergency action policies.",
+        "Coaches' written messages to players under 18 always include a parent.",
+        "Refunds: 100% minus a $45 admin fee more than 10 business days before the program starts, 50% within 10 business days, and none after the first session.",
+    ], ["childsafeguarding", "concussioninfo", "refund", "weathercancellation"]),
+]
+
+
+def policy_ack():
+    titles = {slug: title for slug, title, _ in POLICIES}
+    cards = []
+    for i, (field, head, points, slugs) in enumerate(ACK_GROUPS, 1):
+        full = "".join(
+            f'<details class="ack-doc" data-policy="{esc(titles[s])}"><summary>{esc(titles[s])}</summary>'
+            f'<div class="ack-doc-body">{clean_policy((SRC / "policies" / f"{s}.txt").read_text(), titles[s])}</div></details>'
+            for s in slugs
+        )
+        cards.append(
+            f'<div class="ack-card"><h3><span class="ack-n">{i}</span>{head}</h3>'
+            f'<ul class="ack-points">{"".join(f"<li>{esc(p)}</li>" for p in points)}</ul>'
+            f'<p class="ack-read">Read the full text:</p><div class="ack-docs">{full}</div>'
+            f'<label class="check ack-check"><input type="checkbox" name="{esc(field)}" value="Yes" required> '
+            f'I have read the {head.lower()} and agree to them.</label></div>'
+        )
+    return (
+        f'<input type="hidden" name="Policy version" value="{esc(POLICY_VERSION)}">'
+        '<input type="hidden" name="Agreed at" value="" data-ack-time>'
+        '<input type="hidden" name="Full policies opened" value="None" data-ack-opened>'
+        + "".join(cards)
+    )
+
+
 # ---------- Graduates board ----------
 def yt_id(url):
     m = re.search(r"(?:youtu\.be/|v=|embed/|shorts/)([\w-]{11})", url)
@@ -341,7 +391,7 @@ def main():
     parts = {
         "collage": collage, "sponsors": sponsors, "sponsor_grid": sponsor_grid, "policies": policies,
         "graduates": graduates, "grads_home": grads_home, "coach_carousel": coach_carousel,
-        "staff_carousel": staff_carousel, "season_calendar": season_calendar,
+        "staff_carousel": staff_carousel, "season_calendar": season_calendar, "policy_ack": policy_ack,
     }
     for page in sorted((SRC / "pages").glob("*.html")):
         raw = page.read_text()
