@@ -595,9 +595,11 @@ tr:last-child td { border-bottom: 0; }
 @media (max-width: 640px) {
   .hero::before {
     background:
-      linear-gradient(180deg, var(--navy-950) 0%, rgba(5, 14, 31, 0.7) 20%, rgba(5, 14, 31, 0.7) 80%, var(--navy-900) 100%),
-      radial-gradient(ellipse 90% 60% at 50% 50%, rgba(5, 14, 31, 0.85), rgba(5, 14, 31, 0.5));
+      linear-gradient(180deg, var(--navy-950) 0%, rgba(5, 14, 31, 0.35) 18%, rgba(5, 14, 31, 0.35) 82%, var(--navy-900) 100%),
+      radial-gradient(ellipse 85% 55% at 50% 50%, rgba(5, 14, 31, 0.6), rgba(5, 14, 31, 0.15));
   }
+  .hero h1 { text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), 0 4px 28px rgba(0, 0, 0, 0.7); }
+  .hero-sub, .hero-stats { text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8), 0 2px 14px rgba(0, 0, 0, 0.7); }
   .hero h1 { font-size: clamp(44px, 12.5vw, 56px); }
   .hero-sub { font-size: 17px; }
   .hero-stats { margin-top: 30px; gap: 18px 16px; grid-template-columns: 1fr 1fr; }
