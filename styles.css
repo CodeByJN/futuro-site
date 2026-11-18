@@ -87,7 +87,7 @@ section { padding: 104px 0; }
 }
 .nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 100%; max-width: 1320px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-.brand img { width: 42px; height: 42px; object-fit: contain; border-radius: 8px; }
+.brand img { width: auto; height: 48px; object-fit: contain; }
 .brand-text { display: flex; flex-direction: column; line-height: 1; }
 .brand-name { font-family: var(--display); font-weight: 800; font-size: 26px; letter-spacing: 0.1em; }
 .brand-motto { font-family: var(--display); font-weight: 600; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--lime); margin-top: 3px; }
