@@ -108,31 +108,3 @@ if (search) {
   openFromHash();
   window.addEventListener('hashchange', openFromHash);
 }
-
-// Scroll reveal + count-up
-const countUp = (el) => {
-  const target = Number(el.dataset.count);
-  const suffix = el.dataset.suffix || '';
-  if (reduce) { el.textContent = target + suffix; return; }
-  const start = performance.now();
-  const step = (t) => {
-    const p = Math.min(1, (t - start) / 1200);
-    el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
-    if (p < 1) requestAnimationFrame(step);
-  };
-  requestAnimationFrame(step);
-};
-
-if ('IntersectionObserver' in window) {
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e) => {
-      if (!e.isIntersecting) return;
-      e.target.classList.add('in');
-      if (e.target.dataset.count) countUp(e.target);
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal, [data-count]').forEach((el) => io.observe(el));
-} else {
-  document.querySelectorAll('.reveal').forEach((el) => el.classList.add('in'));
-}

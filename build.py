@@ -260,15 +260,15 @@ def grads_home():
         ("U SPORTS", "Justin Meka", "University of Toronto"),
         ("U SPORTS", "Amelia Racicot", "University of Toronto"),
     ]
-    items = "".join(f'<div class="alum"><span class="tag">{t}</span><strong>{n}</strong><small>{u}</small></div>' for t, n, u in picks)
-    return f'<p class="mini-label">Class of 2025 commitments</p><div class="alumni alumni-mini">{items}</div>'
+    items = "".join(f"<li><strong>{n}</strong><span>{u}</span><small>{t}</small></li>" for t, n, u in picks)
+    return f'<p class="mini-label">Class of 2025 commitments</p><ul class="commit-list">{items}</ul>'
 
 
 def graduates():
     grads = load_grads()
     if not grads:
         return (
-            '<div class="empty-board"><p class="eyebrow">Board opening</p>'
+            '<div class="empty-board">'
             "<h3>The first highlight tapes are being reviewed.</h3>"
             "<p>Approved players will appear here with their highlight video, position and graduating class. "
             'Graduating players can submit their tape <a href="#submit">below</a>.</p></div>'
@@ -288,7 +288,7 @@ def grad_cards(grads):
         cards.append(
             f'<article class="grad-card">{video}<div class="grad-body">'
             f'<span class="tag">Class of {esc(str(g["grad_year"]))}</span><h3>{esc(g["name"])}</h3>'
-            f'<p class="meta">{esc(g.get("position", ""))}{" · " + esc(g["team"]) if g.get("team") else ""}</p>'
+            f'<p class="meta">{esc(g.get("position", ""))}{", " + esc(g["team"]) if g.get("team") else ""}</p>'
             f'{"<p>" + esc(g["note"]) + "</p>" if g.get("note") else ""}'
             f'<a class="btn btn-small btn-ghost" href="mailto:{ACADEMY_EMAIL}?subject={html.escape(subject).replace(" ", "%20")}">Contact through the academy</a>'
             "</div></article>"

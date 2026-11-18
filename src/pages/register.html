@@ -2,27 +2,25 @@
 <!-- description: Register your player for a Futuro Soccer Academy tryout and identification session in Ottawa. -->
 <section class="page-hero">
   <div class="wrap">
-    <p class="eyebrow">Tryouts &amp; player identification</p>
-    <h1>Register for <span class="accent">tryouts.</span></h1>
+    <h1>Register for tryouts.</h1>
     <p class="lede">Tell us about your player. The Academy Director will contact you to set up an identification session.</p>
   </div>
 </section>
 
 <section>
   <div class="wrap form-shell">
-    <aside class="reveal">
-      <p class="eyebrow">What happens next</p>
+    <aside>
       <h2 class="h-lg" style="font-size:clamp(34px,4vw,48px)">We'll be in touch.</h2>
       <ul class="side-list">
         <li><b>1. We review your form</b>Usually within a few days.</li>
         <li><b>2. Identification session</b>Your player trains with the group so our coaches can see their level.</li>
         <li><b>3. Placement</b>If it's a fit, we send team placement, registration and fee details.</li>
       </ul>
-      <p class="form-note" style="margin-top:22px">Questions? <a href="mailto:{{email}}" style="color:var(--sky)">{{email}}</a> · <a href="tel:+16132778096" style="color:var(--sky)">(613) 277-8096</a></p>
+      <p class="form-note" style="margin-top:22px">Questions? <a href="mailto:{{email}}" style="color:var(--sky)">{{email}}</a> or <a href="tel:+16132778096" style="color:var(--sky)">(613) 277-8096</a></p>
       <p class="form-note">Already been placed? <a href="https://go.teamsnap.com/forms/335912" rel="noopener" style="color:var(--sky)">Complete your registration on TeamSnap</a>.</p>
     </aside>
 
-    <form class="form-card reveal" action="{{form_endpoint}}" method="POST">
+    <form class="form-card" action="{{form_endpoint}}" method="POST">
       <input type="hidden" name="_subject" value="New tryout registration (futuro website)">
       <input type="hidden" name="_template" value="table">
       <input type="hidden" name="_next" value="{{site_url}}thanks.html">
