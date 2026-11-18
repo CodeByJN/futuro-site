@@ -136,3 +136,18 @@ if (search) {
   // Some phones (e.g. iPhone Low Power Mode) block autoplay until the first touch anywhere
   ['touchstart', 'pointerdown', 'scroll'].forEach(ev => window.addEventListener(ev, playAll, { passive: true }));
 })();
+
+// Season calendar: highlight this month and say what's on now.
+document.querySelectorAll('[data-season-cal]').forEach(cal => {
+  const m = new Date().getMonth();             // 0 = Jan
+  const i = (m - 8 + 12) % 12 + 1;              // column, season starts in Sep
+  const name = new Date(2000, m, 1).toLocaleString('en-CA', { month: 'long' });
+  const phase = i <= 6 ? 'the Fall / Winter phase' : 'the Spring / Summer phase';
+  const camp = (m === 6 || m === 7) ? ' and summer camp are' : ' is';
+  cal.style.setProperty('--now', i);
+  cal.classList.add('has-now');
+  const cell = cal.querySelector(`.cal-months [data-i="${i}"]`);
+  if (cell) cell.classList.add('is-now');
+  const txt = cal.querySelector('[data-cal-now]');
+  if (txt) txt.textContent = `It's ${name}: ${phase}${camp} on, and players can join now.`;
+});

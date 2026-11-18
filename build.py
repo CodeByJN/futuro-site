@@ -138,6 +138,33 @@ def carousel(label, slides, cls=""):
     )
 
 
+def season_calendar():
+    """One 12-month strip (season year Sep-Aug) showing when each program runs. main.js marks the current month."""
+    months = ["Sep", "Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug"]
+    lanes = [  # (class, name, dates, start col, end col)
+        ("fw", "Fall / Winter phase", "Sep – Feb", 1, 7),
+        ("ss", "Spring / Summer phase", "Mar 1 – Aug 31", 7, 13),
+        ("camp", "Summer camp", "Jul – mid-Aug · ages 8–13", 11, 13),
+        ("join", "Tryouts &amp; placement", "Any month", 1, 13),
+    ]
+    head = "".join(f'<span data-i="{i + 1}">{m}</span>' for i, m in enumerate(months))
+    rows = "".join(
+        f'<li class="cal-lane lane-{c}" style="--s:{a};--e:{b}"><p class="cal-label"><b>{n}</b> <span>{d}</span></p>'
+        '<span class="cal-bar" aria-hidden="true"></span></li>'
+        for c, n, d, a, b in lanes
+    )
+    return (
+        '<div class="season-cal" data-season-cal>'
+        '<div class="cal-top"><p class="cal-now"><span class="cal-dot" aria-hidden="true"></span>'
+        '<span data-cal-now>Players can join in any month.</span></p>'
+        '<span class="cal-note">The season runs September to August</span></div>'
+        '<div class="cal-grid">'
+        f'<div class="cal-months" aria-hidden="true">{head}</div>'
+        f'<ul class="cal-lanes">{rows}</ul>'
+        "</div></div>"
+    )
+
+
 def load_coaches():
     return json.loads((SRC / "coaches.json").read_text())
 
@@ -314,7 +341,7 @@ def main():
     parts = {
         "collage": collage, "sponsors": sponsors, "sponsor_grid": sponsor_grid, "policies": policies,
         "graduates": graduates, "grads_home": grads_home, "coach_carousel": coach_carousel,
-        "staff_carousel": staff_carousel,
+        "staff_carousel": staff_carousel, "season_calendar": season_calendar,
     }
     for page in sorted((SRC / "pages").glob("*.html")):
         raw = page.read_text()

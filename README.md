@@ -34,7 +34,7 @@ python3 build.py
 - `assets/video/reel-N.mp4` (+ `.webp` posters) are Coach Parmar's training clips from X, shown as a reel carousel in the home philosophy section. To add one, encode it to 540x960 and copy a `<figure class="reel slide">` block in `src/pages/index.html`.
 - The coach inquiry form ("Coach with Futuro") is at `coaches.html#coach-with-us` and sends to the same inbox as the tryout form.
 - CSS and JS links get a `?v=` content hash at build time, so visitors always load the latest version.
-- `assets/img/action/` holds the training and match photos (from the current futurosoccer.com). Inner pages set their header photo with `style="--hero-img:url(...)"` on `.page-hero.has-photo`.
+- `{{season_calendar}}` (built in `build.py`) is the Sep–Aug program calendar on home and apply; edit its lanes there. `assets/img/action/` holds the training and match photos (from the current futurosoccer.com). Inner pages set their header photo with `style="--hero-img:url(...)"` on `.page-hero.has-photo`.
 - Sponsors, the nav and the form inbox are set at the top of `build.py`.
 
 Preview locally:
