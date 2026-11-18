@@ -56,34 +56,57 @@
       <div class="carousel-ctrl"><button class="car-btn prev" type="button" data-dir="-1" aria-label="Previous"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="car-count" aria-live="polite"></span><button class="car-btn" type="button" data-dir="1" aria-label="Next"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
     </div>
 
-    <div class="scout-panel">
-      <div class="scout-copy">
-        <h3>Our current graduates.</h3>
-        <p>Graduating players and their highlight tapes, ready for university and pro scouts. Every inquiry goes through the academy director.</p>
-        <div class="btn-row">
-          <a class="btn btn-primary" href="graduates.html">View the graduates</a>
-          <a class="btn btn-ghost" href="graduates.html#submit">Submit a highlight tape</a>
-        </div>
-      </div>
-      <div class="scout-list">
-{{grads_home}}
+    <div class="grad-bar">
+      <p><strong>Scouts and parents:</strong> see our current graduates and their highlight tapes.</p>
+      <div class="grad-bar-cta">
+        <a class="btn btn-primary" href="graduates.html">View the graduates</a>
+        <a class="link-arrow" href="graduates.html#submit">Submit a tape</a>
       </div>
     </div>
   </div>
 </section>
 
 <section class="home-about" aria-labelledby="about-title">
-  <div class="wrap about-split">
-    <figure class="about-photo about-video">
-      <video src="assets/video/philosophy.mp4" poster="assets/video/philosophy-poster.webp" muted loop playsinline preload="none" width="540" height="676" aria-label="Futuro players dribbling, turning and finishing at training sessions"></video>
-      <button class="vid-toggle" type="button" aria-label="Pause video" hidden><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path class="i-pause" fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/><path class="i-play" fill="currentColor" d="M8 5v14l11-7z"/></svg></button>
-    </figure>
-    <div class="about-copy">
+  <div class="wrap">
+    <div class="about-head">
       <h2 id="about-title" class="h-xl">Every Day<br>In Every Way.</h2>
-      <p class="lede">Our mission is to produce professional, international and university players, and to give every player the chance to reach their full potential.</p>
-      <p>We play <em>Joga Bonito</em>: possession-based, attacking soccer that gives players the freedom and confidence to show their creativity. Off the ball, every player works to win it back fast. Off the field, we hold players to the same standard in school, because education comes first.</p>
-      <a class="link-arrow" href="about.html">Read our philosophy and the 7 pillars</a>
+      <div class="about-copy">
+        <p class="lede">Our mission is to produce professional, international and university players, and to give every player the chance to reach their full potential.</p>
+        <p>We play <em>Joga Bonito</em>: possession-based, attacking soccer that gives players the freedom and confidence to show their creativity. Off the ball, every player works to win it back fast. Off the field, we hold players to the same standard in school, because education comes first.</p>
+        <a class="link-arrow" href="about.html">Read our philosophy and the 7 pillars</a>
+      </div>
     </div>
+    <div class="reels" role="region" aria-label="Training clips from Coach Parmar" tabindex="0">
+      <figure class="reel">
+        <div class="reel-frame">
+          <video src="assets/video/reel-1.mp4" poster="assets/video/reel-1.webp" muted loop playsinline preload="none" width="540" height="960" aria-label="Training clip: Message in the pass"></video>
+          <button class="reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path class="i-off" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path class="i-on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+        </div>
+        <figcaption><b>Message in the pass</b><span>Every pass carries a message: weight, angle and timing.</span></figcaption>
+      </figure>
+      <figure class="reel">
+        <div class="reel-frame">
+          <video src="assets/video/reel-2.mp4" poster="assets/video/reel-2.webp" muted loop playsinline preload="none" width="540" height="960" aria-label="Training clip: Confident, creative ballers"></video>
+          <button class="reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path class="i-off" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path class="i-on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+        </div>
+        <figcaption><b>Confident, creative ballers</b><span>1v1s that build players who want the ball.</span></figcaption>
+      </figure>
+      <figure class="reel">
+        <div class="reel-frame">
+          <video src="assets/video/reel-3.mp4" poster="assets/video/reel-3.webp" muted loop playsinline preload="none" width="540" height="960" aria-label="Training clip: Protect and escape"></video>
+          <button class="reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path class="i-off" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path class="i-on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+        </div>
+        <figcaption><b>Protect and escape</b><span>Shield the ball, turn and get out of pressure.</span></figcaption>
+      </figure>
+      <figure class="reel">
+        <div class="reel-frame">
+          <video src="assets/video/reel-4.mp4" poster="assets/video/reel-4.webp" muted loop playsinline preload="none" width="540" height="960" aria-label="Training clip: Fun technical challenges"></video>
+          <button class="reel-sound" type="button" aria-label="Turn sound on" aria-pressed="false"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4z"/><path class="i-off" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path class="i-on" d="M16 8.5a5 5 0 0 1 0 7M18.5 6a8.5 8.5 0 0 1 0 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/></svg></button>
+        </div>
+        <figcaption><b>Fun technical challenges</b><span>Obstacle courses that test touch at speed.</span></figcaption>
+      </figure>
+    </div>
+    <p class="reels-note">From Coach Parmar's sessions. Follow <a href="https://x.com/parmarsports" target="_blank" rel="noopener">@parmarsports</a> for more.</p>
   </div>
 </section>
 

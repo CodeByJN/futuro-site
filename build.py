@@ -307,6 +307,10 @@ def nav(current):
 
 def main():
     layout = (SRC / "layout.html").read_text()
+    # cache-busting: browsers refetch CSS/JS whenever their contents change
+    import hashlib
+    for key, f in (("v_css", "styles.css"), ("v_js", "main.js")):
+        layout = layout.replace("{{" + key + "}}", hashlib.md5((ROOT / f).read_bytes()).hexdigest()[:8])
     parts = {
         "collage": collage, "sponsors": sponsors, "sponsor_grid": sponsor_grid, "policies": policies,
         "graduates": graduates, "grads_home": grads_home, "coach_carousel": coach_carousel,
