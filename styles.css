@@ -202,6 +202,7 @@ section { padding: 104px 0; }
 .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .alt { background: var(--navy-800); }
+.span-2 { grid-column: span 2; }
 .pillar { position: relative; overflow: hidden; }
 .pillar .num { font-family: var(--display); font-weight: 800; font-size: 60px; line-height: 1; color: rgba(143, 203, 239, 0.12); position: absolute; right: 18px; top: 12px; }
 .pillar h3 { font-size: 28px; margin-bottom: 12px; padding-right: 64px; }
@@ -449,6 +450,8 @@ tr:last-child td { border-bottom: 0; }
   .hero-cta .btn { width: 100%; }
     .logo { width: 140px; height: 80px; }
   .expect-list li { grid-template-columns: 1fr; gap: 4px; }
+    .span-2 { grid-column: auto; }
+    .pillar h3 { font-size: 24px; }
     .phase-cards, .week, .grid-3, .mvv, .steps, .grad-grid, .pathway, .videos, .fields { grid-template-columns: 1fr; }
   .stats-band .wrap { grid-template-columns: 1fr 1fr; }
   .legend { grid-template-columns: 1fr; }
